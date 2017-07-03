@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>SchoolPower</title>
+		<!-- FAVICON CSS -->
+		<link rel="icon" type="image/ico" href="favicon.png">
+		<!-- BOOTSTRAP CSS -->
+		<link href="css/plugins/bootstrap.min.css" rel="stylesheet">
+		<!-- FONTS CSS -->
+		<link href="css/plugins/fonts/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/plugins/fonts/ionicons/css/ionicons.min.css" rel="stylesheet">
+		<!-- OWL CAROUSEL CSS -->
+		<link href="css/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+		<link href="css/plugins/owl-carousel/owl.transitions.css" rel="stylesheet">
+		<!-- CUSTOM THEME CSS -->
+		<link href="css/theme.min.css" rel="stylesheet">
+		<!-- THEME COLOR CSS -->
+		<link href="css/themes/blue.min.css" rel="stylesheet" id="color-theme">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+	</head>
+	<body>
+		
+		<!-- PRELOADER -->
+		<div class="preloader">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+		<!-- END PRELOADER -->
+		
+		<!-- HEADER -->
+		<header id="header" class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6">
+						<div class="logo">
+							<a href="#home">
+								<img src="images/ic_header-web-32.png" alt="SchoolPower Logo" />
+							</a>
+						</div>
+					</div>
+					<div class="col-md-9 col-sm-6 col-xs-6 alignright relative">
+						<div class="menu hidden-sm hidden-xs visible-md visible-lg">
+							<ul class="clearfix">
+								<li>
+									<a href="#screenshots">Screenshots</a>
+								</li>
+								<li>
+									<a href="#features">Features</a>
+								</li>
+								<li>
+									<a href="#functions">Functions</a>
+								</li>
+								<li>
+									<a href="#facts">Facts</a>
+								</li>
+								<li>
+									<a href="#developers">Developers</a>
+								</li>
+								<li>
+									<a href="#subscribe">Subscribe</a>
+								</li>
+								<li>
+									<select onchange="select_language(this.options[this.selectedIndex].value)">
+										<option value="en" selected>English</option>
+										<option value="zh-cn">中文</option>
+									</select>
+									<script>
+										function select_language(language) {
+											$("[lang]").each(function () {
+												if (language == "en")
+													window.location.href="index.html"
+												if (language == "zh-cn")
+													window.location.href="index-zh.html"
+											});
+										}
+									</script>
+								</li>
+							</ul>
+						</div>
+						<div class="hidden-nav hidden-lg hidden-md visible-sm visible-xs alignright">
+							<button class="toggle-nav">
+								<i class="ion-navicon"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END HEADER -->
+		
+		<!-- HOME -->
+		<section id="home" class="home home-ptop">
+			<div id="ytbg" data-video-id="JSBr8Thk6fU" class="video"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 aligncenter">
+						<div class="home-title false-pd">
+							<h2>SchoolPower <span>Gives You Power in School</span></h2>
+						</div>
+						<div class="sub-title false-pd">Access your grades with joy and efficiency on SchoolPower - an alternative mobile solution for <a href="https://www.powerschool.com/" style="color:aqua">PowerSchool</a> supporting both Android and iOS devices.</div>
+						<div class="home-btn false-pd">
+							<a href="#0" class="btn-site">Download App</a>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="container bottom-container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 aligncenter">
+						<div class="element">
+							<img src="images/phones.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END HOME -->
+		
+		<!-- SCREENSHOTS -->
+		<section id="screenshots" class="screenshots">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title">
+							<h2>Screenshots</h2>
+						</div>
+						<div class="section-sub-title">Here are several cases that make SchoolPower worth paying attention to. Interfaces are all materially designed.</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="carousel-wrapper" id="slider">
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/01.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/02.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/03.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/04.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/05.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/06.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/07.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/08.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/09.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/10.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/11.png" alt="" />
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="fullwidthimg">
+									<img src="images/slider/12.png" alt="" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END SCREENSHOTS -->
+		
+		<!-- FEATURES -->
+		<section id="features" class="intermediate innovation" style="background-image:url(images/building.jpeg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title light-color">
+							<h2><span class="thin-text">Touch the</span> Innovations</h2>
+						</div>
+						<div class="section-sub-title light-color">Brand-new materially designed user interface permits the seamless viewing experience. Interactions are designed creatively according to the using habits of the local students.</div>
+					</div>
+				</div>
+				<div class="row outer-height">
+					<div class="col-md-4 inner-height">
+						<div class="float-content im-col-items paddingleft-content">
+							
+							<div class="im-col-item">
+								<div class="im-col-icon">
+									<i class="ion-ios-star-outline"></i>
+								</div>
+								<div class="im-col-title"><h4>Creative</h4></div>
+								<div class="im-col-dscr">Innovative interaction design provides you appealing experience.</div>
+							</div>
+							<div class="im-col-item">
+								<div class="im-col-icon">
+									<i class="ion-ios-analytics-outline"></i>
+								</div>
+								<div class="im-col-title"><h4>Reliable</h4></div>
+								<div class="im-col-dscr">Encryped HTTPS network connection keeps youe account safe.</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-push-4 inner-height">
+						<div class="float-content im-col-items paddingright-content">
+							
+							<div class="im-col-item alignright">
+								<div class="im-col-icon">
+									<i class="ion-ios-settings"></i>
+								</div>
+								<div class="im-col-title"><h4>Efficient</h4></div>
+								<div class="im-col-dscr">Localized interface helps you get things done quickly.</div>
+							</div>
+							<div class="im-col-item alignright">
+								<div class="im-col-icon">
+									<i class="ion-ios-timer-outline"></i>
+								</div>
+								<div class="im-col-title"><h4>Sync all Time</h4></div>
+								<div class="im-col-dscr">Data are synced automatically with the PowerSchool server. 70% less time needed to get things updated.</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-md-pull-4">
+						<div class="fullwidthimg">
+							<img src="images/interaction.gif" alt=""/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END FEATURES -->
+		
+		<!-- FUNCTIONS -->
+		<section id="functions" class="functions">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title">
+							<h2><span class="thin-text">How it</span> Works</h2>
+						</div>
+						<div class="section-sub-title">SchoolPower is a third-party client for <a href="https://www.powerschool.com/">PowerSchool</a>, it displays what's originally on the <a href="https://www.powerschool.com/">PowerSchool website</a>.</div>
+					</div>
+				</div>
+				<div class="row outer-height">
+					<div class="col-md-6 aligncenter">
+						<div class="fullwidthimg">
+							<img src="images/PNS.png" alt="" />
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-12 inner-height">
+								<div class="float-content paddingleft-content">
+									<div class="text-inner">
+										<ul>
+											<li><span class="decimal-sp">1</span>Use the username and password you provided to login the <a href="https://www.powerschool.com/">PowerSchool website</a> .</li>
+											<li><span class="decimal-sp">2</span>Grab the information on it with Python, send it to your client.</li>
+											<li><span class="decimal-sp">3</span>Display the data on your mobile devices with our easy-to-use interfaces.</li>
+										</ul>
+									</div>
+									<div class="btn-row">
+										<a href="#0" class="btn-site btn-color">User Agreement</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END FUNCTIONS -->
+		
+		<!-- FACTS -->
+		<section id="facts" class="intermediate" style="background-image:url(images/coding.png);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title light-color">
+							<h2><span class="thin-text">Some</span> Facts</h2>
+						</div>
+						<div class="section-sub-title light-color"> </div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6">
+						<div class="fact-item aligncenter">
+							<div class="fact-icon">
+								<i class="ion-ios-compose"></i>
+							</div>
+							<div class="fact-statistic">
+								<span class="timer" data-from="0" data-to="17594">17594</span>
+							</div>
+							<div class="name-fact">Lines Code</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="fact-item aligncenter">
+							<div class="fact-icon">
+								<i class="ion-ios-time"></i>
+							</div>
+							<div class="fact-statistic">
+								<span class="timer" data-from="0" data-to="374">374</span>
+							</div>
+							<div class="name-fact">Hours Coding</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="fact-item aligncenter">
+							<div class="fact-icon">
+								<i class="ion-ios-refresh"></i>
+							</div>
+							<div class="fact-statistic">
+								<span class="timer" data-from="0" data-to="6">6s</span>
+							</div>
+							<div class="name-fact">Sec to Refresh</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="fact-item aligncenter">
+							<div class="fact-icon">
+								<i class="ion-ios-world"></i>
+							</div>
+							<div class="fact-statistic">
+								<span class="timer" data-from="0" data-to="3">3</span>
+							</div>
+							<div class="name-fact">Languages Supported</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END FACTS -->
+		
+		<!-- DEVELOPERS -->
+		<section id="developers" class="testimonials">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title">
+							<h2><span class="thin-text">Who</span> Did this</h2>
+						</div>
+						<div class="section-sub-title">Our developers spent tons of their own time to provide us the comfort of using SchoolPower.</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<div class="testimonials-carousel" id="slider2">
+							<div class="tms-item">
+								<div class="tms-img">
+									<img src="images/developers/hit.jpg" alt="" />
+								</div>
+								<div class="tms-us-name">HITGIF</div>
+							</div>
+							<div class="tms-item">
+								<div class="tms-img">
+									<img src="images/developers/null.jpg" alt="" />
+								</div>
+								<div class="tms-us-name">Null</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END DEVELOPERS -->
+		
+		<!-- INTERMEDIATE -->
+		<section id="subscribe" class="intermediate" style="background-image:url(images/building2.jpeg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 aligncenter">
+						<div class="section-title light-color">
+							<h2><span class="thin-text">Subscribe to our</span> Newsletter</h2>
+						</div>
+						<div class="section-sub-title light-color">Get our development news straight to your inbox, see all the exciting changes and what's going on.</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+						<form action="js/subscribe.php" method="post" id="subscribeForm">
+							<div class="subscribe-form-wrapper">
+								<input type="text" name="semail" placeholder="Email" id="semail" />
+								<div class="info-row honeypot">
+									<input type="text" name="last" id="last" />
+								</div>
+								<button type="submit">
+									<i class="ion-ios-paperplane"></i>
+								</button>
+							</div>
+							<div class="message">
+								<div class="alert"></div>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- END INTERMEDIATE -->
+		
+		<!-- FOOTER -->
+		<footer id="footer" class="intermediate footer" style="background-image:url(images/intermediate-bg-2.jpg);">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="all-row">
+							<div class="copyrights">
+								<span class="allc"> Copyright &copy; 2017 SchoolPower Studio <span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12">
+						<div class="social-nw alignright">
+							<ul>
+								<li>
+									<a href="https://github.com/SchoolPower">
+										<i class="ion-social-github"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- END FOOTER -->
+		
+		<!-- TO TOP -->
+		<div class="to-top">
+			<a href="#home">
+				<i class="ion-ios-arrow-up"></i>
+			</a>
+		</div>
+		<!-- END TO TOP -->
+
+		<!-- JQUERY -->
+		<script src="js/jquery-2.2.0.min.js"></script>
+		<!-- BOOTSTRAP JS -->
+		<script src="js/plugins/bootstrap.min.js"></script>
+		<!-- SCROLL TARGET -->
+		<script src="js/plugins/jquery.easing.js"></script>
+		<script src="js/plugins/jquery.localscroll.min.js"></script>
+		<script src="js/plugins/jquery.scrollto.min.js"></script>
+		<!-- OWL CAROUSEL JS -->
+		<script src="js/plugins/owl.carousel.min.js"></script>
+		<!-- STATISTIC JS -->
+		<script src="js/plugins/jquery.appear.js"></script>
+		<script src="js/plugins/jquery.countTo.js"></script>
+		<!-- YOUTUBE HOME BG JS -->
+		<script src="js/plugins/jquery.youtubebackground.js"></script>
+		<!-- VIDEO BACKGROUND BG JS -->
+		<script src="js/plugins/jquery.backgroundvideo.min.js"></script>
+		<script src="js/plugins/embedvid.js"></script>
+		<!-- FORM JS -->
+		<script src="js/plugins/jquery.form.js"></script>
+		<!-- CUSTOM THEME JS -->
+		<script src="js/custom.js"></script>
+
+	</body>
+</html>
