@@ -19,6 +19,7 @@
 		<link href="css/theme.min.css" rel="stylesheet">
 		<!-- THEME COLOR CSS -->
 		<link href="css/themes/blue.min.css" rel="stylesheet" id="color-theme">
+		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -72,18 +73,25 @@
 									<a href="#subscribe">Subscribe</a>
 								</li>
 								<li>
-									<select onchange="select_language(this.options[this.selectedIndex].value)">
+									<select onchange="select_language(this.options[this.selectedIndex].value); resetSelectElement(this)">
 										<option value="en" selected>English</option>
-										<option value="zh-cn">中文</option>
+										<option value="zh-CN">中文</option>
 									</select>
 									<script>
 										function select_language(language) {
-											$("[lang]").each(function () {
-												if (language == "en")
-													window.location.href="index.html"
-												if (language == "zh-cn")
-													window.location.href="index-zh.html"
-											});
+											if (language == "zh-CN")
+												localStorage.setItem('setLang', "zh-CN");
+												window.location.href="index-zh.html"
+										}
+										function resetSelectElement(selectElement) {
+											var options = selectElement.options
+											for (var i=0, iLen=options.length; i<iLen; i++) {
+												if (options[i].defaultSelected) {
+													selectElement.selectedIndex = i
+													return;
+												}
+											}
+											selectElement.selectedIndex = 0
 										}
 									</script>
 								</li>
@@ -107,7 +115,7 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 aligncenter">
 						<div class="home-title false-pd">
-							<h2>SchoolPower <span>Gives You Power in School</span></h2>
+							<h2><span>May</span> SchoolPower <span>Be With You</span></h2>
 						</div>
 						<div class="sub-title false-pd">Access your grades with joy and efficiency on SchoolPower - an alternative mobile solution for <a href="https://www.powerschool.com/" style="color:aqua">PowerSchool</a> supporting both Android and iOS devices.</div>
 						<div class="home-btn false-pd">
