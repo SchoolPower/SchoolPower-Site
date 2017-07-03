@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 
 	$(window).load(function () {
 		
-		if (typeof window.localStorage !== "undefined" && !localStorage.getItem('setLan')) {
+		if (typeof window.localStorage !== "undefined" && !localStorage.getItem('setLang')) {
 			
 			var acceptLanguage = 'Accept-Language: en;q=0.8,es;q=0.6,fr;q=0.4';
 			var languages = acceptLanguage.split(':')[1].match(/[a-zA-Z\-]{2,10}/g) || [];
