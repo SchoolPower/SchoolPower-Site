@@ -128,8 +128,8 @@ h6 {
     left: 0;
     width: 100%;
     margin-top: 75px;
--   padding-top: 50px;
--   padding-left: 60px;
+    padding-top: 50px;
+    padding-left: 60px;
     z-index: 500;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
