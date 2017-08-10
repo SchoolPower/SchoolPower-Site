@@ -102,7 +102,7 @@ h6 {
 .section-sub-title {
     font-size: 15px;
     color: #777E82;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
     line-height: 1.8;
     padding: 0 80px
 }
@@ -185,13 +185,12 @@ h6 {
     display: block!important;
     z-index: 999;
     text-align: left;
-    padding: 30px 30px 20px;
+    padding: 10px 20px 20px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, .5)
 }
 .menu.open ul li {
     display: block;
     margin-top: 10px;
-    margin-bottom: 20px
 }
 .menu.open ul li a {
     font-size: 15px;
@@ -302,14 +301,6 @@ h6 {
     height: 100%;
     content: ''
 }
-.intermediate-solid:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: ''
-}
 .intermediate .element {
     text-align: center
 }
@@ -318,10 +309,10 @@ h6 {
     height: auto
 }
 .intermediate.footer {
-    padding: 40px 0
+    padding: 20px 0
 }
 .intermediate-solid.footer {
-    padding: 40px 0
+    padding: 20px 0
 }
 .im-col-item {
     color: #fff;
@@ -630,7 +621,7 @@ h6 {
     margin-top: 15px;
     width: 45px;
     height: 45px;
-    border-radius: 15px;
+    border-radius: 45px;
     text-align: center;
     line-height: 28px;
     position: relative
@@ -638,7 +629,7 @@ h6 {
 .footer .social-nw ul li a {
     color: #fff;
     display: block;
-    border-radius: 15px;
+    border-radius: 45px;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -769,7 +760,6 @@ h6 {
         padding-left: 0
     }
     .logo {
-        padding-top: 0px
     }
     .innovation {
         text-align: center

@@ -30,8 +30,8 @@
 .intermediate:before {
     background: rgba(9, 49, 75, .60)
 }
-.intermediate-solid:before {
-    background: #09314b
+.intermediate-solid {
+    background: #07263b
 }
 .im-col-item .im-col-icon {
     color: #f5f7f8

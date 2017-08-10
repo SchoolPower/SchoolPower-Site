@@ -1,8 +1,13 @@
 jQuery(document).ready(function ($) {
 
+    /*---------------------------------------------------
+    [Initialization]
+    */
+
     'use strict';
 
     $(".button-collapse").sideNav();
+    $('.collapsible').collapsible();
 
     /*---------------------------------------------------
     [Loaclization]
