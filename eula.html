@@ -1,64 +1,343 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#09314b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SchoolPower | 最终用户协议 EULA</title>
+    <title>SchoolPower</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-    body {
-        margin:5% 0;
-        padding:0 20%;
-        overflow-x:hidden;
-    }
-    .warp{
-        width:60%;
-    }
-    @media screen and (max-width:1700px) {
-        body {
-            margin:5% 0;
-            padding:0 5%;
-            overflow-x:hidden;
-        }
-        .warp{
-            width:90%;
-        }
-    }
-    h2,h3{
-        margin: 25px 0;
-    }
-    </style>
-
+    <link href="https://i.loli.net/2017/08/10/598c339dd969b.png" rel="icon" type="image/ico">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/flag-icon-css/2.8.0/css/flag-icon.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/materialize/0.100.1/css/materialize.min.css" rel="stylesheet">
+    <link href="css/theme.min.css" rel="stylesheet">
+    <link href="css/blue.min.css" rel="stylesheet" id="color-theme">
 </head>
+
+<style>
+html, body {
+    height: 100%;
+}
+.content-heading {
+    font-size: 44px;
+    font-weight: 300;
+    line-height: 48px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+.content-header {
+    background-color: #09314b;
+}
+.content-header {
+    background-color: #09314b;
+}
+.ui-content-header {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -58px;
+    padding-top: 68px;
+    padding-bottom: 58px
+}
+@media (min-width: 479px) and (max-width: 767px) {
+    #wrapper {
+        min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -163px;
+    }
+    #push {
+        height: 163px;
+    }
+}
+@media (min-width: 299px) and (max-width: 478px) {
+    #wrapper {
+        min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -163px;
+    }
+    #push {
+        height: 163px;
+    }
+
+}
+@media (min-width: 299px) and (max-width: 991px) {
+    #wrapper {
+        min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -120px;
+    }
+    #push {
+        height: 120px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 960px
+    }
+    .col-md-12 {
+        width: 100%
+    }
+    #wrapper {
+        min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -120px;
+    }
+    #push {
+        height: 120px;
+    }
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 1100px
+    }
+    .col-lg-12 {
+        width: 100%
+    }
+    #wrapper {
+        min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -120px;
+    }
+    #push {
+        height: 120px;
+    }
+}
+.content-inner {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+.margin-top-no {
+    margin-top: 0!important
+}
+.row {
+    margin-right: -16px;
+    margin-left: -16px
+}
+.card {
+    background-color: #fff;
+    box-shadow: 0 -1px 0 #e5e5e5, 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 24px;
+    margin-bottom: 24px
+}
+.margin-bottom-no {
+    margin-bottom: 0!important
+}
+.card-main {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0
+}
+.card-inner {
+    margin: 24px 16px
+}
+.card-heading {
+    display: block;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 24px;
+    margin-bottom: 24px
+}
+.top-nav {
+    background-color: #09314b;
+}
+.lang-flag {
+    margin-right: 15px
+}
+.lang-drop-down-btn {
+    width: 140px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center
+}
+.footer-social-icon {
+    font-size:30px;
+    padding-top:8px;
+    padding-bottom:8px;
+    padding-left:10px;
+    padding-right:10px
+}
+.to-top-icon {
+    margin-top: -4px;
+    padding-left: 14px;
+    padding-right: 14px
+}
+</style>
+
 <body>
-    <div class="container">
-    <div class="warp">
-        <h1 id="eula">最终用户协议 | 最終用戶協議 | End User License Agreement</h1>
-        <p>您如果使用本软件，即表示您同意遵守本最终用户许可协议的条款。本最终用户许可协议（下简称“协议”）的全部部分都具有同等的法律效应。</p>
-        <p>您如果使用本軟件，即表示您同意遵守本最終用戶許可協議的條款。本最終用戶許可協議（下簡稱“協議”）的全部部分都具有同等的法律效應。</p>
-        <p>By using This Mobile Application, you agree to abide by the terms of this End User License Agreement. All parts of this End User License Agreement (the "Agreement") are equally valid.</p>
 
-        <h2>定义 | 定義 | Definition</h2>
-        <p>本软件指包括但不限于您从第一方渠道、第三方渠道或自己编译得到的 SchoolPower 以及其附属服务。</p>
-        <p>本軟件指包括但不限於您從第一方渠道、第三方渠道或自己編譯得到的 SchoolPower 以及其附屬服務。</p>
-        <p>This Mobile Application includes, but is not limited to, SchoolPower and its affiliated services from first-party channels, third-party channels, or compiled by yourself.</p>
-
-        <h2>免责 | 免責 | Disclaimer</h2>
-        <p>本软件按“现状”提供，不作任何陈述或担保。本软件不保证其内容的完整性，正确性，用户应仅将其作为参考用途。因使用本软件导致您帐号被锁定或出现其它异常的，本软件不承担任何责任。</p>
-        <p>本軟件按“現狀”提供，不作任何陳述或擔保。本軟件不保證其內容的完整性，正確性，請用戶僅將其作為參考用途。因使用本軟件導致您帳號被鎖定或出現其它異常的，本軟件不承擔任何責任。</p>
-        <p>This Mobile Application is provided "as is" without making any representations or warranties. This Mobile Application does not guarantee the completeness and correctness of its contents. Please use it only for reference. This Mobile Application does not assume any responsibility for the use of This Mobile Application to cause your account to be locked or other exceptions.</p>
-
-        <p>本软件为高中学生自行开发的 PowerSchool 第三方客户端，与 Powerschool 官方无关。</p>
-        <p>本軟件為高中學生自行開發的 PowerSchool 第三方客戶端，與 Powerschool 官方無關。</p>
-        <p>This Mobile Application is a third-party client for PowerSchool by highschool students, has nothing to do with the PowerSchool official.</p>
-
-        <h2>隐私 | 隱私 | Privacy</h2>
-        <p>您允许本软件记录并永久保存您使用的用户名，并将其用于统计、分析或其它用途。</p>
-        <p>您同意本軟件記錄並永久保存您使用的用戶名，並將其用於統計、分析或其它用途。</p>
-        <p>You agree that This Mobile Application will record and permanently store the Username you use and use it for statistical, analytical or other purposes.</p>
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
     </div>
+    <!-- END PRELOADER -->
+
+    <!-- LANG DROPDOWN -->
+    <div class="header-lang">
+        <div class="container">
+            <div class="lang-drop-down">
+                <a class='dropdown-button waves-effect btn white lang-drop-down-btn' data-activates='dropdown-lang' translate>
+                    <span style="color:black"><span class="flag-icon flag-icon-gb lang-flag"></span>English</span>
+                    <span style="color:black"><span class="flag-icon flag-icon-cn lang-flag"></span>简体中文</span>
+                    <span style="color:black"><span class="flag-icon flag-icon-tw lang-flag"></span>正體中文</span>
+                </a>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown-lang' class='dropdown-content'>
+                    <li id="en-itm"><span class="waves-effect" style="color:black"><span class="flag-icon flag-icon-gb lang-flag"></span>English</span></li>
+                    <li id="zh-TW-itm"><span class="waves-effect" style="color:black"><span class="flag-icon flag-icon-tw lang-flag"></span>正體中文</span></li>
+                    <li id="zh-CN-itm"><span class="waves-effect" style="color:black"><span class="flag-icon flag-icon-cn lang-flag"></span>简体中文</span></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    <!-- END LANG DROPDOWN -->
+
+    <div id="wrapper">
+
+        <!-- HEADER -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="row" style="margin-bottom:0px">
+                    <div class="col-md-3 col-sm-6 col-xs-6" style="padding-left:0px">
+                        <div class="logo">
+                            <a href="index.html" class="waves-effect waves-blue" style="border-radius:5px">
+                                <img src="https://i.loli.net/2017/08/10/598c3240090cf.png" alt="SchoolPower Logo" style="height:42px;padding:8px" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER -->
+
+        <!-- HOME -->
+        <div class="content">
+            <div class="content-header ui-content-header" style="padding-top:180px">
+                <div class="container" style="padding-left:10px;padding-right:10px;">
+                    <h1 class="content-heading" translate>End User License Agreement // 最终用户协议 // 最終用戶協議</h1>
+                </div>
+            </div>
+            <div class="container" style="padding-left:0px;padding-right:0px;">
+                <section class="content-inner margin-top-no">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card margin-bottom-no">
+                                <div class="card-main">
+                                    <div class="card-inner">
+                                        <div class="card-inner">
+                                            <p class="card-heading" translate>Definition // 定义 // 定義</p>
+                                            <div translate>
+                                                <p>This Mobile Application includes, but is not limited to, SchoolPower and its affiliated services from first-party channels, third-party channels, or compiled by yourself.</p>
+                                                <p>该移动应用程序指包括但不限于您从第一方渠道、第三方渠道或自己编译得到的 SchoolPower 以及其附属服务。</p>
+                                                <p>該移動應用程式指包括但不限於您從第一方渠道、第三方渠道或自己編譯得到的 SchoolPower 以及其附屬服務。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card margin-bottom-no">
+                                <div class="card-main">
+                                    <div class="card-inner">
+                                        <div class="card-inner">
+                                            <p class="card-heading" translate>Disclaimer // 免责 // 免責</p>
+                                            <div translate>
+                                                <p>This Mobile Application is provided "as is" without making any representations or warranties. This Mobile Application does not guarantee the completeness and correctness of its contents. Please use it only for reference. This Mobile Application does not assume any responsibility for the use of This Mobile Application to cause your account to be locked or other exceptions.</p>
+                                                <p>该移动应用程序按“现状”提供，不作任何陈述或担保。该移动应用程序不保证其内容的完整性，正确性，用户应仅将其作为参考用途。因使用该移动应用程序导致您帐号被锁定或出现其它异常的，该移动应用程序不承担任何责任。</p>
+                                                <p>該移動應用程式按“現狀”提供，不作任何陳述或擔保。該移動應用程式不保證其內容的完整性，正確性，請用戶僅將其作為參考用途。因使用該移動應用程式導致您帳號被鎖定或出現其它異常的，該移動應用程式不承擔任何責任。</p>
+                                            </div>
+                                            <div style="margin-top:15px" translate>
+                                                <p>This Mobile Application is a third-party client, and is not endorsed, sponsored, affiliated with or otherwise authorized by PowerSchool Group LLC or its affiliates.</p>
+                                                <p>该移动应用程序为第三方客户端，未经 PowerSchool Group LLC 或其附属公司的认可，赞助，附属或以其他任何方式授权。</p>
+                                                <p>該移動應用程式為第三方客戶端，未經 PowerSchool Group LLC 或其附屬公司的認可，贊助，附屬或以其他任何方式授權。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card margin-bottom-no">
+                                <div class="card-main">
+                                    <div class="card-inner">
+                                        <div class="card-inner">
+                                            <p class="card-heading" translate>Privacy // 隐私 // 隱私</p>
+                                            <div translate>
+                                                <p>You agree that This Mobile Application will record and permanently store the Username you use and use it for statistical, analytical or other purposes.</p>
+                                                <p>您允许该移动应用程序记录并永久保存您使用的用户名，并将其用于统计、分析或其它用途。</p>
+                                                <p>您同意該移動應用程式記錄並永久保存您使用的用戶名，並將其用於統計、分析或其它用途。</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- END HOME -->
+
+        <div id="push"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="intermediate-solid footer fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="all-row">
+                        <div class="copyrights" translate>
+                            <span class="allc"> Copyright &copy; 2017 SchoolPower Studio </span>
+                            <span class="allc"> 版权所有 &copy; 2017 SchoolPower 工作室 </span>
+                            <span class="allc"> 版權所有 &copy; 2017 SchoolPower 工作室 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="social-nw alignright">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/SchoolPower">
+                                    <i class="waves-effect waves-light circle ion-social-github footer-social-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- SCRIPT -->
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-localScroll/2.0.0/jquery.localScroll.min.js"></script>
+    <script src="https://cdn.bootcss.com/owl-carousel/1.32/owl.carousel.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.appear/0.3.3/jquery.appear.js"></script>
+    <script src="https://cdn.bootcss.com/materialize/0.100.1/js/materialize.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="js/dom-i18n.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-101976839-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- END SCRIPT -->
+
 </body>
 </html>

@@ -82,7 +82,7 @@ jQuery(document).ready(function ($) {
     });
 
     /*---------------------------------------------------
-    [Testimonials Slider]
+    [Developers Slider]
     */
 
     var owl = $('#slider2');
@@ -91,27 +91,6 @@ jQuery(document).ready(function ($) {
         navigation: false,
         pagination: true,
         slideSpeed: 500,
-    });
-
-    /*---------------------------------------------------
-    [Video Thumbnail & Embedding (only Youtube / Vimeo)]
-    */
-
-    if ($('#video-embed').length) {
-        Video('#video-embed');
-    }
-
-    /*---------------------------------------------------
-    [Numbers]
-    */
-    $('.fact-statistic').appear(function () {
-        $('.timer').countTo({
-            speed: 4000,
-            refreshInterval: 60,
-            formatter: function (value, options) {
-                return value.toFixed(options.decimals);
-            }
-        });
     });
 
     /*---------------------------------------------------
