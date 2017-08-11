@@ -2,6 +2,13 @@
     background: #09314b;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2)
 }
+.side-nav {
+    background: #09314b;
+}
+.side-nav li a {
+    color: white;
+    text-decoration: none;
+}
 .menu ul li a:hover {
     color: #bbdefb
 }

@@ -50,6 +50,16 @@
     padding-left: 14px;
     padding-right: 14px
 }
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.no-decoration{
+    text-decoration: none;
+}
 </style>
 
 <body>
@@ -63,6 +73,48 @@
         </div>
     </div>
     <!-- END PRELOADER -->
+
+    <!-- SIDE NAV -->
+    <div class="scrollable">
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="user-view" style="padding-left:100px;padding-right:100px;padding-top:30px;padding-bottom:20px;">
+                    <a><img style="width:80px;height:80px" src="https://i.loli.net/2017/08/11/598d3f2497cf9.png"></a>
+                </div>
+            </li>
+            <li><a href="#screenshots" class="menu-list waves-effect wave-blue" translate>
+                <span>Screenshots</span>
+                <span>截屏</span>
+                <span>截屏</span>
+            </a></li>
+            <li><a href="#features" class="menu-list waves-effect wave-blue" translate>
+                <span>What is This</span>
+                <span>这是什么</span>
+                <span>這是什麼</span>
+            </a></li>
+            <li><a href="#functions" class="menu-list waves-effect wave-blue" translate>
+                <span>How it Works</span>
+                <span>怎么做到的</span>
+                <span>怎麼做到的</span>
+            </a></li>
+            <li><a href="#facts" class="menu-list waves-effect wave-blue" translate>
+                <span>Some Facts</span>
+                <span>一些事实</span>
+                <span>一些事實</span>
+            </a></li>
+            <li><a href="#developers" class="menu-list waves-effect wave-blue" translate>
+                <span>Who did This</span>
+                <span>谁干的</span>
+                <span>誰幹的</span>
+            </a></li>
+            <li><a href="#credits" class="menu-list waves-effect wave-blue" translate>
+                <span>Credits</span>
+                <span>贡献与鸣谢</span>
+                <span>貢獻與鳴謝</span>
+            </a></li>
+        </ul>
+    </div>
+    <!-- END SIDE NAV -->
 
     <!-- LANG DROPDOWN -->
     <div class="header-lang">
@@ -89,8 +141,8 @@
         <div class="container">
             <div class="row" style="margin-bottom:0px">
                 <div class="col-md-3 col-sm-6 col-xs-6" style="padding-left:0px">
-                    <div>
-                        <a href="#home" class="waves-effect waves-blue" style="border-radius:5px" id="logo">
+                    <div class="logo">
+                        <a href="#home" class="waves-effect waves-blue" style="border-radius:5px">
                             <img src="https://i.loli.net/2017/08/10/598c3240090cf.png" alt="SchoolPower Logo" style="height:42px;padding:8px" />
                         </a>
                     </div>
@@ -99,39 +151,39 @@
                     <div class="menu hidden-sm hidden-xs visible-md visible-lg">
                         <ul class="clearfix">
                             <li><a href="#screenshots" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Screenshot</span>
+                                <span>Screenshots</span>
                                 <span>截屏</span>
                                 <span>截屏</span>
                             </a></li>
                             <li><a href="#features" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Feature</span>
-                                <span>特色</span>
-                                <span>特色</span>
+                                <span>What</span>
+                                <span>这是什么</span>
+                                <span>這是什麼</span>
                             </a></li>
                             <li><a href="#functions" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Function</span>
-                                <span>功能</span>
-                                <span>功能</span>
+                                <span>How</span>
+                                <span>怎么做到的</span>
+                                <span>怎麼做到的</span>
                             </a></li>
                             <li><a href="#facts" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Fact</span>
-                                <span>事实</span>
-                                <span>事實</span>
+                                <span>Facts</span>
+                                <span>一些事实</span>
+                                <span>一些事實</span>
                             </a></li>
                             <li><a href="#developers" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Developer</span>
-                                <span>开发者</span>
-                                <span>開發者</span>
+                                <span>Who</span>
+                                <span>谁干的</span>
+                                <span>誰幹的</span>
                             </a></li>
                             <li><a href="#credits" class="waves-effect waves-blue btn-flat tight-flat-btn" translate>
-                                <span>Credit</span>
-                                <span>鸣谢</span>
-                                <span>鳴謝</span>
+                                <span>Credits</span>
+                                <span>贡献与鸣谢</span>
+                                <span>貢獻與鳴謝</span>
                             </a></li>
                         </ul>
                     </div>
                     <div class="hidden-nav hidden-lg hidden-md visible-sm visible-xs alignright">
-                        <a class="toggle-nav">
+                        <a href="#" data-activates="slide-out" class="button-collapse">
                             <i class="material-icons waves-effect waves-light circle" style="color:white;margin-right:-14px;padding:8px">menu</i>
                         </a>
                     </div>
@@ -209,9 +261,9 @@
                         <h2>截屏</h2>
                     </div>
                     <span translate>
-                        <div class="section-sub-title">Here are several cases that make SchoolPower worth paying attention to. Interfaces are all materially designed.</div>
-                        <div class="section-sub-title">这里是一些 SchoolPower 值得被注意的地方。用户界面设计遵循 Google Material Design<sup>&reg;</sup> 规范。</div>
-                        <div class="section-sub-title">這裡是一些 SchoolPower 值得被注意的地方。用戶界面設計遵循 Google Material Design<sup>&reg;</sup> 規範。</div>
+                        <div class="section-sub-title">Here are several cases that make SchoolPower worth paying attention to. Interfaces are all Materially Designed.</div>
+                        <div class="section-sub-title">这里是一些 SchoolPower 值得被注意的地方。用户界面设计遵循 Google Material Design 规范。</div>
+                        <div class="section-sub-title">這裡是一些 SchoolPower 值得被注意的地方。用戶界面設計遵循 Google Material Design 規範。</div>
                     </span>
                 </div>
             </div>
@@ -291,14 +343,14 @@
             <div class="row">
                 <div class="col-md-12 aligncenter">
                     <div class="section-title light-color" translate>
-                        <h2><span class="thin-text">Touch the</span> Innovations</h2>
-                        <h2><span class="thin-text">触动</span> 革新</h2>
-                        <h2><span class="thin-text">觸動</span> 革新</h2>
+                        <h2>What<span class="thin-text"> is This</span></h2>
+                        <h2><span class="thin-text">这是</span> 什么</h2>
+                        <h2><span class="thin-text">這是</span> 什麼</h2>
                     </div>
                     <span translate>
-                        <div class="section-sub-title light-color">Brand-new materially designed user interface permits the seamless viewing experience. Interactions are designed creatively according to the using habits of the local students.</div>
-                        <div class="section-sub-title light-color">全新的 Material Design<sup>&reg;</sup> 界面提供了无暇的浏览体验。创意交互根据本地学生的使用习惯设计。</div>
-                        <div class="section-sub-title light-color">全新的 Material Design<sup>&reg;</sup> 界面提供了無暇的瀏覽體驗。創意交互根據本地學生的使用習慣設計。</div>
+                        <div class="section-sub-title light-color">SchoolPower is a third-party client for <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup></a>. Brand-new Material Design user interface is designed according to the using habits of the local students.</div>
+                        <div class="section-sub-title light-color">SchoolPower 是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup> </a> 的第三方客户端。全新的 Material Design 界面根据本地学生的使用习惯设计。</div>
+                        <div class="section-sub-title light-color">SchoolPower 是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup> </a> 的第三方客戶端。全新的 Material Design 界面根據本地學生的使用習慣設計。</div>
                     </span>
                 </div>
             </div>
@@ -393,14 +445,14 @@
             <div class="row">
                 <div class="col-md-12 aligncenter">
                     <div class="section-title" translate>
-                        <h2><span class="thin-text">How it</span> Works</h2>
+                        <h2>How<span class="thin-text"> it Works</span></h2>
                         <h2><span class="thin-text">怎么</span> 做到的</h2>
                         <h2><span class="thin-text">怎麼</span> 做到的</h2>
                     </div>
                     <span translate>
-                        <div class="section-sub-title">SchoolPower is a third-party client for <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup> </a>. It displays what's originally on the <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  website</a>.</div>
-                        <div class="section-sub-title">SchoolPower 是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup> </a> 的第三方客户端。 它显示的是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  网站</a>上原有的信息。</div>
-                        <div class="section-sub-title">SchoolPower 是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup> </a> 的第三方客戶端。它顯示的是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  網站</a>上原有的信息。</div>
+                        <div class="section-sub-title">SchoolPower displays what's originally on the <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  website</a>.</div>
+                        <div class="section-sub-title">SchoolPower 显示的是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  网站</a>上原有的信息。</div>
+                        <div class="section-sub-title">SchoolPower 顯示的是 <a href="https://www.powerschool.com/">PowerSchool<sup>&reg;</sup>  網站</a>上原有的信息。</div>
                     </span>
                 </div>
             </div>
@@ -536,9 +588,9 @@
             <div class="row">
                 <div class="col-md-12 aligncenter">
                     <div class="section-title" translate>
-                        <h2><span class="thin-text">Who</span> Did This</h2>
-                        <h2><span class="thin-text">谁</span> 干的</h2>
-                        <h2><span class="thin-text">誰</span> 幹的</h2>
+                        <h2>Who<span class="thin-text"> Did This</span></h2>
+                        <h2>谁<span class="thin-text"> 干的</span></h2>
+                        <h2>誰<span class="thin-text"> 幹的</span></h2>
                     </div>
                     <span translate>
                         <div class="section-sub-title">Our developers spent tons of their own time to provide you the comfort of using SchoolPower.</div>
@@ -587,40 +639,42 @@
             </div>
             <div class="row" style="margin-bottom:0px">
                 <div class="col-md-8 col-md-offset-2">
-                        <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">bug_report</i>
-                                    <span translate>Bug Reports // 报告错误 // 報告錯誤</span>
-                                </div>
-                                <div class="collapsible-body grey lighten-3">
-                                    <span>
-                                        <div class="chip"><img src="http://chuantu.biz/t5/167/1502374135x1822611407.jpg" alt="Contact Person">Andrew Zhang</div>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">account_circle</i>
-                                    <span translate>Provide Test Accounts // 提供测试账号 // 提供測試賬號</span>
-                                </div>
-                                <div class="collapsible-body grey lighten-3">
-                                    <span>
-                                        <div class="chip"><img src="http://chuantu.biz/t5/167/1502374135x1822611407.jpg" alt="Andrew Zhang">Andrew Zhang</div>
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header">
-                                    <i class="material-icons">comment</i>
-                                    <span translate>Valuable Suggestions // 提出有价值的建议 // 提出有價值的建議</span>
-                                </div>
-                                <div class="collapsible-body grey lighten-3">
-                                    <span>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
+                    <ul class="collapsible unselectable" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons">bug_report</i>
+                                <span translate>Bug Reports // 报告错误 // 報告錯誤</span>
+                            </div>
+                            <div class="collapsible-body grey lighten-3">
+                                <span>
+                                    <div class="chip"><img src="https://chuantu.biz/t5/167/1502374135x1822611407.jpg" alt="Contact Person">Andrew Zhang</div>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons">account_circle</i>
+                                <span translate>Provide Test Accounts // 提供测试账号 // 提供測試賬號</span>
+                            </div>
+                            <div class="collapsible-body grey lighten-3">
+                                <span>
+                                    <div class="chip"><img src="https://chuantu.biz/t5/167/1502374135x1822611407.jpg" alt="Andrew Zhang">Andrew Zhang</div>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons">comment</i>
+                                <span translate>Valuable Suggestions // 提出有价值的建议 // 提出有價值的建議</span>
+                            </div>
+                            <div class="collapsible-body grey lighten-3">
+                                <span>
+                                    <div class="chip"><img src="https://i.loli.net/2017/08/11/598d22aca5cfe.jpg" alt="陈俊宏">陈俊宏</div>
+                                    <div class="chip"><img src="https://chuantu.biz/t5/167/1502374135x1822611407.jpg" alt="Andrew Zhang">Andrew Zhang</div>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

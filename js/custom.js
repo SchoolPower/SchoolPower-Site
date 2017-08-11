@@ -118,7 +118,7 @@ jQuery(document).ready(function ($) {
     [Scroll links]
     */
     $.localScroll.hash();
-    $('.menu, .to-top').localScroll({
+    $('.menu, .to-top, .scrollable, .logo').localScroll({
         target: 'body',
         queue: true,
         duration: 1000,
@@ -144,20 +144,20 @@ jQuery(document).ready(function ($) {
     [Mobile Menu]
     */
     $('.toggle-nav').on('click', function () {
-        $('.menu').toggleClass('open');
+        $('.button-collapse').sideNav('show');
+    });
+    $('.menu-list').on('click', function () {
+        $('.button-collapse').sideNav('hide');
     });
 
-    /*---------------------------------------------------
-    [Event Target]
-    */
-    // $('body').click(function (event) {
-    //     if ($(event.target).closest('.menu, .toggle-nav').length) return;
-    //     if ($('.dropdown-button').dropdown.do {
-    //
-    //     } while (true);) $('.dropdown-button').dropdown('close');
-    //     $('.menu').removeClass('open');
-    //     event.stopPropagation();
-    // });
+    $('.button-collapse').sideNav({
+        menuWidth: 280, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true, // Choose whether you can drag to open on touch screens,
+        onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
+        onClose: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is closed
+    });
 
     /*---------------------------------------------------
     [Preloader]

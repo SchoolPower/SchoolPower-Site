@@ -149,6 +149,20 @@ h6 {
     padding-left: 0px;
     background: 0 0
 }
+.scrollable {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease
+}
+.scrollable ul li a {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease
+}
 .menu {
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -761,6 +775,11 @@ h6 {
         padding-left: 0
     }
     .logo {
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease
     }
     .innovation {
         text-align: center
