@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
 
     var $header = $('.header');
 
-    $(window).scroll(function () {
+    $(window).on('scroll', function () {
         if ($(this).scrollTop() > 0) {
             $header.addClass('fixed');
         } else if ($(this).scrollTop() <= 0) {
@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
     [Helpers]
     */
 
-    $(window).load(function () {
+    $(window).on('load', function () {
         if ($(this).width() >= 992) {
             $('.float-content').each(function () {
                 var floatContentHeight = $(this).outerHeight() / 2;
@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
 
     var $outerHeightElement;
 
-    $(window).load(function () {
+    $(window).on('load', function () {
         if ($(this).width() >= 992) {
             $('.outer-height').each(function () {
                 $outerHeightElement = $(this).innerHeight();
