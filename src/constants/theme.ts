@@ -1,18 +1,24 @@
 import { createTheme } from "@mui/material/styles";
+import "@fontsource/plus-jakarta-sans/200.css";
+import "@fontsource/plus-jakarta-sans/300.css";
+import "@fontsource/plus-jakarta-sans/400.css";
+import "@fontsource/plus-jakarta-sans/500.css";
+import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/plus-jakarta-sans/800.css";
 
 declare module "@mui/material/styles" {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
+    interface Theme {
+        status: {
+            danger: string;
+        };
+    }
 
-  interface ThemeOptions {
-    overrides?: {
-      MuiInputLabel?: any;
-      MuiTableCell?: any;
-    };
-  }
+    interface ThemeOptions {
+        overrides?: {
+            MuiInputLabel?: any;
+            MuiTableCell?: any;
+        };
+    }
 }
 
 export const MUITheme = createTheme({
@@ -28,12 +34,12 @@ export const MUITheme = createTheme({
         },
     },
     typography: {
-        "fontFamily": "\"Montserrat\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontFamily": "\"Plus Jakarta Sans\", \"Helvetica\", \"Arial\", sans-serif",
         "fontSize": 14,
         "fontWeightLight": 300,
         "fontWeightRegular": 400,
         "fontWeightMedium": 600,
-        "fontWeightBold": 700,
+        "fontWeightBold": 800,
         button: {
             textTransform: "none"
         }

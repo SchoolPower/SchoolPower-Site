@@ -1,18 +1,19 @@
-const path = require('path');
-const tsconfig = require('../tsconfig.json');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: "./src/index.tsx",
     output: {
-        filename: 'bundle.[hash].js',
-        path: path.join(__dirname, '../build'),
-        publicPath: '/',
+        filename: "bundle.[hash].js",
+        path: path.join(__dirname, "../build"),
+        publicPath: "/",
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: [".js", ".jsx", ".ts", ".tsx"],
         plugins: [
             new TsconfigPathsPlugin(),
         ]
@@ -23,7 +24,7 @@ module.exports = {
                 test: /\.svg$/,
                 use: [
                     {
-                        loader: 'svg-url-loader',
+                        loader: "svg-url-loader",
                         options: {
                             limit: 10000,
                         },
@@ -41,15 +42,15 @@ module.exports = {
             },
             {
                 test: /pdf\.worker(\.min)?\.js$/,
-                loader: 'file-loader'
+                loader: "file-loader"
             },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: "babel-loader",
                     options: {
-                        presets: ['@babel/preset-env'],
+                        presets: ["@babel/preset-env"],
                         plugins: [
                             ["@babel/plugin-proposal-decorators", {"legacy": true}],
                             ["@babel/plugin-proposal-class-properties", {"loose": false}],
@@ -60,16 +61,16 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    "style-loader",
+                    "css-loader"
                 ]
             },
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
                 ]
             }
         ]
@@ -79,7 +80,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html'
+            template: "./public/index.html"
         }),
         new CleanWebpackPlugin()
     ]

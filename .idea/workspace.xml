@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c824ab-355f-4c7a-8b04-ddd4c8b12039" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/theme.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.base.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.base.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.dev.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.prod.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.prod.conf.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638219218220</updated>
       <workItem from="1638219221551" duration="564000" />
-      <workItem from="1638219809208" duration="3636000" />
+      <workItem from="1638219809208" duration="5625000" />
     </task>
     <servers />
   </component>
