@@ -32,6 +32,10 @@ module.exports = {
                 ],
             },
             {
+                test: /\.(jpg|png|gif)$/,
+                loader: "file-loader"
+            },
+            {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 use: [

@@ -24,10 +24,15 @@ declare module "@mui/material/styles" {
 export const MUITheme = createTheme({
     palette: {
         primary: {
-            main: "#0288d1"
+            main: "#6AD4E2",
+            contrastText: "#09314B"
         },
         secondary: {
-            main: "#f48fb1"
+            main: "#F178B6",
+            contrastText: "#FFFFFF"
+        },
+        background: {
+            default: "#EDFDFF",
         },
         error: {
             main: "#ff0000"
