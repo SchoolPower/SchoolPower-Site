@@ -25,9 +25,9 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-
+      "@schoolpower/*": ["./*"]
     }
   },
   "include": [

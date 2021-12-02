@@ -8,6 +8,7 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:import/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -16,7 +17,8 @@
             "jsx": true
         },
         "ecmaVersion": 2015,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
@@ -40,13 +42,7 @@
             "error",
             "always"
         ],
-        "import/no-unresolved": [
-            2,
-            {
-                "commonjs": true,
-                "amd": true
-            }
-        ],
+        "import/no-unresolved": "off",
         "import/order": [
             "error",
             {
@@ -76,17 +72,5 @@
                 ]
             }
         ]
-    },
-    "settings": {
-        "import/resolver": {
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
-        }
     }
 }
