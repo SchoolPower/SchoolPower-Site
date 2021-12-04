@@ -1,10 +1,6 @@
 import { createTheme } from "@mui/material/styles";
-import "@fontsource/plus-jakarta-sans/200.css";
-import "@fontsource/plus-jakarta-sans/300.css";
-import "@fontsource/plus-jakarta-sans/400.css";
-import "@fontsource/plus-jakarta-sans/500.css";
-import "@fontsource/plus-jakarta-sans/700.css";
-import "@fontsource/plus-jakarta-sans/800.css";
+import "./styles";
+import { SplideProps } from "@splidejs/react-splide";
 
 export const MUITheme = createTheme({
     palette: {
@@ -59,8 +55,33 @@ export const MUITheme = createTheme({
 declare module "@mui/material/styles" {
     interface ThemeOptions {
         overrides?: {
-            MuiInputLabel?: any;
-            MuiTableCell?: any;
+            MuiInputLabel?: unknown;
+            MuiTableCell?: unknown;
         };
     }
 }
+
+export const splideOptions: SplideProps["options"] = {
+    breakpoints: {
+        500: {
+            perPage: 1,
+            padding: {
+                left: 0,
+                right: 0,
+            }
+        },
+        900: {
+            perPage: 2,
+            padding: {
+                left: 0,
+                right: 0,
+            }
+        }
+    },
+    perPage: 3,
+    rewind: true,
+    padding: {
+        left: 24,
+        right: 24,
+    }
+};

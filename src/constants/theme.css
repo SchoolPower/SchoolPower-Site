@@ -1,0 +1,7 @@
+.splide__pagination__page {
+  background-color: lightpink;
+}
+
+.splide__pagination__page.is-active {
+   background-color: deeppink;
+ }

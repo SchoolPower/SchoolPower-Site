@@ -9,6 +9,7 @@ module.exports = merge(baseConfig, {
     devtool: "inline-source-map",
     devServer: {
         static: "./build",
-        port: 3000
+        port: 3000,
+        allowedHosts: "all",
     }
 });

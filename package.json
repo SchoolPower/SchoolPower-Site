@@ -1,6 +1,4 @@
 {
-  "name": "schoolpower-site",
-  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
@@ -8,6 +6,7 @@
     "@fontsource/plus-jakarta-sans": "^4.5.0",
     "@mui/icons-material": "^5.2.0",
     "@mui/material": "^5.2.2",
+    "@splidejs/react-splide": "^0.6.17",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
@@ -55,6 +54,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
     "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.3.0",
     "eslint-import-resolver-webpack": "^0.13.2",
