@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c824ab-355f-4c7a-8b04-ddd4c8b12039" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SectionHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/What.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Home/How.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Home/Who.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Home/Credits.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ToolBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToolBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useSimpleState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSimpleState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Gallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-fullpage/examples/react" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -71,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\carbo\repo\SchoolPower-Site" />
       <recent name="$PROJECT_DIR$/src/constants" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/routes" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\carbo\repo\SchoolPower-Site\src\routes\Home" />
@@ -118,7 +112,7 @@
       <workItem from="1638325030551" duration="15217000" />
       <workItem from="1638411041764" duration="7853000" />
       <workItem from="1638489188367" duration="669000" />
-      <workItem from="1638489899707" duration="48809000" />
+      <workItem from="1638489899707" duration="49643000" />
     </task>
     <servers />
   </component>
