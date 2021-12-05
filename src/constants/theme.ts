@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
-import "./styles";
 import { SplideProps } from "@splidejs/react-splide";
+import "./styles";
 
 export const MUITheme = createTheme({
     palette: {
@@ -14,6 +14,9 @@ export const MUITheme = createTheme({
         },
         background: {
             default: "#EDFDFF",
+        },
+        info: {
+            main: "#09314B",
         },
         error: {
             main: "#ff0000"

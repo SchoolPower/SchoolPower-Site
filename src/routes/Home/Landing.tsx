@@ -36,7 +36,7 @@ const Background = () => {
 
 const Title = () => {
     return (
-        <Grid container justifyContent={"center"} alignItems={"center"}>
+        <Grid pt={5} container justifyContent={"center"} alignItems={"center"}>
             <Grid item md={8} xl={6}>
                 <Typography
                     sx={{

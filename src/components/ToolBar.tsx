@@ -26,7 +26,16 @@ export const ToolBar = () => {
                             <ButtonLink to={""}>Web (Beta)</ButtonLink>
                             <ButtonLink to={""}>Contact Us</ButtonLink>
                         </Stack>
-                        <Button variant="contained" color={"secondary"} startIcon={<Favorite/>}>
+                        <Button
+                            sx={{
+                                borderRadius: 20,
+                                paddingLeft: 2.5,
+                                paddingRight: 2.5,
+                            }}
+                            variant="contained"
+                            color={"secondary"}
+                            startIcon={<Favorite/>}
+                        >
                             Support Us
                         </Button>
                     </Stack>

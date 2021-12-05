@@ -18,8 +18,8 @@ const useDeviceState = () => useSimpleState<DeviceType>("iPhone");
 export const Gallery = () => {
     const device = useDeviceState();
     return (
-        <Stack sx={{bgcolor: "primary"}} pt={20}>
-            <Stack alignContent={"center"}>
+        <Stack sx={{bgcolor: "primary"}} pt={28}>
+            <Stack justifyContent={"center"}>
                 <Typography variant={"h4"} textAlign={"center"} fontWeight={600} pb={4}>
                     Gallery
                 </Typography>

@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c824ab-355f-4c7a-8b04-ddd4c8b12039" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/constants/DeviceType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useSimpleState.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Home/Gallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SectionHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/What.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Home/How.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Home/Who.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/webpack.dev.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.dev.conf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ToolBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToolBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useSimpleState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useSimpleState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Gallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
       <workItem from="1638325030551" duration="15217000" />
       <workItem from="1638411041764" duration="7853000" />
       <workItem from="1638489188367" duration="669000" />
-      <workItem from="1638489899707" duration="30089000" />
+      <workItem from="1638489899707" duration="48809000" />
     </task>
     <servers />
   </component>

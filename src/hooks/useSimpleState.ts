@@ -9,6 +9,7 @@ export function useSimpleState<T>(initial: T) {
         value: T,
         set: (newValue: T) => void,
         is: (expected: T) => boolean,
+        toggle: () => void;
     }>(() => ({
         value: initial,
         set(newValue) {
@@ -16,6 +17,11 @@ export function useSimpleState<T>(initial: T) {
         },
         is(expected) {
             return this.value === expected;
+        },
+        toggle() {
+            if (typeof this.value === "boolean") {
+                this.set(!this.value as unknown as T);
+            }
         }
     }));
 }
