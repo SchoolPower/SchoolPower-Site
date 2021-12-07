@@ -1,12 +1,14 @@
-import { Favorite } from "@mui/icons-material";
+import { Download, Favorite } from "@mui/icons-material";
 import { Button, Container, Stack } from "@mui/material";
-import { ButtonLink } from "@schoolpower/components/ButtonLink";
+import { ButtonLink, LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
+import { useLocation } from "react-router-dom";
 import React from "react";
 
 import logo from "/public/ic_header-web copy.png";
 
 export const ToolBar = () => {
+    const location = useLocation();
     return (
         <Stack justifyContent={"center"} sx={{
             height: ToolBarHeight,
@@ -26,18 +28,37 @@ export const ToolBar = () => {
                             <ButtonLink to={""}>Web (Beta)</ButtonLink>
                             <ButtonLink to={""}>Contact Us</ButtonLink>
                         </Stack>
-                        <Button
-                            sx={{
-                                borderRadius: 20,
-                                paddingLeft: 2.5,
-                                paddingRight: 2.5,
-                            }}
-                            variant="contained"
-                            color={"secondary"}
-                            startIcon={<Favorite/>}
-                        >
-                            Support Us
-                        </Button>
+                        {location.pathname !== "/" ? (
+                            <LinkWrapper to={"/"}>
+                                <Button
+                                    sx={{
+                                        borderRadius: 20,
+                                        paddingLeft: 2.5,
+                                        paddingRight: 2.5,
+                                    }}
+                                    variant="contained"
+                                    color={"secondary"}
+                                    startIcon={<Download/>}
+                                >
+                                    Download
+                                </Button>
+                            </LinkWrapper>
+                        ) : (
+                            <LinkWrapper to={"/support"}>
+                                <Button
+                                    sx={{
+                                        borderRadius: 20,
+                                        paddingLeft: 2.5,
+                                        paddingRight: 2.5,
+                                    }}
+                                    variant="contained"
+                                    color={"secondary"}
+                                    startIcon={<Favorite/>}
+                                >
+                                    Support Us
+                                </Button>
+                            </LinkWrapper>
+                        )}
                     </Stack>
                 </Stack>
             </Container>

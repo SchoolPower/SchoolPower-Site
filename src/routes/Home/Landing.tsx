@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Stack } from "@mui/material";
+import { Title } from "@schoolpower/components/PageTitle";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import React from "react";
 
@@ -10,7 +11,12 @@ export const Landing = () => {
             <Background/>
             <Stack sx={{minHeight: "40vh", width: "100%", zIndex: 1}} justifyContent="center">
                 <Container>
-                    <Title/>
+                    <Grid pt={5} container justifyContent={"center"} alignItems={"center"}>
+                        <Title
+                            title={"May SchoolPower\nBe With You"}
+                            subtitle={"An alternative mobile client for PowerSchool®"}
+                        />
+                    </Grid>
                     <Downloads/>
                 </Container>
             </Stack>
@@ -31,29 +37,6 @@ const Background = () => {
             height: {xs: "100%", md: `calc(100vh - ${ToolBarHeight})`},
             position: "absolute",
         }}/>
-    );
-};
-
-const Title = () => {
-    return (
-        <Grid pt={5} container justifyContent={"center"} alignItems={"center"}>
-            <Grid item md={8} xl={6}>
-                <Typography
-                    sx={{
-                        fontSize: {xs: 32, sm: 48, md: 56},
-                        lineHeight: {xs: "44px", sm: "60px", md: "68px"},
-                    }}
-                    fontWeight={800}
-                    textAlign={"center"}
-                    pt={4}
-                >
-                    May SchoolPower<br/>Be With You
-                </Typography>
-                <Typography variant={"subtitle1"} textAlign={"center"} pt={2}>
-                    An alternative mobile client for PowerSchool®
-                </Typography>
-            </Grid>
-        </Grid>
     );
 };
 

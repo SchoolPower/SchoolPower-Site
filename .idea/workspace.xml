@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c824ab-355f-4c7a-8b04-ddd4c8b12039" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Home/Credits.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/4375034_logo_paypal_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/4375157_logo_wechat_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/8679434-512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Bitcoin-BTC-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/PageTitle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ScrollToTop.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Support/Support.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ToolBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToolBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/Home/Who.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Home/Who.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -49,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -60,16 +67,16 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="ts.external.directory.path" value="C:\Users\carbo\repo\SchoolPower-Site\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\Users\carbo\repo\SchoolPower-Site" />
       <recent name="$PROJECT_DIR$/src/constants" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/routes" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\carbo\repo\SchoolPower-Site\src\routes\Home" />
@@ -90,7 +97,7 @@
         <script value="start" />
       </scripts>
       <node-interpreter value="project" />
-      <package-manager value="yarn" />
+      <package-manager value="$PROJECT_DIR$/node_modules/yarn" />
       <envs />
       <method v="2" />
     </configuration>
@@ -113,6 +120,7 @@
       <workItem from="1638411041764" duration="7853000" />
       <workItem from="1638489188367" duration="669000" />
       <workItem from="1638489899707" duration="49643000" />
+      <workItem from="1638841668693" duration="6458000" />
     </task>
     <servers />
   </component>
@@ -129,6 +137,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

@@ -1,4 +1,4 @@
-import { Avatar, Container, IconButton, Stack, Typography } from "@mui/material";
+import { Avatar, ButtonBase, Container, Stack, Typography } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import React from "react";
 
@@ -47,13 +47,13 @@ export const Who = () => {
 
 const WhoItem = ({item}: { item: IWhoItem }) => (
     <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
-        <IconButton sx={{padding: 0}} href={item.profileURL} target={"_blank"}>
+        <ButtonBase sx={{padding: 0, borderRadius: 76}} href={item.profileURL} target={"_blank"}>
             <Avatar
                 alt={item.name}
                 src={item.imageURL}
                 sx={{width: 152, height: 152}}
             />
-        </IconButton>
+        </ButtonBase>
         <Typography variant={"subtitle1"} color={"primary.contrastText"} fontWeight={600}>
             {item.name}
         </Typography>
