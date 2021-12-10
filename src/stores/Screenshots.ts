@@ -1,26 +1,37 @@
 import { DeviceType, IOS_DEVICE_TYPES, IOSDeviceType } from "@schoolpower/constants/DeviceType";
+import rawIOSScreenshotList from "@schoolpower/constants/screenshots/ios/images.json";
 import { Language, LANGUAGES } from "@schoolpower/constants/Language";
 
 import a from "/public/a.png";
 
-const iOSScreenshotList = "https://raw.githubusercontent.com/SchoolPower/schoolpower-ios-v2/master/screenshots-compressed";
+type IOSScreenshotDeviceName =
+    "iPhone 13 Pro Max (15.0)"
+    | "iPad Pro (12.9-inch) (5th generation) (15.0)"
+    | "MacBook Pro (12.0.1)"
+
+type IOSScreenshotList = {
+    [device in IOSScreenshotDeviceName]: {
+        [language in Language]: string[]
+    };
+};
+
 const iOSScreenshotCDN = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-ios-v2@master/screenshots-compressed";
 
-const iOSScreenshotDeviceName = new Map<IOSDeviceType, string>([
+const iOSScreenshotDeviceName = new Map<IOSDeviceType, IOSScreenshotDeviceName>([
     ["iPhone", "iPhone 13 Pro Max (15.0)"],
     ["iPad", "iPad Pro (12.9-inch) (5th generation) (15.0)"],
     ["Mac", "MacBook Pro (12.0.1)"],
 ]);
 
+const iOSScreenshotsList: IOSScreenshotList = rawIOSScreenshotList as IOSScreenshotList;
+
 const iOSScreenShotsByLanguage = async (
     device: IOSDeviceType,
     language: Language
 ): Promise<string[]> => {
-    const ghScreenshotsDir = `${iOSScreenshotList}/${iOSScreenshotDeviceName.get(device)}/${language}`;
-    const cdnScreenshotsDir = `${iOSScreenshotCDN}/${iOSScreenshotDeviceName.get(device)}/${language}`;
-    const screenshotsList: string[] = await fetch(`${ghScreenshotsDir}/images.json`)
-        .then(response => response.json());
-    return screenshotsList.map(filename => `${cdnScreenshotsDir}/${filename}`);
+    const deviceName = iOSScreenshotDeviceName.get(device) ?? "iPhone 13 Pro Max (15.0)";
+    const cdnScreenshotsDir = `${iOSScreenshotCDN}/${deviceName}/${language}`;
+    return iOSScreenshotsList[deviceName][language].map(filename => `${cdnScreenshotsDir}/${filename}`);
 };
 
 const iOSScreenshotsByDevice = async (
