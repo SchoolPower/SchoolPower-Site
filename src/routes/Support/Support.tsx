@@ -19,6 +19,7 @@ interface IDonationMethod {
     name: string,
     imageURL: string,
     targetURL: string,
+    external?: boolean,
 }
 
 const donationMethods: IDonationMethod[] = [
@@ -35,7 +36,8 @@ const donationMethods: IDonationMethod[] = [
     {
         name: "Paypal",
         imageURL: paypal,
-        targetURL: "https://paypal.me/schoolpower"
+        targetURL: "https://paypal.me/schoolpower",
+        external: true,
     },
     {
         name: "Bitcoin",
@@ -58,6 +60,22 @@ export const Support = () => (
 );
 
 const SupportPage = () => {
+    const ImageButton = ({imageURL, href}: {
+        imageURL: string,
+        href?: string,
+    }) => (
+        <ButtonBase href={href ?? ""} target={"_blank"} sx={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "30px",
+        }}>
+            <img style={{
+                width: "75%",
+                height: "75%",
+            }} src={imageURL}/>
+        </ButtonBase>
+    );
+
     return (
         <Container>
             <Stack justifyContent={"center"} alignItems={"center"} height={"100%"}>
@@ -110,21 +128,16 @@ const SupportPage = () => {
                                 alignItems={"center"}
                                 justifyContent={"center"}
                             >
-                                <LinkWrapper style={{
-                                    width: "100%",
-                                    height: "100%",
-                                }} to={it.targetURL}>
-                                    <ButtonBase sx={{
+                                {it.external ? (
+                                    <ImageButton href={it.targetURL} imageURL={it.imageURL}/>
+                                ) : (
+                                    <LinkWrapper style={{
                                         width: "100%",
                                         height: "100%",
-                                        borderRadius: "30px",
-                                    }}>
-                                        <img style={{
-                                            width: "75%",
-                                            height: "75%",
-                                        }} src={it.imageURL}/>
-                                    </ButtonBase>
-                                </LinkWrapper>
+                                    }} to={it.targetURL}>
+                                        <ImageButton imageURL={it.imageURL}/>
+                                    </LinkWrapper>
+                                )}
                             </ImageContainer>
                         </Grid>
                     ))}
