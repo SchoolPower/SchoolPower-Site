@@ -25,11 +25,11 @@ export const Gallery = () => {
     );
 };
 
-interface IProps {
+interface IDeviceStateProps {
     device: ReturnType<typeof useDeviceState>;
 }
 
-const DeviceSelect = observer(({device}: IProps) => (
+const DeviceSelect = observer(({device}: IDeviceStateProps) => (
     <Stack alignItems={"center"} pb={4}>
         <ToggleButtonGroup
             color="secondary"
@@ -67,7 +67,7 @@ const imageMaxWidth = new Map<DeviceType, string>([
     ["Android", "20rem"],
 ]);
 
-const DeviceCarousel = observer(({device}: IProps) => {
+const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
     if (carouselByDevice === null) {
         carouselByDevice = new Map(DEVICE_TYPES.map(it => [it, (
             <CarouselByDevice

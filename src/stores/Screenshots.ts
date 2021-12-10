@@ -3,6 +3,9 @@ import { Language, LANGUAGES } from "@schoolpower/constants/Language";
 
 import a from "/public/a.png";
 
+const iOSScreenshotList = "https://raw.githubusercontent.com/SchoolPower/schoolpower-ios-v2/master/screenshots-compressed";
+const iOSScreenshotCDN = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-ios-v2@master/screenshots-compressed";
+
 const iOSScreenshotDeviceName = new Map<IOSDeviceType, string>([
     ["iPhone", "iPhone 13 Pro Max (15.0)"],
     ["iPad", "iPad Pro (12.9-inch) (5th generation) (15.0)"],
@@ -13,10 +16,8 @@ const iOSScreenShotsByLanguage = async (
     device: IOSDeviceType,
     language: Language
 ): Promise<string[]> => {
-    const ghBase = "https://raw.githubusercontent.com/SchoolPower/schoolpower-ios-v2/master/screenshots-compressed";
-    const cdnBase = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-ios-v2@master/screenshots-compressed";
-    const ghScreenshotsDir = `${ghBase}/${iOSScreenshotDeviceName.get(device)}/${language}`;
-    const cdnScreenshotsDir = `${cdnBase}/${iOSScreenshotDeviceName.get(device)}/${language}`;
+    const ghScreenshotsDir = `${iOSScreenshotList}/${iOSScreenshotDeviceName.get(device)}/${language}`;
+    const cdnScreenshotsDir = `${iOSScreenshotCDN}/${iOSScreenshotDeviceName.get(device)}/${language}`;
     const screenshotsList: string[] = await fetch(`${ghScreenshotsDir}/images.json`)
         .then(response => response.json());
     return screenshotsList.map(filename => `${cdnScreenshotsDir}/${filename}`);
