@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import { DeviceType } from "@schoolpower/constants/DeviceType";
 import { SplideProps } from "@splidejs/react-splide";
 import "./styles";
 
@@ -64,27 +65,31 @@ declare module "@mui/material/styles" {
     }
 }
 
-export const splideOptions: SplideProps["options"] = {
+export const splideOptions = (device: DeviceType): SplideProps["options"] => ({
     breakpoints: {
-        500: {
+        730: {
             perPage: 1,
             padding: {
                 left: 0,
                 right: 0,
             }
         },
-        900: {
-            perPage: 2,
+        1100: {
+            perPage: device == "iPad" || device == "Mac" ? 1 : 2,
             padding: {
                 left: 0,
                 right: 0,
             }
         }
     },
-    perPage: 3,
+    perPage: device == "Mac"
+        ? 1
+        : device == "iPad"
+            ? 2
+            : 3,
     rewind: true,
     padding: {
         left: 24,
         right: 24,
     }
-};
+});

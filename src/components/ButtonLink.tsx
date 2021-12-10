@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 
 export const ButtonLink = ({to, children}: {
@@ -13,11 +13,16 @@ export const ButtonLink = ({to, children}: {
     </LinkWrapper>
 );
 
-export const LinkWrapper = ({to, children}: {
+export const LinkWrapper = ({to, children, style}: {
     to: string,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    style?: CSSProperties,
 }) => (
-    <Link to={to} style={{textDecoration: "inherit", color: "inherit"}}>
+    <Link to={to} style={{
+        textDecoration: "inherit",
+        color: "inherit",
+        ...style,
+    }}>
         {children}
     </Link>
 );

@@ -87,5 +87,8 @@ module.exports = {
             template: "./public/index.html"
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    experiments: {
+        topLevelAwait: true
+    }
 };

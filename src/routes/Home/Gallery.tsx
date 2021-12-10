@@ -1,17 +1,45 @@
 import { ChevronRight } from "@mui/icons-material";
 import { Container, Fab, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { DEVICE_TYPES, DeviceType } from "@schoolpower/constants/DeviceType";
+import { DEVICE_TYPES, DeviceType, IOSDeviceType } from "@schoolpower/constants/DeviceType";
 import { splideOptions } from "@schoolpower/constants/theme";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
 import { observer } from "mobx-react";
 import React from "react";
 
 import a from "/public/a.png";
 
-interface IProps {
-    device: ReturnType<typeof useDeviceState>;
-}
+const iOSScreenShots = async (
+    device: IOSDeviceType,
+    language: string
+) => {
+    const ghBase = "https://raw.githubusercontent.com/SchoolPower/schoolpower-ios-v2/master/screenshots-compressed";
+    const cdnbase = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-ios-v2@master/screenshots-compressed";
+    const deviceName = new Map<IOSDeviceType, string>([
+        ["iPhone", "iPhone 13 Pro Max (15.0)"],
+        ["iPad", "iPad Pro (12.9-inch) (5th generation) (15.0)"],
+        ["Mac", "MacBook Pro (12.0.1)"],
+    ]);
+    const ghScreenshotsDir = `${ghBase}/${deviceName.get(device)}/${language}`;
+    const cdnScreenshotsDir = `${cdnbase}/${deviceName.get(device)}/${language}`;
+    const screenshotsList: string[] = await fetch(`${ghScreenshotsDir}/images.json`)
+        .then(response => response.json());
+    return screenshotsList.map(filename => `${cdnScreenshotsDir}/${filename}`);
+};
+
+const imagesByDevice = new Map<DeviceType, string[]>([
+    ["iPhone", await iOSScreenShots("iPhone", "English")],
+    ["iPad", await iOSScreenShots("iPad", "English")],
+    ["Mac", await iOSScreenShots("Mac", "English")],
+    ["Android", Array(10).fill(0).map(_ => a)],
+]);
+
+const maxWidth = new Map<DeviceType, string>([
+    ["iPhone", "20rem"],
+    ["iPad", "30rem"],
+    ["Mac", "60rem"],
+    ["Android", "20rem"],
+]);
 
 const useDeviceState = () => useSimpleState<DeviceType>("iPhone");
 
@@ -29,6 +57,10 @@ export const Gallery = () => {
         </Stack>
     );
 };
+
+interface IProps {
+    device: ReturnType<typeof useDeviceState>;
+}
 
 const DeviceSelect = observer(({device}: IProps) => (
     <Stack alignItems={"center"} pb={4}>
@@ -48,7 +80,7 @@ const DeviceSelect = observer(({device}: IProps) => (
                     key={it}
                     value={it}
                     aria-label={it}
-                    sx={{width: "min(120px, 28vw)"}}
+                    sx={{width: "min(120px, 20vw)"}}
                 >
                     {it}
                 </ToggleButton>
@@ -57,39 +89,51 @@ const DeviceSelect = observer(({device}: IProps) => (
     </Stack>
 ));
 
-const imagesByDevice = new Map<DeviceType, string[]>([
-    ["iPhone", Array(10).fill(0).map(_ => a)],
-    ["iPad", Array(10).fill(0).map(_ => a)],
-    ["Android", Array(10).fill(0).map(_ => a)],
-]);
+const Temp = ({options, images, maxWidth}: {
+    options: SplideProps["options"],
+    images: string[],
+    maxWidth?: string
+}) => (
+    <Container>
+        <Splide
+            options={options}
+            renderControls={() => (
+                <div className={"splide__arrows"}>
+                    <div className="splide__arrow splide__arrow--prev" style={{opacity: 1}}>
+                        <CarouselArrow/>
+                    </div>
+                    <div className="splide__arrow splide__arrow--next" style={{opacity: 1}}>
+                        <CarouselArrow/>
+                    </div>
+                </div>
+            )}
+        >
+            {images.map((it, index) => (
+                <SplideSlide key={index}>
+                    <Stack width="100%" pb={3} sx={{justifyContent: "center", alignItems: "center"}}>
+                        <img
+                            draggable={false}
+                            style={{width: `min(${maxWidth ?? "100%"}, 100%)`}}
+                            src={it}
+                        />
+                    </Stack>
+                </SplideSlide>
+            ))}
+        </Splide>
+    </Container>
+);
+
+let temps: Map<DeviceType, React.ReactNode> | null = null;
 
 const DeviceCarousel = observer(({device}: IProps) => {
-    const images = imagesByDevice.get(device.value) ?? [];
+    if (temps === null) {
+        temps = new Map<DeviceType, React.ReactNode>(DEVICE_TYPES.map(it => [it, (
+            <Temp key={it} options={splideOptions(it)} images={imagesByDevice.get(it) ?? []}
+                  maxWidth={maxWidth.get(it)}/>
+        )]));
+    }
     return (
-        <Container>
-            <Splide
-                options={splideOptions}
-                renderControls={() => (
-                    <div className={"splide__arrows"}>
-                        <div className="splide__arrow splide__arrow--prev" style={{opacity: 1}}>
-                            <CarouselArrow/>
-                        </div>
-                        <div className="splide__arrow splide__arrow--next" style={{opacity: 1}}>
-                            <CarouselArrow/>
-                        </div>
-                    </div>
-                )}
-            >
-                {images.map((it, index) => (
-                    <SplideSlide key={index}>
-                        <Stack width="100%" pb={3} sx={{justifyContent: "center", alignItems: "center"}}>
-                            <Typography sx={{zIndex: 10, position: "absolute"}}>{device.value}</Typography>
-                            <img draggable={false} style={{width: "min(320px, 100%)"}} src={it}/>
-                        </Stack>
-                    </SplideSlide>
-                ))}
-            </Splide>
-        </Container>
+        <>{temps.get(device.value)}</>
     );
 });
 
