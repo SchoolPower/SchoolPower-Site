@@ -91,5 +91,6 @@ export const splideOptions = (device: DeviceType): SplideProps["options"] => ({
     padding: {
         left: 24,
         right: 24,
-    }
+    },
+    lazyLoad: true,
 });

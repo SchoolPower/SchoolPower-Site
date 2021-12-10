@@ -1,45 +1,12 @@
 import { ChevronRight } from "@mui/icons-material";
 import { Container, Fab, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { DEVICE_TYPES, DeviceType, IOSDeviceType } from "@schoolpower/constants/DeviceType";
+import { DEVICE_TYPES, DeviceType } from "@schoolpower/constants/DeviceType";
 import { splideOptions } from "@schoolpower/constants/theme";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
+import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
 import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
 import { observer } from "mobx-react";
 import React from "react";
-
-import a from "/public/a.png";
-
-const iOSScreenShots = async (
-    device: IOSDeviceType,
-    language: string
-) => {
-    const ghBase = "https://raw.githubusercontent.com/SchoolPower/schoolpower-ios-v2/master/screenshots-compressed";
-    const cdnbase = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-ios-v2@master/screenshots-compressed";
-    const deviceName = new Map<IOSDeviceType, string>([
-        ["iPhone", "iPhone 13 Pro Max (15.0)"],
-        ["iPad", "iPad Pro (12.9-inch) (5th generation) (15.0)"],
-        ["Mac", "MacBook Pro (12.0.1)"],
-    ]);
-    const ghScreenshotsDir = `${ghBase}/${deviceName.get(device)}/${language}`;
-    const cdnScreenshotsDir = `${cdnbase}/${deviceName.get(device)}/${language}`;
-    const screenshotsList: string[] = await fetch(`${ghScreenshotsDir}/images.json`)
-        .then(response => response.json());
-    return screenshotsList.map(filename => `${cdnScreenshotsDir}/${filename}`);
-};
-
-const imagesByDevice = new Map<DeviceType, string[]>([
-    ["iPhone", await iOSScreenShots("iPhone", "English")],
-    ["iPad", await iOSScreenShots("iPad", "English")],
-    ["Mac", await iOSScreenShots("Mac", "English")],
-    ["Android", Array(10).fill(0).map(_ => a)],
-]);
-
-const maxWidth = new Map<DeviceType, string>([
-    ["iPhone", "20rem"],
-    ["iPad", "30rem"],
-    ["Mac", "60rem"],
-    ["Android", "20rem"],
-]);
 
 const useDeviceState = () => useSimpleState<DeviceType>("iPhone");
 
@@ -89,7 +56,34 @@ const DeviceSelect = observer(({device}: IProps) => (
     </Stack>
 ));
 
-const Temp = ({options, images, maxWidth}: {
+// Workaround for issues with carousel dynamic image loading,
+// just pre-render a separate component for each set of images.
+let carouselByDevice: Map<DeviceType, React.ReactNode> | null = null;
+
+const imageMaxWidth = new Map<DeviceType, string>([
+    ["iPhone", "20rem"],
+    ["iPad", "30rem"],
+    ["Mac", "60rem"],
+    ["Android", "20rem"],
+]);
+
+const DeviceCarousel = observer(({device}: IProps) => {
+    if (carouselByDevice === null) {
+        carouselByDevice = new Map(DEVICE_TYPES.map(it => [it, (
+            <CarouselByDevice
+                key={it}
+                options={splideOptions(it)}
+                images={screenshotsByDeviceLanguage.get(it)?.get("Chinese Simplified") ?? []}
+                maxWidth={imageMaxWidth.get(it)}
+            />
+        )]));
+    }
+    return (
+        <>{carouselByDevice.get(device.value)}</>
+    );
+});
+
+const CarouselByDevice = ({options, images, maxWidth}: {
     options: SplideProps["options"],
     images: string[],
     maxWidth?: string
@@ -110,7 +104,7 @@ const Temp = ({options, images, maxWidth}: {
         >
             {images.map((it, index) => (
                 <SplideSlide key={index}>
-                    <Stack width="100%" pb={3} sx={{justifyContent: "center", alignItems: "center"}}>
+                    <Stack width="100%" pb={6} sx={{justifyContent: "center", alignItems: "center"}}>
                         <img
                             draggable={false}
                             style={{width: `min(${maxWidth ?? "100%"}, 100%)`}}
@@ -122,20 +116,6 @@ const Temp = ({options, images, maxWidth}: {
         </Splide>
     </Container>
 );
-
-let temps: Map<DeviceType, React.ReactNode> | null = null;
-
-const DeviceCarousel = observer(({device}: IProps) => {
-    if (temps === null) {
-        temps = new Map<DeviceType, React.ReactNode>(DEVICE_TYPES.map(it => [it, (
-            <Temp key={it} options={splideOptions(it)} images={imagesByDevice.get(it) ?? []}
-                  maxWidth={maxWidth.get(it)}/>
-        )]));
-    }
-    return (
-        <>{temps.get(device.value)}</>
-    );
-});
 
 const CarouselArrow = () => (
     <Fab
