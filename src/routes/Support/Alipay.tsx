@@ -3,7 +3,7 @@ import { BackNav } from "@schoolpower/routes/Support/BackNav";
 import React from "react";
 import { QRCodeInstruction } from "@schoolpower/routes/Support/QRCodeInstruction";
 
-import qrcode from "/public/WechatIMG685.png";
+import qrcode from "/public/img/qrcode_alipay_donation.png";
 
 export const AliPay = () => (
     <Container>

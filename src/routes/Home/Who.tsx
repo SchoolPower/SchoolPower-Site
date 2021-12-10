@@ -10,7 +10,7 @@ const whoItems: IWhoItem[] = [
     },
     {
         name: "harrynull",
-        imageURL: "https://avatars.githubusercontent.com/u/7413706?v=4",
+        imageURL: "https://avatars.githubusercontent.com/u/7413706?s=400",
         profileURL: "https://github.com/harrynull",
     },
 ];

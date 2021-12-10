@@ -5,7 +5,7 @@ import { ToolBarHeight } from "@schoolpower/constants/styles";
 import { useLocation } from "react-router-dom";
 import React from "react";
 
-import logo from "/public/ic_header-web copy.png";
+import logo from "/public/img/header_logo.png";
 
 export const ToolBar = () => {
     const location = useLocation();

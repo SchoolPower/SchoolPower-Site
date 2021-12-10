@@ -7,10 +7,10 @@ import { Background } from "@schoolpower/routes/Support/Background";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
 
-import wechat from "/public/4375157_logo_wechat_icon.png";
-import alipay from "/public/8679434-512.png";
-import paypal from "/public/4375034_logo_paypal_icon.png";
-import bitcoin from "/public/Bitcoin-BTC-icon.png";
+import wechat from "/public/img/icon_wechat.png";
+import alipay from "/public/img/icon_alipay.png";
+import paypal from "/public/img/icon_paypal.png";
+import bitcoin from "/public/img/icon_bitcoin.png";
 
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";

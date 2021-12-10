@@ -3,7 +3,7 @@ import { BackNav } from "@schoolpower/routes/Support/BackNav";
 import React from "react";
 import { QRCodeInstruction } from "@schoolpower/routes/Support/QRCodeInstruction";
 
-import qrcode from "/public/photo_2021-12-07 13.16.49.png";
+import qrcode from "/public/img/qrcode_wechat_donation.png";
 
 export const WechatPay = () => (
     <Container>
