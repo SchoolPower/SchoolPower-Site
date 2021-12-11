@@ -51,7 +51,7 @@ export const What = () => {
             <Container>
                 <SectionHeader
                     title={"What is this"}
-                    subtitle={"SchoolPower is a third-party mobile client for PowerSchool®. We've designed a brand new user interface tailored to the needs of local students."}
+                    subtitle={"SchoolPower is a third-party client for PowerSchool®. We've designed a brand new user interface tailored to the needs of local students."}
                 />
                 <Stack display={{xs: "block", sm: "none"}}>
                     <Narrow/>

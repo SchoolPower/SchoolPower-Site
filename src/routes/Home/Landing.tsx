@@ -16,7 +16,7 @@ export const Landing = () => {
                     <Grid pt={6} container justifyContent={"center"} alignItems={"center"}>
                         <Title
                             title={"May SchoolPower<sup>2.0</sup><br/>Be With You"}
-                            subtitle={"An alternative mobile client for PowerSchool®"}
+                            subtitle={"An alternative client for PowerSchool®"}
                         />
                     </Grid>
                     <Downloads/>

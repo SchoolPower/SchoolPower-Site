@@ -1,9 +1,10 @@
 import { ButtonBase, Container, Grid, Stack } from "@mui/material";
+import { Background } from "@schoolpower/components/Background";
 import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { Footer } from "@schoolpower/components/Footer";
 import { Title } from "@schoolpower/components/PageTitle";
+import { ScrollToTop } from "@schoolpower/components/ScrollToTop";
 import { AliPay } from "@schoolpower/routes/Support/Alipay";
-import { Background } from "@schoolpower/routes/Support/Background";
 import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
@@ -49,6 +50,7 @@ const donationMethods: IDonationMethod[] = [
 
 export const Support = () => (
     <Stack>
+        <ScrollToTop/>
         <Background>
             <Routes>
                 <Route path="/" element={<SupportPage/>}/>
