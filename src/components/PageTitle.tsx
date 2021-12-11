@@ -11,8 +11,9 @@ export const Title = ({title, subtitle}: ITitleProps) => {
         <Grid item md={8} xl={6}>
             <Typography
                 sx={{
-                    fontSize: {xs: 32, sm: 48, md: 56},
+                    fontSize: {xs: 38, sm: 48, md: 56},
                     lineHeight: {xs: "44px", sm: "60px", md: "68px"},
+                    whiteSpace: "pre-line",
                 }}
                 fontWeight={800}
                 textAlign={"center"}

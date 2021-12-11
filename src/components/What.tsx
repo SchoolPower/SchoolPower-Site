@@ -12,7 +12,7 @@ interface IWhatItem {
 }
 
 interface IWhatItemProps extends IWhatItem {
-    align: "start" | "end",
+    align?: "flex-start" | "flex-end",
 }
 
 const whatItems: {
@@ -80,11 +80,11 @@ const Wide = () => (
             sx={{borderRadius: "30px"}}
         >
             <Grid height={"100%"} item xs={2.75} sm={3} md={2.75} lg={3}>
-                <Stack height={"100%"} alignItems={"end"}>
+                <Stack height={"100%"} alignItems={"flex-end"}>
                     {whatItems.left.map((it, index) => (
                         <WideWhatItem
                             key={index}
-                            align={"end"}
+                            align={"flex-end"}
                             title={it.title}
                             icon={it.icon}
                             subtitle={it.subtitle}
@@ -108,7 +108,7 @@ const Wide = () => (
                     {whatItems.right.map((it, index) => (
                         <WideWhatItem
                             key={index}
-                            align={"start"}
+                            align={"flex-start"}
                             title={it.title}
                             icon={it.icon}
                             subtitle={it.subtitle}
@@ -133,7 +133,6 @@ const Narrow = () => (
                 {whatItems.left.map((it, index) => (
                     <NarrowWhatItem
                         key={index}
-                        align={"end"}
                         title={it.title}
                         icon={it.icon}
                         subtitle={it.subtitle}
@@ -157,7 +156,6 @@ const Narrow = () => (
                 {whatItems.right.map((it, index) => (
                     <NarrowWhatItem
                         key={index}
-                        align={"start"}
                         title={it.title}
                         icon={it.icon}
                         subtitle={it.subtitle}
@@ -180,10 +178,10 @@ const WideWhatItem = ({align, title, subtitle, icon}: IWhatItemProps) => (
         }}>
             {icon}
         </Stack>
-        <Typography pt={2} sx={{fontSize: 18, fontWeight: 600, textAlign: align}}>
+        <Typography pt={2} sx={{fontSize: 18, fontWeight: 600, textAlign: align == "flex-end" ? "end" : "start"}}>
             {title}
         </Typography>
-        <Typography pt={2} sx={{fontSize: 12, textAlign: align}}>
+        <Typography pt={2} sx={{fontSize: 12, textAlign: align == "flex-end" ? "end" : "start"}}>
             {subtitle}
         </Typography>
     </Stack>

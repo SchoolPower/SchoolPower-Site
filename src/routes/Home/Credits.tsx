@@ -106,7 +106,7 @@ export const Credits = () => {
         <Stack sx={{bgcolor: "primary.main"}} pt={13} pb={13}>
             <Container>
                 <SectionHeader
-                    title={"Credits and Acknowledgements"}
+                    title={"Credits"}
                     subtitle={"Thank you to the following people for providing help and support with the development and maintenance of SchoolPower."}
                 />
                 <Grid container justifyContent={"center"} pt={8} pb={4}>

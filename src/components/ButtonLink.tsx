@@ -19,6 +19,9 @@ export const LinkWrapper = ({to, children, style}: {
     style?: CSSProperties,
 }) => (
     <Link to={to} style={{
+        height: "fit-content",
+        justifyContent: "center",
+        alignItems: "center",
         textDecoration: "inherit",
         color: "inherit",
         ...style,
