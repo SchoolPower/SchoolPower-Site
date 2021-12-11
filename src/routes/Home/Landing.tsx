@@ -75,8 +75,15 @@ const Downloads = () => {
 const Images = () => {
     return (
         <Grid container justifyContent={"center"}>
-            <Grid item xs={12} sx={{display: {xs: "block", sm: "none"}}}>
-                <img style={{maxWidth: "100%"}} src={iphone}/>
+            <Grid
+                container item xs={12}
+                alignItems={"center"}
+                justifyContent={"center"}
+                sx={{display: {xs: "block", sm: "none"}}}
+            >
+                <Stack alignItems={"center"}>
+                    <img style={{maxWidth: "min(400px, 100%)"}} src={iphone}/>
+                </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
                 <img style={{maxWidth: "100%"}} src={ipad}/>
