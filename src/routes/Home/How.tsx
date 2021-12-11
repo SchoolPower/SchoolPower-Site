@@ -3,6 +3,8 @@ import { Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import React from "react";
 
+import ps_sp from "/public/ps_sp.png";
+
 const howItems: IHowItem[] = [
     {text: "Use the username and password you provided to login PowerSchool®."},
     {text: "Fetch the information using their API and send it to your client."},
@@ -26,16 +28,33 @@ export const How = () => {
                     title={"How does it work"}
                     subtitle={"SchoolPower displays what's originally on the PowerSchool® website."}
                 />
-                <Grid container pt={7}>
-                    <Grid item xs={12} md={6}>
+                <Grid container pt={7} alignItems={"center"} justifyContent={"center"}>
+                    <Grid item xs={12} sm={8} md={6}>
                         <Stack alignItems={"center"} justifyContent={"center"}>
                             <img style={{maxWidth: "100%"}}
-                                 src={"https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"}/>
+                                 src={ps_sp}/>
                         </Stack>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <Stack pl={8} pr={8} height={"100%"} justifyContent={"center"} spacing={7}>
-                            <Stack spacing={3}>
+                        <Stack
+                            pl={{
+                                xs: 2,
+                                md: 8,
+                            }}
+                            pr={2}
+                            height={"100%"}
+                            justifyContent={"center"}
+                            alignItems={{
+                                xs: "center",
+                                md: "flex-start",
+                            }}
+                            pt={{
+                                xs: 7,
+                                md: 0,
+                            }}
+                            spacing={7}
+                        >
+                            <Stack maxWidth={"380px"} spacing={3}>
                                 {howItems.map((it, index) => (
                                     <HowItem key={index} index={index + 1} item={it}/>
                                 ))}
@@ -62,7 +81,7 @@ export const How = () => {
 };
 
 const HowItem = ({item, index}: IHowItemProps) => (
-    <Stack direction={"row"} maxWidth={"380px"} spacing={3} alignItems={"center"}>
+    <Stack direction={"row"} spacing={3} alignItems={"center"}>
         <Stack sx={{
             minWidth: 40,
             width: 40,
