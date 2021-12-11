@@ -15,7 +15,7 @@ export const Landing = () => {
                 <Container>
                     <Grid pt={6} container justifyContent={"center"} alignItems={"center"}>
                         <Title
-                            title={"May SchoolPower\nBe With You"}
+                            title={"May SchoolPower<sup>2.0</sup><br/>Be With You"}
                             subtitle={"An alternative mobile client for PowerSchool®"}
                         />
                     </Grid>
