@@ -4,6 +4,7 @@ import { Footer } from "@schoolpower/components/Footer";
 import { Title } from "@schoolpower/components/PageTitle";
 import { AliPay } from "@schoolpower/routes/Support/Alipay";
 import { Background } from "@schoolpower/routes/Support/Background";
+import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
 
@@ -42,7 +43,7 @@ const donationMethods: IDonationMethod[] = [
     {
         name: "Bitcoin",
         imageURL: bitcoin,
-        targetURL: ""
+        targetURL: "/support/bitcoin"
     },
 ];
 
@@ -53,6 +54,7 @@ export const Support = () => (
                 <Route path="/" element={<SupportPage/>}/>
                 <Route path="wechat" element={<WechatPay/>}/>
                 <Route path="alipay" element={<AliPay/>}/>
+                <Route path="bitcoin" element={<Bitcoin/>}/>
             </Routes>
         </Background>
         <Footer/>
