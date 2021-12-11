@@ -3,7 +3,9 @@ import { Title } from "@schoolpower/components/PageTitle";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import React from "react";
 
-import a from "/public/a.png";
+import iphone from "/public/iPhone 13 Pro Max - Graphite.png";
+import ipad from "/public/iPad Pro 12.9 - Space Gray - Vertical.png";
+import mac from "/public/MacBook Pro 16-inch.png";
 
 export const Landing = () => {
     return (
@@ -11,7 +13,7 @@ export const Landing = () => {
             <Background/>
             <Stack sx={{minHeight: "40vh", width: "100%", zIndex: 1}} justifyContent="center">
                 <Container>
-                    <Grid pt={5} container justifyContent={"center"} alignItems={"center"}>
+                    <Grid pt={6} container justifyContent={"center"} alignItems={"center"}>
                         <Title
                             title={"May SchoolPower\nBe With You"}
                             subtitle={"An alternative mobile client for PowerSchool®"}
@@ -72,15 +74,15 @@ const Downloads = () => {
 
 const Images = () => {
     return (
-        <Grid container justifyContent={"center"} alignItems={"end"} columnSpacing={7}>
-            <Grid item md={3.75} pb={2} sx={{display: {xs: "none", md: "block"}}}>
-                <img style={{maxWidth: "100%"}} src={a}/>
+        <Grid container justifyContent={"center"}>
+            <Grid item xs={12} sx={{display: {xs: "block", sm: "none"}}}>
+                <img style={{maxWidth: "100%"}} src={iphone}/>
             </Grid>
-            <Grid item xs={12} sm={8} md={4.5}>
-                <img style={{maxWidth: "100%"}} src={a}/>
+            <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
+                <img style={{maxWidth: "100%"}} src={ipad}/>
             </Grid>
-            <Grid item md={3.75} pb={2} sx={{display: {xs: "none", md: "block"}}}>
-                <img style={{maxWidth: "100%"}} src={a}/>
+            <Grid item xs={12} sx={{display: {xs: "none", lg: "block"}}}>
+                <img style={{maxWidth: "100%"}} src={mac}/>
             </Grid>
         </Grid>
     );
