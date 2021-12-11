@@ -9,7 +9,7 @@ import ps_sp from "/public/ps_sp.png";
 const howItems: IHowItem[] = [
     {text: "Use the username and password you provided to login PowerSchool®."},
     {text: "Fetch the information using their API and send it to your client."},
-    {text: "Display the data on your devices with our easy-to-use interfaces."},
+    {text: "Display the data on your devices with easy-to-use interfaces."},
 ];
 
 interface IHowItem {
