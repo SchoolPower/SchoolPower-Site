@@ -31,8 +31,14 @@ export const Who = () => {
                 />
                 <Stack
                     pt={12}
-                    spacing={15}
-                    direction={"row"}
+                    spacing={{
+                        xs: 10,
+                        sm: 15,
+                    }}
+                    direction={{
+                        xs: "column",
+                        sm: "row",
+                    }}
                     justifyContent={"center"}
                     alignItems={"center"}
                 >
