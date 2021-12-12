@@ -1,4 +1,4 @@
-import { Language } from "@schoolpower/i18n/Language";
+import { useLanguage } from "@schoolpower/hooks/useLanguage";
 
 const cdn = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-resources@main/web-images";
 
@@ -11,9 +11,11 @@ const heroImageDeviceName = new Map<HeroImageDeviceType, string>([
 ]);
 
 export const heroImage = (
-    device: HeroImageDeviceType,
-    language: Language,
-) => `${cdn}/hero/${language}/${heroImageDeviceName.get(device)}-min.png`;
+    device: HeroImageDeviceType
+) => {
+    const language = useLanguage();
+    return `${cdn}/hero/${language}/${heroImageDeviceName.get(device)}-min.png`;
+};
 
 export const donationIcon = (
     method: string

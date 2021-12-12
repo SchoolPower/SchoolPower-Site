@@ -1,7 +1,8 @@
 import { ChevronRight } from "@mui/icons-material";
 import { Container, Fab, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { DEVICE_TYPES, DeviceType, IOS_DEVICE_TYPES } from "@schoolpower/constants/DeviceType";
+import { DeviceType, IOS_DEVICE_TYPES } from "@schoolpower/constants/DeviceType";
 import { splideOptions } from "@schoolpower/constants/theme";
+import { useLanguage } from "@schoolpower/hooks/useLanguage";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
 import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
@@ -75,7 +76,7 @@ const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
             <CarouselByDevice
                 key={it}
                 options={splideOptions(it)}
-                images={screenshotsByDeviceLanguage.get(it)?.get("Chinese Simplified") ?? []}
+                device={it}
                 maxWidth={imageMaxWidth.get(it)}
             />
         )]));
@@ -85,39 +86,43 @@ const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
     );
 });
 
-const CarouselByDevice = ({options, images, maxWidth}: {
+const CarouselByDevice = ({options, device, maxWidth}: {
     options: SplideProps["options"],
-    images: string[],
+    device: DeviceType,
     maxWidth?: string
-}) => (
-    <Container>
-        <Splide
-            options={options}
-            renderControls={() => (
-                <div className={"splide__arrows"}>
-                    <div className="splide__arrow splide__arrow--prev" style={{opacity: 1}}>
-                        <CarouselArrow/>
+}) => {
+    const language = useLanguage();
+    const images = screenshotsByDeviceLanguage.get(device)?.get(language) ?? [];
+    return (
+        <Container>
+            <Splide
+                options={options}
+                renderControls={() => (
+                    <div className={"splide__arrows"}>
+                        <div className="splide__arrow splide__arrow--prev" style={{opacity: 1}}>
+                            <CarouselArrow/>
+                        </div>
+                        <div className="splide__arrow splide__arrow--next" style={{opacity: 1}}>
+                            <CarouselArrow/>
+                        </div>
                     </div>
-                    <div className="splide__arrow splide__arrow--next" style={{opacity: 1}}>
-                        <CarouselArrow/>
-                    </div>
-                </div>
-            )}
-        >
-            {images.map((it, index) => (
-                <SplideSlide key={index}>
-                    <Stack width="100%" pb={6} sx={{justifyContent: "center", alignItems: "center"}}>
-                        <img
-                            draggable={false}
-                            style={{width: `min(${maxWidth ?? "100%"}, 100%)`}}
-                            src={it}
-                        />
-                    </Stack>
-                </SplideSlide>
-            ))}
-        </Splide>
-    </Container>
-);
+                )}
+            >
+                {images.map((it, index) => (
+                    <SplideSlide key={index}>
+                        <Stack width="100%" pb={6} sx={{justifyContent: "center", alignItems: "center"}}>
+                            <img
+                                draggable={false}
+                                style={{width: `min(${maxWidth ?? "100%"}, 100%)`}}
+                                src={it}
+                            />
+                        </Stack>
+                    </SplideSlide>
+                ))}
+            </Splide>
+        </Container>
+    );
+};
 
 const CarouselArrow = () => (
     <Fab

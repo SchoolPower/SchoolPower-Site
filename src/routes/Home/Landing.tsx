@@ -5,7 +5,9 @@ import { androidAPKURL, appStoreURL } from "@schoolpower/constants/AppDownloads"
 import { heroImage } from "@schoolpower/constants/ImageResources";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
+import { useLanguage } from "@schoolpower/hooks/useLanguage";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const Landing = () => {
     return (
@@ -119,14 +121,14 @@ const Images = () => {
                 sx={{display: {xs: "block", sm: "none"}}}
             >
                 <Stack alignItems={"center"}>
-                    <img style={{maxWidth: "min(400px, 100%)"}} src={heroImage("phone", "Japanese")}/>
+                    <img style={{maxWidth: "min(400px, 100%)"}} src={heroImage("phone")}/>
                 </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
-                <img style={{maxWidth: "100%"}} src={heroImage("tablet", "Japanese")}/>
+                <img style={{maxWidth: "100%"}} src={heroImage("tablet")}/>
             </Grid>
             <Grid item xs={12} sx={{display: {xs: "none", lg: "block"}}}>
-                <img style={{maxWidth: "100%"}} src={heroImage("laptop", "Japanese")}/>
+                <img style={{maxWidth: "100%"}} src={heroImage("laptop")}/>
             </Grid>
         </Grid>
     );
