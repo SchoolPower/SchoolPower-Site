@@ -1,5 +1,16 @@
 import { ContentCopy, Done, Download } from "@mui/icons-material";
-import { Button, Grid, IconButton, InputAdornment, OutlinedInput, Paper, Stack, Typography } from "@mui/material";
+import {
+    Alert,
+    Button,
+    Grid,
+    IconButton,
+    InputAdornment,
+    OutlinedInput,
+    Paper,
+    Snackbar,
+    Stack,
+    Typography
+} from "@mui/material";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
@@ -19,6 +30,7 @@ export const CryptoQRCodeInstruction = observer(({
     address,
 }: QRCodeInstructionProps) => {
     const copied = useSimpleState(false);
+    const cannotCopy = useSimpleState<string | null>(null);
 
     const copyAddress = () => {
         navigator.clipboard
@@ -28,7 +40,8 @@ export const CryptoQRCodeInstruction = observer(({
                 setTimeout(() => {
                     copied.set(false);
                 }, 2000);
-            });
+            })
+            .catch(reason => copied.set(reason));
     };
 
     return (<Stack direction={{
@@ -58,18 +71,22 @@ export const CryptoQRCodeInstruction = observer(({
                         text={instruction}
                     />
                     <Paper>
-                        <StyledInput fullWidth value={address} disabled endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="copy address"
-                                    onClick={copyAddress}
-                                    onMouseDown={copyAddress}
-                                    edge="end"
-                                >
-                                    {copied.value ? <Done color={"secondary"}/> : <ContentCopy/>}
-                                </IconButton>
-                            </InputAdornment>
-                        }/>
+                        <StyledInput
+                            fullWidth
+                            value={address}
+                            disabled
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="copy address"
+                                        onClick={copyAddress}
+                                        onMouseDown={copyAddress}
+                                        edge="end"
+                                    >
+                                        {copied.value ? <Done color={"secondary"}/> : <ContentCopy/>}
+                                    </IconButton>
+                                </InputAdornment>
+                            }/>
                     </Paper>
                 </Stack>
                 <Stack>
@@ -81,6 +98,11 @@ export const CryptoQRCodeInstruction = observer(({
                     </Button>
                 </Stack>
             </Stack>
+            <Snackbar open={!!cannotCopy.value} autoHideDuration={6000} onClose={() => cannotCopy.set(null)}>
+                <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{ width: "100%" }}>
+                    Copy failed: {cannotCopy.value}. Please copy manually.
+                </Alert>
+            </Snackbar>
         </Stack>
     );
 });
@@ -110,7 +132,7 @@ const InstructionItem = ({icon, text}: IInstructionItemProps) => (
 );
 
 const StyledInput = styled(OutlinedInput)`
-    fieldset {
-      border-color: transparent !important;
-    }
+  fieldset {
+    border-color: transparent !important;
+  }
 `;
