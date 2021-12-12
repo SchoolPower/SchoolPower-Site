@@ -19,7 +19,7 @@ export const locales: Locale[] = [
         identifier: "en",
         language: "English",
         name: "English",
-        icon: <span className="flag-icon flag-icon-us"/>,
+        icon: <span className="flag-icon flag-icon-ca"/>,
     },
     {
         identifier: "zh-Hans",
