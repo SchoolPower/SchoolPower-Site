@@ -1,5 +1,8 @@
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Android, Apple } from "@mui/icons-material";
+import { Box, Button, Container, Grid, Link, Stack } from "@mui/material";
 import { Title } from "@schoolpower/components/PageTitle";
+import { androidAPKURL, appStoreURL } from "@schoolpower/constants/AppDownloads";
+import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import React from "react";
 
@@ -15,8 +18,8 @@ export const Landing = () => {
                 <Container>
                     <Grid pt={6} container justifyContent={"center"} alignItems={"center"}>
                         <Title
-                            title={"May SchoolPower<sup>2.0</sup><br/>Be With You"}
-                            subtitle={"An alternative client for PowerSchool®"}
+                            title={<>May SchoolPower<sup>2.0</sup><br/>Be With You</>}
+                            subtitle={<>An alternative client for <PowerSchool/></>}
                         />
                     </Grid>
                     <Downloads/>
@@ -45,15 +48,26 @@ const Background = () => {
 const Downloads = () => {
     const IOSDownload = () => {
         return (
-            <img width={128}
-                src="https://img.favpng.com/11/5/0/app-store-ios-download-apple-png-favpng-RAZKpacGpHZHnM3W2cQW0yS1e.jpg"
-                alt={"ios-download"}/>
+            <DownloadButton
+                href={appStoreURL("jp")}
+                icon={<Apple/>}
+                text={"App Store"}
+            />
         );
     };
 
     const AndroidDownload = () => {
         return (
-            <img width={128} src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Google_Play_Store_badge_FR.svg"/>
+            <Stack alignItems={"center"}>
+                <DownloadButton
+                    disabled
+                    icon={<Android/>}
+                    text={"Android (Soon)"}
+                />
+                <Link href={androidAPKURL} underline={"hover"} color={"info.main"} variant={"caption"}>
+                    Download v1.5
+                </Link>
+            </Stack>
         );
     };
 
@@ -62,7 +76,10 @@ const Downloads = () => {
             direction={{xs: "column", sm: "row"}}
             spacing={{xs: 2, sm: 4}}
             justifyContent={"center"}
-            alignItems={"center"}
+            alignItems={{
+                xs: "center",
+                sm: "flex-start",
+            }}
             pt={6}
             pb={6}
         >
@@ -71,6 +88,29 @@ const Downloads = () => {
         </Stack>
     );
 };
+
+const DownloadButton = ({disabled, icon, text, href}: {
+    disabled?: boolean,
+    icon: React.ReactNode,
+    text: string,
+    href?: string,
+}) => (
+    <Button
+        href={href ?? ""}
+        target={"_blank"}
+        disabled={disabled}
+        variant={"contained"}
+        color={"info"}
+        startIcon={icon}
+        sx={{
+            minWidth: "160px",
+            height: "fit-content",
+            pt: 1,
+            pb: 1,
+        }}>
+        {text}
+    </Button>
+);
 
 const Images = () => {
     return (

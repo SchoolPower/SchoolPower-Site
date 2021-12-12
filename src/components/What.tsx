@@ -1,13 +1,14 @@
 import { Bolt, Brush, GppGood, Sync } from "@mui/icons-material";
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
+import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import React from "react";
 
 import a from "/public/a.png";
 
 interface IWhatItem {
     title: string,
-    subtitle: string,
+    subtitle: string | React.ReactNode,
     icon: React.ReactElement,
 }
 
@@ -34,7 +35,7 @@ const whatItems: {
     right: [
         {
             title: "Keep in sync",
-            subtitle: "Data are always in sync with the PowerSchool® server.",
+            subtitle: <>Data are always in sync with the <PowerSchool/> server.</>,
             icon: <Sync color={"secondary"}/>,
         },
         {
@@ -51,7 +52,7 @@ export const What = () => {
             <Container>
                 <SectionHeader
                     title={"What is this"}
-                    subtitle={"SchoolPower is a third-party client for PowerSchool®. We've designed a brand new user interface tailored to the needs of local students."}
+                    subtitle={<>SchoolPower is a third-party client for <PowerSchool/>. We&apos;ve designed a brand new user interface tailored to the needs of local students.</>}
                 />
                 <Stack display={{xs: "block", sm: "none"}}>
                     <Narrow/>

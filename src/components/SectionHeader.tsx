@@ -3,7 +3,7 @@ import React from "react";
 
 export interface ISectionHeaderProps {
     title: string,
-    subtitle: string,
+    subtitle: string | React.ReactNode,
 }
 
 export const SectionHeader = ({title, subtitle}: ISectionHeaderProps) => (

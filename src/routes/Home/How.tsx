@@ -2,18 +2,19 @@ import { Class } from "@mui/icons-material";
 import { Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
+import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import React from "react";
 
 import ps_sp from "/public/ps_sp.png";
 
 const howItems: IHowItem[] = [
-    {text: "Use the username and password you provided to login PowerSchool®."},
+    {text: <>Use the username and password you provided to login <PowerSchool/>.</>},
     {text: "Fetch the information using their API and send it to your client."},
     {text: "Display the data on your devices with easy-to-use interfaces."},
 ];
 
 interface IHowItem {
-    text: string;
+    text: React.ReactNode | string;
 }
 
 interface IHowItemProps {
@@ -27,7 +28,7 @@ export const How = () => {
             <Container>
                 <SectionHeader
                     title={"How does it work"}
-                    subtitle={"SchoolPower displays what's originally on the PowerSchool® website."}
+                    subtitle={<>SchoolPower displays what&apos;s originally on the <PowerSchool/> website.</>}
                 />
                 <Grid container pt={7} alignItems={"center"} justifyContent={"center"}>
                     <Grid item xs={12} sm={8} md={6}>

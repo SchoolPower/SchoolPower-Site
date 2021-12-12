@@ -18,6 +18,7 @@ export const MUITheme = createTheme({
         },
         info: {
             main: "#09314B",
+            contrastText: "#FFFFFF"
         },
         error: {
             main: "#ff0000"

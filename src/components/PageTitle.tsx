@@ -1,11 +1,10 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
-import ReactHtmlParser from "react-html-parser";
 import styled from "styled-components";
 
 export interface ITitleProps {
-    title: string,
-    subtitle: string,
+    title: string | React.ReactNode,
+    subtitle: string | React.ReactNode,
 }
 
 export const Title = ({title, subtitle}: ITitleProps) => {
@@ -21,7 +20,7 @@ export const Title = ({title, subtitle}: ITitleProps) => {
                 textAlign={"center"}
                 pt={4}
             >
-                {ReactHtmlParser(title)}
+                {title}
             </StyledTitle>
             <Typography variant={"subtitle1"} textAlign={"center"} pt={2}>
                 {subtitle}

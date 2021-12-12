@@ -1,5 +1,5 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { ScrollToTop } from "@schoolpower/components/ScrollToTop";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { ToolBar } from "@schoolpower/components/ToolBar";
 import { MUITheme } from "@schoolpower/constants/theme";
 import { Agreement } from "@schoolpower/routes/Agreement/Agreement";

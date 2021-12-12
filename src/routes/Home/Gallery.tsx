@@ -1,6 +1,6 @@
 import { ChevronRight } from "@mui/icons-material";
 import { Container, Fab, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { DEVICE_TYPES, DeviceType } from "@schoolpower/constants/DeviceType";
+import { DEVICE_TYPES, DeviceType, IOS_DEVICE_TYPES } from "@schoolpower/constants/DeviceType";
 import { splideOptions } from "@schoolpower/constants/theme";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
@@ -42,7 +42,8 @@ const DeviceSelect = observer(({device}: IDeviceStateProps) => (
             aria-label="device"
             exclusive
         >
-            {DEVICE_TYPES.map(it => (
+            {/*TODO Enable when android is available*/}
+            {IOS_DEVICE_TYPES.map(it => (
                 <ToggleButton
                     key={it}
                     value={it}
@@ -69,7 +70,8 @@ const imageMaxWidth = new Map<DeviceType, string>([
 
 const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
     if (carouselByDevice === null) {
-        carouselByDevice = new Map(DEVICE_TYPES.map(it => [it, (
+        // TODO Enable when android is available
+        carouselByDevice = new Map(IOS_DEVICE_TYPES.map(it => [it, (
             <CarouselByDevice
                 key={it}
                 options={splideOptions(it)}
