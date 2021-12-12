@@ -25,7 +25,7 @@ export const MUITheme = createTheme({
         },
     },
     typography: {
-        "fontFamily": "\"Plus Jakarta Sans\", \"Noto Sans SC\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontFamily": "\"Poppins\", \"Noto Sans SC\", \"Noto Sans TC\", \"Noto Sans JP\", \"Helvetica\", \"Arial\", sans-serif",
         "fontSize": 14,
         button: {
             textTransform: "none"
