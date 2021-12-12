@@ -5,7 +5,7 @@ import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import React from "react";
 
-import ps_sp from "/public/ps_sp.png";
+const ps_sp = "https://s2.loli.net/2021/12/12/TtSDyjUKZW3mfpr.png";
 
 const howItems: IHowItem[] = [
     {text: <>Use the username and password you provided to login <PowerSchool/>.</>},

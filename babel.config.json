@@ -1,8 +1,27 @@
 {
-  "presets": ["@babel/preset-env","@babel/react"],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    "@babel/react"
+  ],
   "plugins": [
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    ["@babel/plugin-proposal-class-properties", { "loose": false }],
-    "react-hot-loader/babel"
+    [
+      "import",
+      {
+        "libraryName": "@mui/material",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "mui-core"
+    ],
+    [
+      "import",
+      {
+        "libraryName": "@mui/icons-material",
+        "libraryDirectory": "",
+        "camel2DashComponentName": false
+      },
+      "mui-icon"
+    ]
   ]
 }

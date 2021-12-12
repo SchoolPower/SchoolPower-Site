@@ -8,14 +8,13 @@ import { AliPay } from "@schoolpower/routes/Support/Alipay";
 import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
-
-import wechat from "/public/img/icon_wechat.png";
-import alipay from "/public/img/icon_alipay.png";
-import paypal from "/public/img/icon_paypal.png";
-import bitcoin from "/public/img/icon_bitcoin.png";
-
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+
+const paypal = "https://s2.loli.net/2021/12/12/meGB5n9P8aCvb7i.png";
+const wechat = "https://s2.loli.net/2021/12/12/bf27Ln8h136Wk5a.png";
+const alipay = "https://s2.loli.net/2021/12/12/F9LmfhyzBl32qXS.png";
+export const bitcoin = "https://s2.loli.net/2021/12/12/oIDpEFUONkla86i.png";
 
 interface IDonationMethod {
     name: string,

@@ -9,8 +9,8 @@ import { observer } from "mobx-react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import logoWithText from "/public/img/header_logo_text.png";
-import logo from "/public/img/header_logo.png";
+const logoWithText = "https://s2.loli.net/2021/12/12/i4dESBKpQl2bfxg.png";
+const logo = "https://s2.loli.net/2021/12/12/wJkjuAf68QXxh7b.png";
 
 export const ToolBar = observer(() => {
     const location = useLocation();

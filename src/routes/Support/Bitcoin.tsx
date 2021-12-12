@@ -1,10 +1,10 @@
 import { Container, Stack, Typography } from "@mui/material";
 import { BackNav } from "@schoolpower/routes/Support/BackNav";
 import { CryptoQRCodeInstruction } from "@schoolpower/routes/Support/CryptoQRCodeInstruction";
+import { bitcoin } from "@schoolpower/routes/Support/Support";
 import React from "react";
 
 import qrcode from "/public/img/qrcode_bitcoin.png";
-import icon from "/public/img/icon_bitcoin.png";
 
 const bitcoinAddress = "3EF34mi84YvK2CLHy4bhjSwFCW3L4YLN1u";
 
@@ -13,7 +13,7 @@ export const Bitcoin = () => (
         <Stack>
             <BackNav title={"Bitcoin"}/>
             <CryptoQRCodeInstruction
-                currencyIcon={icon}
+                currencyIcon={bitcoin}
                 qrCodeImageURL={qrcode}
                 instruction={"请将捐款发送到以下比特币地址"}
                 address={bitcoinAddress}

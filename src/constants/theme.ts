@@ -25,12 +25,8 @@ export const MUITheme = createTheme({
         },
     },
     typography: {
-        "fontFamily": "\"Plus Jakarta Sans\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontFamily": "\"Plus Jakarta Sans\", \"Noto Sans SC\", \"Helvetica\", \"Arial\", sans-serif",
         "fontSize": 14,
-        "fontWeightLight": 300,
-        "fontWeightRegular": 400,
-        "fontWeightMedium": 600,
-        "fontWeightBold": 800,
         button: {
             textTransform: "none"
         }

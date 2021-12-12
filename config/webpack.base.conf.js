@@ -6,7 +6,10 @@ const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.tsx",
+    entry:[
+        "babel-polyfill",
+        "./src/index.tsx"
+    ],
     output: {
         filename: "bundle.[hash].js",
         path: path.join(__dirname, "../build"),
@@ -21,46 +24,24 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.[tj]s(x?)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                }
+            },
+            {
                 test: /\.svg$/,
-                use: [
-                    {
-                        loader: "svg-url-loader",
-                        options: {
-                            limit: 10000,
-                        },
+                use: {
+                    loader: "svg-url-loader",
+                    options: {
+                        limit: 10000,
                     },
-                ],
+                },
             },
             {
                 test: /\.(jpg|png|gif)$/,
                 loader: "file-loader"
-            },
-            {
-                test: /\.ts(x?)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
-            },
-            {
-                test: /pdf\.worker(\.min)?\.js$/,
-                loader: "file-loader"
-            },
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: ["@babel/preset-env"],
-                        plugins: [
-                            ["@babel/plugin-proposal-decorators", {"legacy": true}],
-                            ["@babel/plugin-proposal-class-properties", {"loose": false}],
-                        ]
-                    }
-                }
             },
             {
                 test: /\.css$/,
