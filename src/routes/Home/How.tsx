@@ -2,10 +2,9 @@ import { Class } from "@mui/icons-material";
 import { Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
+import { miscImage } from "@schoolpower/constants/ImageResources";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import React from "react";
-
-const ps_sp = "https://s2.loli.net/2021/12/12/TtSDyjUKZW3mfpr.png";
 
 const howItems: IHowItem[] = [
     {text: <>Use the username and password you provided to login <PowerSchool/>.</>},
@@ -34,7 +33,7 @@ export const How = () => {
                     <Grid item xs={12} sm={8} md={6}>
                         <Stack alignItems={"center"} justifyContent={"center"}>
                             <img style={{maxWidth: "100%"}}
-                                 src={ps_sp}/>
+                                 src={miscImage("ps_sp")}/>
                         </Stack>
                     </Grid>
                     <Grid item xs={12} md={6}>

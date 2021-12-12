@@ -2,13 +2,10 @@ import { Android, Apple } from "@mui/icons-material";
 import { Box, Button, Container, Grid, Link, Stack } from "@mui/material";
 import { Title } from "@schoolpower/components/PageTitle";
 import { androidAPKURL, appStoreURL } from "@schoolpower/constants/AppDownloads";
+import { heroImage } from "@schoolpower/constants/ImageResources";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import React from "react";
-
-import iphone from "/public/iPhone 13 Pro Max - Graphite.png";
-import ipad from "/public/iPad Pro 12.9 - Space Gray - Vertical.png";
-import mac from "/public/MacBook Pro 16-inch.png";
 
 export const Landing = () => {
     return (
@@ -122,14 +119,14 @@ const Images = () => {
                 sx={{display: {xs: "block", sm: "none"}}}
             >
                 <Stack alignItems={"center"}>
-                    <img style={{maxWidth: "min(400px, 100%)"}} src={iphone}/>
+                    <img style={{maxWidth: "min(400px, 100%)"}} src={heroImage("phone", "Japanese")}/>
                 </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
-                <img style={{maxWidth: "100%"}} src={ipad}/>
+                <img style={{maxWidth: "100%"}} src={heroImage("tablet", "Japanese")}/>
             </Grid>
             <Grid item xs={12} sx={{display: {xs: "none", lg: "block"}}}>
-                <img style={{maxWidth: "100%"}} src={mac}/>
+                <img style={{maxWidth: "100%"}} src={heroImage("laptop", "Japanese")}/>
             </Grid>
         </Grid>
     );

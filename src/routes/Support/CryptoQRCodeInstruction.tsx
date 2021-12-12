@@ -41,8 +41,7 @@ export const CryptoQRCodeInstruction = observer(({
                     setTimeout(() => {
                         copied.set(false);
                     }, 2000);
-                })
-                .catch(reason => cannotCopy.set(reason));
+                });
         } catch (e) {
             if (typeof e === "string") {
                 cannotCopy.set(e);

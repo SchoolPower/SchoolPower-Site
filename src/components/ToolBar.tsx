@@ -2,15 +2,13 @@ import { Download, Favorite, Menu } from "@mui/icons-material";
 import { Button, ButtonBase, Container, IconButton, Stack } from "@mui/material";
 import { ButtonLink, LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { Drawer } from "@schoolpower/components/Drawer";
+import { headerLogo } from "@schoolpower/constants/ImageResources";
 import { navRoutes } from "@schoolpower/constants/Routes";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
 import { useLocation } from "react-router-dom";
-
-const logoWithText = "https://s2.loli.net/2021/12/12/i4dESBKpQl2bfxg.png";
-const logo = "https://s2.loli.net/2021/12/12/wJkjuAf68QXxh7b.png";
 
 export const ToolBar = observer(() => {
     const location = useLocation();
@@ -47,14 +45,14 @@ export const ToolBar = observer(() => {
                                     borderRadius: "8px",
                                     display: {xs: "block", sm: "none"}
                                 }}>
-                                    <img height={"24px"} src={logo}/>
+                                    <img height={"24px"} src={headerLogo()}/>
                                 </ButtonBase>
                                 <ButtonBase sx={{
                                     padding: "4px",
                                     borderRadius: "8px",
                                     display: {xs: "none", sm: "block"}
                                 }}>
-                                    <img height={"24px"} src={logoWithText}/>
+                                    <img height={"24px"} src={headerLogo(true)}/>
                                 </ButtonBase>
                             </LinkWrapper>
                         </Stack>

@@ -4,17 +4,13 @@ import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { Footer } from "@schoolpower/components/Footer";
 import { Title } from "@schoolpower/components/PageTitle";
 import { ScrollToTop } from "@schoolpower/components/ScrollToTop";
+import { donationIcon } from "@schoolpower/constants/ImageResources";
 import { AliPay } from "@schoolpower/routes/Support/Alipay";
 import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-
-const paypal = "https://s2.loli.net/2021/12/12/meGB5n9P8aCvb7i.png";
-const wechat = "https://s2.loli.net/2021/12/12/bf27Ln8h136Wk5a.png";
-const alipay = "https://s2.loli.net/2021/12/12/F9LmfhyzBl32qXS.png";
-export const bitcoin = "https://s2.loli.net/2021/12/12/oIDpEFUONkla86i.png";
 
 interface IDonationMethod {
     name: string,
@@ -26,23 +22,23 @@ interface IDonationMethod {
 const donationMethods: IDonationMethod[] = [
     {
         name: "Wechat",
-        imageURL: wechat,
+        imageURL: donationIcon("wechat"),
         targetURL: "/support/wechat"
     },
     {
         name: "Alipay",
-        imageURL: alipay,
+        imageURL: donationIcon("alipay"),
         targetURL: "/support/alipay"
     },
     {
         name: "Paypal",
-        imageURL: paypal,
+        imageURL: donationIcon("paypal"),
         targetURL: "https://paypal.me/schoolpower",
         external: true,
     },
     {
         name: "Bitcoin",
-        imageURL: bitcoin,
+        imageURL: donationIcon("bitcoin"),
         targetURL: "/support/bitcoin"
     },
 ];
