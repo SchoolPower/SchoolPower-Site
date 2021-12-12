@@ -33,15 +33,23 @@ export const CryptoQRCodeInstruction = observer(({
     const cannotCopy = useSimpleState<string | null>(null);
 
     const copyAddress = () => {
-        navigator.clipboard
-            .writeText(address)
-            .then(() => {
-                copied.set(true);
-                setTimeout(() => {
-                    copied.set(false);
-                }, 2000);
-            })
-            .catch(reason => copied.set(reason));
+        try {
+            navigator.clipboard
+                .writeText(address)
+                .then(() => {
+                    copied.set(true);
+                    setTimeout(() => {
+                        copied.set(false);
+                    }, 2000);
+                })
+                .catch(reason => cannotCopy.set(reason));
+        } catch (e) {
+            if (typeof e === "string") {
+                cannotCopy.set(e);
+            } else if (e instanceof Error) {
+                cannotCopy.set(e.message);
+            }
+        }
     };
 
     return (<Stack direction={{
@@ -99,7 +107,7 @@ export const CryptoQRCodeInstruction = observer(({
                 </Stack>
             </Stack>
             <Snackbar open={!!cannotCopy.value} autoHideDuration={6000} onClose={() => cannotCopy.set(null)}>
-                <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{ width: "100%" }}>
+                <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{width: "100%"}}>
                     Copy failed: {cannotCopy.value}. Please copy manually.
                 </Alert>
             </Snackbar>
