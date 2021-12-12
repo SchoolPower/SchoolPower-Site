@@ -3,50 +3,54 @@ import { Background } from "@schoolpower/components/Background";
 import { Footer } from "@schoolpower/components/Footer";
 import { ScrollToTop } from "@schoolpower/components/ScrollToTop";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const sections: { title: string, content: string }[] = [
     {
-        title: "Definition",
-        content: "This Application includes SchoolPower and its affiliated services from first-party channels, third-party channels, or compiled by yourself."
+        title: "agreement.definition.title",
+        content: "agreement.definition.content"
     },
     {
-        title: "Disclaimer",
-        content: "This Application is provided \"as is\" without making any representations or warranties. This Application does not guarantee the completeness and correctness of its contents. Please use it only for reference. This Application does not assume any responsibility for the use of This Application to cause your account to be locked or other exceptions.\n\nThis Application is a third-party client, and is not endorsed, sponsored, affiliated with or otherwise authorized by PowerSchool Group LLC or its affiliates."
+        title: "agreement.disclaimer.title",
+        content: "agreement.disclaimer.content"
     },
     {
-        title: "Privacy",
-        content: "You agree that This Application will record and permanently store the username, the operating system information, and the application's version you use and use it for statistical and analytical purposes."
+        title: "agreement.privacy.title",
+        content: "agreement.privacy.content"
     },
 ];
 
-export const Agreement = () => (
-    <Stack>
-        <ScrollToTop/>
-        <Background color={"background.default"}>
-            <Stack width={"100%"} height={"fit-content"} bgcolor={"primary.main"}>
-                <Container>
-                    <Typography pt={16} pb={6} variant={"h3"} fontWeight={800}>
-                        End User License Agreement
-                    </Typography>
-                </Container>
-            </Stack>
-            <Container>
-                <Stack pt={4} pb={4} spacing={2}>
-                    {sections.map((it, index) => (
-                        <Card key={index} sx={{maxWidth: "800px"}}>
-                            <CardContent>
-                                <Typography gutterBottom variant="h6" component="div">
-                                    {it.title}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{whiteSpace: "pre-line"}}>
-                                    {it.content}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    ))}
+export const Agreement = () => {
+    const {t} = useTranslation();
+    return (
+        <Stack>
+            <ScrollToTop/>
+            <Background color={"background.default"}>
+                <Stack width={"100%"} height={"fit-content"} bgcolor={"primary.main"}>
+                    <Container>
+                        <Typography pt={16} pb={6} variant={"h3"} fontWeight={800}>
+                            End User License Agreement
+                        </Typography>
+                    </Container>
                 </Stack>
-            </Container>
-        </Background>
-        <Footer/>
-    </Stack>
-);
+                <Container>
+                    <Stack pt={4} pb={4} spacing={2}>
+                        {sections.map((it, index) => (
+                            <Card key={index} sx={{maxWidth: "800px"}}>
+                                <CardContent>
+                                    <Typography gutterBottom variant="h6" component="div">
+                                        {t(it.title)}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary" sx={{whiteSpace: "pre-line"}}>
+                                        {t(it.content)}
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </Stack>
+                </Container>
+            </Background>
+            <Footer/>
+        </Stack>
+    );
+};

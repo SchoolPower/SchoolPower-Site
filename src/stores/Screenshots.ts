@@ -1,6 +1,6 @@
 import { DeviceType, IOS_DEVICE_TYPES, IOSDeviceType } from "@schoolpower/constants/DeviceType";
 import rawIOSScreenshotList from "@schoolpower/constants/screenshots/ios/images.json";
-import { Language, LANGUAGES } from "@schoolpower/constants/Language";
+import { Language, LANGUAGES } from "@schoolpower/i18n/Language";
 
 import a from "/public/a.png";
 

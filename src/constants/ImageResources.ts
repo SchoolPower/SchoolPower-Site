@@ -1,4 +1,4 @@
-import { Language } from "@schoolpower/constants/Language";
+import { Language } from "@schoolpower/i18n/Language";
 
 const cdn = "https://cdn.jsdelivr.net/gh/SchoolPower/schoolpower-resources@main/web-images";
 

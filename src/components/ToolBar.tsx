@@ -6,6 +6,7 @@ import { headerLogo } from "@schoolpower/constants/ImageResources";
 import { navRoutes } from "@schoolpower/constants/Routes";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
+import { LanguageSwitch } from "@schoolpower/i18n/LanguageSwitch";
 import { observer } from "mobx-react";
 import React from "react";
 import { useLocation } from "react-router-dom";
@@ -63,6 +64,7 @@ export const ToolBar = observer(() => {
                                 ) : (
                                     <ButtonLink key={index} to={it.to}>{it.name}</ButtonLink>
                                 ))}
+                                <LanguageSwitch/>
                             </Stack>
                             {location.pathname !== "/" ? (
                                 <LinkWrapper to={"/"}>

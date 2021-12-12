@@ -17,6 +17,8 @@
     "babel-polyfill": "^6.26.0",
     "buffer": "^6.0.3",
     "css-loader": "^6.5.1",
+    "i18next": "^21.6.0",
+    "i18next-browser-languagedetector": "^6.1.2",
     "lodash": "^4.17.21",
     "mobx": "^6.3.8",
     "mobx-react": "^7.2.1",
@@ -25,6 +27,7 @@
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.15.0",
     "react-router-dom": "^6.0.2",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.3"
@@ -81,7 +84,6 @@
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0",
-    "webpack-merge": "^5.8.0",
-    "yarn": "^1.22.17"
+    "webpack-merge": "^5.8.0"
   }
 }
