@@ -13,6 +13,29 @@ const en: ResourceLanguage = {
                     }
                 }
             },
+            what: {
+                title: "What is this",
+                subtitle: "SchoolPower is a third-party client for <1/>. We've designed a brand new user " +
+                    "interface tailored to the needs of local students.",
+                items: {
+                    newLook: {
+                        title: "New Look",
+                        subtitle: "Brand new interface design provides you an enjoyable experience.",
+                    },
+                    faster: {
+                        title: "Faster",
+                        subtitle: "70% less time needed to get things updated.",
+                    },
+                    keepInSync: {
+                        title: "Keep in sync",
+                        subtitle: "Data are always in sync with the <1/> server.",
+                    },
+                    reliable: {
+                        title: "Reliable",
+                        subtitle: "Dedicated server handling your requests 24/7.",
+                    },
+                }
+            }
         },
         agreement: {
             definition: {
