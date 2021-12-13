@@ -73,6 +73,34 @@ const en: ResourceLanguage = {
                 }
             },
         },
+        support: {
+            title: "Support",
+            subtitle: "Lorem ipsum dolor sit amet.",
+            wechat: {
+                name: "Wechat Pay",
+                instruction: {
+                    desktop: "微信「扫一扫」中用相机扫描此二维码",
+                    mobile: "保存此二维码至手机相册，并在微信「扫一扫」中从相册选择"
+                }
+            },
+            alipay: {
+                name: "Wechat Pay",
+                instruction: {
+                    desktop: "微信支付宝「扫一扫」中用相机扫描此二维码",
+                    mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择"
+                }
+            },
+            paypal: {
+                name: "Paypal"
+            },
+            bitcoin: {
+                name: "Bitcoin",
+                instruction: "请将捐款发送到以下比特币地址"
+            },
+            save: "Save",
+            saveQRCode: "Save QR Code",
+            copyError: "Copy failed: {{error}}. Please copy manually."
+        },
         agreement: {
             definition: {
                 title: "Definition",

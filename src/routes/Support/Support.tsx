@@ -9,11 +9,12 @@ import { AliPay } from "@schoolpower/routes/Support/Alipay";
 import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
 interface IDonationMethod {
-    name: string,
+    nameKey: string,
     imageURL: string,
     targetURL: string,
     external?: boolean,
@@ -21,23 +22,23 @@ interface IDonationMethod {
 
 const donationMethods: IDonationMethod[] = [
     {
-        name: "Wechat",
+        nameKey: "support.wechat.name",
         imageURL: donationIcon("wechat"),
         targetURL: "/support/wechat"
     },
     {
-        name: "Alipay",
+        nameKey: "support.alipay.name",
         imageURL: donationIcon("alipay"),
         targetURL: "/support/alipay"
     },
     {
-        name: "Paypal",
+        nameKey: "support.paypal.name",
         imageURL: donationIcon("paypal"),
         targetURL: "https://paypal.me/schoolpower",
         external: true,
     },
     {
-        name: "Bitcoin",
+        nameKey: "support.bitcoin.name",
         imageURL: donationIcon("bitcoin"),
         targetURL: "/support/bitcoin"
     },
@@ -59,6 +60,7 @@ export const Support = () => (
 );
 
 const SupportPage = () => {
+    const {t} = useTranslation();
     const ImageButton = ({imageURL, href}: {
         imageURL: string,
         href?: string,
@@ -83,8 +85,8 @@ const SupportPage = () => {
                     lg: "max(56px, 12vh)"
                 }} pb={5} container item justifyContent={"center"}>
                     <Title
-                        title={"Support Us"}
-                        subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at imperdiet magna, in ornare ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris nec eros felis. Interdum et malesuada fames ac ante ipsum primis in faucibus."}
+                        title={t("support.title")}
+                        subtitle={t("support.subtitle")}
                     />
                 </Grid>
                 <Grid

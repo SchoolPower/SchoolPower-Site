@@ -12,8 +12,10 @@ import {
     Typography
 } from "@mui/material";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
+import { Translate } from "@schoolpower/hooks/useTranslate";
 import { observer } from "mobx-react";
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 export interface QRCodeInstructionProps {
@@ -31,6 +33,7 @@ export const CryptoQRCodeInstruction = observer(({
 }: QRCodeInstructionProps) => {
     const copied = useSimpleState(false);
     const cannotCopy = useSimpleState<string | null>(null);
+    const {t} = useTranslation();
 
     const copyAddress = () => {
         try {
@@ -101,13 +104,17 @@ export const CryptoQRCodeInstruction = observer(({
                         marginTop: 2,
                         width: "fit-content",
                     }} startIcon={<Download/>} href={qrCodeImageURL} download>
-                        Save QR Code
+                        {t("support.saveQRCode")}
                     </Button>
                 </Stack>
             </Stack>
             <Snackbar open={!!cannotCopy.value} autoHideDuration={6000} onClose={() => cannotCopy.set(null)}>
                 <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{width: "100%"}}>
-                    Copy failed: {cannotCopy.value}. Please copy manually.
+                    <Trans
+                        i18nKey="support.copyError"
+                        defaults="Copy failed: {{error}}. Please copy manually."
+                        values={{ error: cannotCopy.value}}
+                    />
                 </Alert>
             </Snackbar>
         </Stack>
