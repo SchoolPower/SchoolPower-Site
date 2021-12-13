@@ -10,3 +10,7 @@
 .splide__pagination__page.is-active {
    background-color: deeppink;
  }
+
+.flag-icon {
+  max-width: 100%;
+}
