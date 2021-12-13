@@ -35,6 +35,19 @@ const en: ResourceLanguage = {
                         subtitle: "Dedicated server handling your requests 24/7.",
                     },
                 }
+            },
+            gallery: {
+                title: "Gallery",
+            },
+            how: {
+                title: "How does it work",
+                subtitle: "SchoolPower displays what's originally on the <1/> website.",
+                items: {
+                    login: "Use the username and password you provided to login <1/>.",
+                    fetch: "Fetch the information using their API and send it to your client.",
+                    display: "Display the data on your devices with easy-to-use interfaces.",
+                },
+                userAgreement: "User Agreement",
             }
         },
         agreement: {

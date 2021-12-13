@@ -4,13 +4,24 @@ import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import { miscImage } from "@schoolpower/constants/ImageResources";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
+import { Translate } from "@schoolpower/hooks/useTranslate";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-const howItems: IHowItem[] = [
-    {text: <>Use the username and password you provided to login <PowerSchool/>.</>},
-    {text: "Fetch the information using their API and send it to your client."},
-    {text: "Display the data on your devices with easy-to-use interfaces."},
-];
+const useHowItems = (): IHowItem[] => {
+    const {t} = useTranslation();
+    return [
+        {
+            text: (
+                <Translate i18nKey={"home.how.items.login"}>
+                    Use the username and password you provided to login <PowerSchool/>.
+                </Translate>
+            )
+        },
+        {text: t("home.how.items.fetch")},
+        {text: t("home.how.items.display")},
+    ];
+};
 
 interface IHowItem {
     text: React.ReactNode | string;
@@ -22,12 +33,18 @@ interface IHowItemProps {
 }
 
 export const How = () => {
+    const howItems = useHowItems();
+    const {t} = useTranslation();
     return (
         <Stack sx={{bgcolor: "primary"}} pt={28}>
             <Container>
                 <SectionHeader
-                    title={"How does it work"}
-                    subtitle={<>SchoolPower displays what&apos;s originally on the <PowerSchool/> website.</>}
+                    title={t("home.how.title")}
+                    subtitle={
+                        <Translate i18nKey={"home.how.subtitle"}>
+                            SchoolPower displays what&apos;s originally on the <PowerSchool/> website.
+                        </Translate>
+                    }
                 />
                 <Grid container pt={7} alignItems={"center"} justifyContent={"center"}>
                     <Grid item xs={12} sm={8} md={6}>
@@ -72,7 +89,7 @@ export const How = () => {
                                     variant={"contained"}
                                     startIcon={<Class/>}
                                 >
-                                    User Agreement
+                                    {t("home.how.userAgreement")}
                                 </Button>
                             </LinkWrapper>
                         </Stack>

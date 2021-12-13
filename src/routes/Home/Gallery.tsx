@@ -8,16 +8,18 @@ import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
 import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
 import { observer } from "mobx-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const useDeviceState = () => useSimpleState<DeviceType>("iPhone");
 
 export const Gallery = () => {
     const device = useDeviceState();
+    const {t} = useTranslation();
     return (
         <Stack sx={{bgcolor: "primary"}} pt={28}>
             <Stack justifyContent={"center"}>
                 <Typography variant={"h4"} textAlign={"center"} fontWeight={600} pb={4}>
-                    Gallery
+                    {t("home.gallery.title")}
                 </Typography>
                 <DeviceSelect device={device}/>
                 <DeviceCarousel device={device}/>
