@@ -60,7 +60,7 @@ const ja: ResourceLanguage = {
                 userAgreement: "利用規約",
             },
             who: {
-                title: "誰がやった",
+                title: "誰が作った",
                 subtitle: "MLES-ZJ 卒業生によって開発されました",
             },
             credits: {
