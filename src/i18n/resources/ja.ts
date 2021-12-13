@@ -79,15 +79,15 @@ const ja: ResourceLanguage = {
             wechat: {
                 name: "ウィーチャットペイ",
                 instruction: {
-                    desktop: "微信「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在微信「扫一扫」中从相册选择"
+                    desktop: "カメラを使用して、Wechat でこのQRコードをスキャンする",
+                    mobile: "このQRコードを保存し、Wechat で「アルバムから選択」を選択する"
                 }
             },
             alipay: {
                 name: "Alipay",
                 instruction: {
-                    desktop: "支付宝「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择"
+                    desktop: "カメラを使用して、Alipay でこのQRコードをスキャンする",
+                    mobile: "このQRコードを保存し、Alipay で「アルバムから選択」を選択する"
                 }
             },
             paypal: {
@@ -95,7 +95,7 @@ const ja: ResourceLanguage = {
             },
             bitcoin: {
                 name: "ビットコイン",
-                instruction: "请将捐款发送到以下比特币地址"
+                instruction: "以下のビットコインアドレスに寄付を送ってください"
             },
             save: "保存する",
             saveQRCode: "QRコードを保存する",
@@ -105,7 +105,7 @@ const ja: ResourceLanguage = {
         agreement: {
             title: "エンドユーザー契約",
             definition: {
-                title: "定义",
+                title: "定義",
                 content: "本製品及び付属のメディアに含まれるソフトウェア（以下「本ソフトウェア」という）は、" +
                     "SchoolPower とその関連サービスが含まれています。",
             },

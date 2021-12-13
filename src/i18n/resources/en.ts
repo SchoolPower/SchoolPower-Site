@@ -80,15 +80,15 @@ const en: ResourceLanguage = {
             wechat: {
                 name: "Wechat Pay",
                 instruction: {
-                    desktop: "微信「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在微信「扫一扫」中从相册选择"
+                    desktop: "Use camera to scan this QR code in Wechat Scan",
+                    mobile: "Save this QR code to your phone and choose \"select from album\" in Wechat Scan"
                 }
             },
             alipay: {
                 name: "Alipay",
                 instruction: {
-                    desktop: "微信支付宝「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择"
+                    desktop: "Use camera to scan this QR code in Alipay Scan",
+                    mobile: "Save this QR code to your phone and choose \"select from album\" in Alipay Scan"
                 }
             },
             paypal: {
@@ -96,7 +96,7 @@ const en: ResourceLanguage = {
             },
             bitcoin: {
                 name: "Bitcoin",
-                instruction: "请将捐款发送到以下比特币地址"
+                instruction: "Please send your donation to the following Bitcoin address"
             },
             save: "Save",
             saveQRCode: "Save QR Code",
