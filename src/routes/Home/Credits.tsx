@@ -16,6 +16,7 @@ import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface ICredit {
     name: string,
@@ -23,14 +24,14 @@ interface ICredit {
 }
 
 interface ICreditSection {
-    title: string,
+    titleKey: string,
     icon: React.ReactElement,
     credits: ICredit[],
 }
 
 const creditSections: ICreditSection[] = [
     {
-        title: "Bug Reports",
+        titleKey: "home.credits.sections.bugReports",
         icon: <BugReport color={"info"}/>,
         credits: [
             {
@@ -60,12 +61,12 @@ const creditSections: ICreditSection[] = [
         ],
     },
     {
-        title: "Test Accounts",
+        titleKey: "home.credits.sections.testAccounts",
         icon: <AccountCircle color={"info"}/>,
         credits: []
     },
     {
-        title: "Valuable Suggestions",
+        titleKey: "home.credits.sections.suggestions",
         icon: <Message color={"info"}/>,
         credits: [
             {
@@ -77,6 +78,7 @@ const creditSections: ICreditSection[] = [
 ];
 
 const CreditSection = observer(({section}: { section: ICreditSection }) => {
+    const {t} = useTranslation();
     const open = useSimpleState(section.credits.length > 0);
     return (
         <>
@@ -84,7 +86,7 @@ const CreditSection = observer(({section}: { section: ICreditSection }) => {
                 <ListItemIcon>
                     {section.icon}
                 </ListItemIcon>
-                <ListItemText primary={section.title}/>
+                <ListItemText primary={t(section.titleKey)}/>
                 {open.value ? <ExpandLess/> : <ExpandMore/>}
             </ListItemButton>
             <Collapse in={open.value} timeout="auto" unmountOnExit>
@@ -102,12 +104,13 @@ const CreditSection = observer(({section}: { section: ICreditSection }) => {
 
 
 export const Credits = () => {
+    const {t} = useTranslation();
     return (
         <Stack sx={{bgcolor: "primary.main"}} pt={13} pb={13}>
             <Container>
                 <SectionHeader
-                    title={"Credits"}
-                    subtitle={"Thank you to the following people for providing help and support with the development and maintenance of SchoolPower."}
+                    title={t("home.credits.title")}
+                    subtitle={t("home.credits.subtitle")}
                 />
                 <Grid container justifyContent={"center"} pt={8} pb={4}>
                     <Grid item xs={12} sm={8} lg={6}>

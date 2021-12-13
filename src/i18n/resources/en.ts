@@ -2,6 +2,15 @@ import { ResourceLanguage } from "i18next";
 
 const en: ResourceLanguage = {
     translation: {
+        navs: {
+            sourceCode: "Source Code",
+            web: "Web (Beta)",
+            contactUs: "Contact Us",
+        },
+        toolBar: {
+            supportUs: "Support Us",
+            download: "Download",
+        },
         home: {
             landing: {
                 title: "May SchoolPower<1>2.0</1><br/>Be With You",
@@ -48,7 +57,21 @@ const en: ResourceLanguage = {
                     display: "Display the data on your devices with easy-to-use interfaces.",
                 },
                 userAgreement: "User Agreement",
-            }
+            },
+            who: {
+                title: "Who made this",
+                subtitle: "Built by graduates of MLES-ZJ",
+            },
+            credits: {
+                title: "Credits",
+                subtitle: "Thank you to the following people for providing help and support with the development " +
+                    "and maintenance of SchoolPower.",
+                sections: {
+                    bugReports: "Bug Reports",
+                    testAccounts: "Test Accounts",
+                    suggestions: "Valuable Suggestions",
+                }
+            },
         },
         agreement: {
             definition: {

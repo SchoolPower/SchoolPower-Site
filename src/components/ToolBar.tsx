@@ -9,11 +9,13 @@ import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { LanguageSwitch } from "@schoolpower/i18n/LanguageSwitch";
 import { observer } from "mobx-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 
 export const ToolBar = observer(() => {
     const location = useLocation();
     const drawerOpen = useSimpleState(false);
+    const {t} = useTranslation();
     return (
         <>
             <Stack justifyContent={"center"} sx={{
@@ -60,9 +62,9 @@ export const ToolBar = observer(() => {
                         <Stack direction={"row"} ml={"auto"} spacing={3} alignItems={"center"}>
                             <Stack direction={"row"} spacing={3} sx={{display: {xs: "none", md: "block"}}}>
                                 {navRoutes.map((it, index) => it.external ? (
-                                    <Button color="inherit" href={it.to}>{it.name}</Button>
+                                    <Button color="inherit" href={it.to}>{t(it.nameKey)}</Button>
                                 ) : (
-                                    <ButtonLink key={index} to={it.to}>{it.name}</ButtonLink>
+                                    <ButtonLink key={index} to={it.to}>{t(it.nameKey)}</ButtonLink>
                                 ))}
                                 <LanguageSwitch/>
                             </Stack>
@@ -78,7 +80,7 @@ export const ToolBar = observer(() => {
                                         color={"secondary"}
                                         startIcon={<Download/>}
                                     >
-                                        Download
+                                        {t("toolBar.download")}
                                     </Button>
                                 </LinkWrapper>
                             ) : (
@@ -93,7 +95,7 @@ export const ToolBar = observer(() => {
                                         color={"secondary"}
                                         startIcon={<Favorite/>}
                                     >
-                                        Support Us
+                                        {t("toolBar.supportUs")}
                                     </Button>
                                 </LinkWrapper>
                             )}
