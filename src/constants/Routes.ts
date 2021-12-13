@@ -1,22 +1,22 @@
 export interface IRoute {
     to: string,
-    name: string,
+    nameKey: string,
     external?: boolean,
 }
 
 export const navRoutes: IRoute[] = [
     {
-        name: "Source Code",
+        nameKey: "navs.sourceCode",
         to: "",
         external: true,
     },
     {
-        name: "Web (Beta)",
+        nameKey: "navs.web",
         to: "",
         external: true,
     },
     {
-        name: "Contact Us",
+        nameKey: "navs.contactUs",
         to: "",
     },
 ];

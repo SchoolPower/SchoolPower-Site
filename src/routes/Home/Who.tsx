@@ -1,6 +1,7 @@
 import { Avatar, ButtonBase, Container, Stack, Typography } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const whoItems: IWhoItem[] = [
     {
@@ -22,12 +23,13 @@ interface IWhoItem {
 }
 
 export const Who = () => {
+    const {t} = useTranslation();
     return (
         <Stack sx={{bgcolor: "primary"}} pt={28} pb={28}>
             <Container>
                 <SectionHeader
-                    title={"Who made this"}
-                    subtitle={"Built by graduates of MLES-ZJ"}
+                    title={t("home.who.title")}
+                    subtitle={t("home.who.subtitle")}
                 />
                 <Stack
                     pt={12}

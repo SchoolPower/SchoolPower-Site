@@ -1,59 +1,61 @@
 import { Download, Laptop, PhoneIphone } from "@mui/icons-material";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export interface QRCodeInstructionProps {
     qrCodeImageURL: string;
-    desktopInstruction: string;
-    mobileInstruction: string;
+    instructionKey: string
 }
 
 export const QRCodeInstruction = ({
     qrCodeImageURL,
-    desktopInstruction,
-    mobileInstruction,
-}: QRCodeInstructionProps) => (
-    <Stack direction={{
-        xs: "column",
-        sm: "row",
-    }} alignItems={"center"} pt={5} spacing={5}>
-        <Grid
-            container
-            sx={{
-                width: "238px",
-                aspectRatio: "1",
-                bgcolor: "white",
-                borderRadius: "30px",
-            }}
-            alignItems={"center"}
-            justifyContent={"center"}
-        >
-            <img style={{
-                width: "90%",
-                height: "90%",
-            }} src={qrCodeImageURL}/>
-        </Grid>
-        <Stack spacing={3}>
-            <InstructionItem
-                icon={<Laptop color={"secondary"}/>}
-                text={desktopInstruction}
-            />
-            <Stack>
+    instructionKey,
+}: QRCodeInstructionProps) => {
+    const {t} = useTranslation();
+    return (
+        <Stack direction={{
+            xs: "column",
+            sm: "row",
+        }} alignItems={"center"} pt={5} spacing={5}>
+            <Grid
+                container
+                sx={{
+                    width: "238px",
+                    aspectRatio: "1",
+                    bgcolor: "white",
+                    borderRadius: "30px",
+                }}
+                alignItems={"center"}
+                justifyContent={"center"}
+            >
+                <img style={{
+                    width: "90%",
+                    height: "90%",
+                }} src={qrCodeImageURL}/>
+            </Grid>
+            <Stack spacing={3}>
                 <InstructionItem
-                    icon={<PhoneIphone color={"secondary"}/>}
-                    text={mobileInstruction}
+                    icon={<Laptop color={"secondary"}/>}
+                    text={t(`${instructionKey}.desktop`)}
                 />
-                <Button variant={"contained"} color={"secondary"} sx={{
-                    marginLeft: 8,
-                    marginTop: 2,
-                    width: "fit-content",
-                }} startIcon={<Download/>} href={qrCodeImageURL} download>
-                    Save
-                </Button>
+                <Stack>
+                    <InstructionItem
+                        icon={<PhoneIphone color={"secondary"}/>}
+                        text={t(`${instructionKey}.mobile`)}
+                    />
+                    <Button variant={"contained"} color={"secondary"} sx={{
+                        marginLeft: 8,
+                        marginTop: 2,
+                        width: "fit-content",
+                    }} startIcon={<Download/>} href={qrCodeImageURL} download>
+                        {t("support.save")}
+                    </Button>
+                </Stack>
             </Stack>
         </Stack>
-    </Stack>
-);
+    );
+};
 
 interface IInstructionItemProps {
     icon: React.ReactNode;

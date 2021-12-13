@@ -1,6 +1,5 @@
-import { getLocale } from "@schoolpower/i18n";
-import { useTranslation } from "react-i18next";
+import { useLocale } from "@schoolpower/hooks/useLocale";
 
 export function useLanguage() {
-    return getLocale(useTranslation().i18n).language;
+    return useLocale().language;
 }

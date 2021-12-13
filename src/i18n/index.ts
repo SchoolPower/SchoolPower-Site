@@ -1,10 +1,9 @@
-import { Language } from "@schoolpower/i18n/Language";
 import { Locale, LOCALE_IDENTIFIERS, localeByIdentifier } from "@schoolpower/i18n/Locale";
 import en from "@schoolpower/i18n/resources/en";
 import ja from "@schoolpower/i18n/resources/ja";
 import zhHans from "@schoolpower/i18n/resources/zh-Hans";
 import zhHant from "@schoolpower/i18n/resources/zh-Hant";
-import i18next, { changeLanguage, use, i18n } from "i18next";
+import i18next, { changeLanguage, i18n, use } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 
@@ -21,6 +20,9 @@ use(LanguageDetector)
         fallbackLng: "en",
         interpolation: {
             escapeValue: false,
+        },
+        react: {
+            transSupportBasicHtmlNodes: true,
         }
     });
 
