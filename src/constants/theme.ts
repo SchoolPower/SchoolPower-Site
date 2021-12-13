@@ -1,7 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 import { DeviceType } from "@schoolpower/constants/DeviceType";
 import { SplideProps } from "@splidejs/react-splide";
+
 import "./styles";
+import "./theme.css";
 
 export const MUITheme = createTheme({
     palette: {
