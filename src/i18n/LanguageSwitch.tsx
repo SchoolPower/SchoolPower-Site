@@ -1,5 +1,5 @@
-import { IconButton, Menu, MenuItem, Stack } from "@mui/material";
-import { Spacer } from "@schoolpower/components/Spacer";
+import { Language } from "@mui/icons-material";
+import { Button, Menu, MenuItem } from "@mui/material";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { getLocale, setLocale } from "@schoolpower/i18n/index";
 import { locales } from "@schoolpower/i18n/Locale";
@@ -12,7 +12,8 @@ export const LanguageSwitch = observer(() => {
     const close = () => anchor.set(null);
     return (
         <>
-            <IconButton
+            <Button
+                startIcon={<Language/>}
                 color={"inherit"}
                 id="basic-button"
                 aria-controls="basic-menu"
@@ -20,10 +21,8 @@ export const LanguageSwitch = observer(() => {
                 aria-expanded={open ? "true" : undefined}
                 onClick={(e) => anchor.set(e.currentTarget)}
             >
-                <div style={{width: 24}}>
-                    {getLocale().icon}
-                </div>
-            </IconButton>
+                {getLocale().name}
+            </Button>
             <Menu
                 id="basic-menu"
                 anchorEl={anchor.value}
@@ -38,11 +37,7 @@ export const LanguageSwitch = observer(() => {
                         setLocale(it);
                         close();
                     }}>
-                        <Stack direction={"row"}>
-                            {it.icon}
-                            <Spacer width={16}/>
-                            {it.name}
-                        </Stack>
+                        {it.name}
                     </MenuItem>
                 ))}
             </Menu>

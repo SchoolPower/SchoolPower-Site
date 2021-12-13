@@ -66,6 +66,8 @@ export const ToolBar = observer(() => {
                                 ) : (
                                     <ButtonLink key={index} to={it.to}>{t(it.nameKey)}</ButtonLink>
                                 ))}
+                            </Stack>
+                            <Stack direction={"row"} spacing={3} sx={{display: {xs: "none", sm: "block"}}}>
                                 <LanguageSwitch/>
                             </Stack>
                             {location.pathname !== "/" ? (

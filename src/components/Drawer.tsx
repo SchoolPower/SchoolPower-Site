@@ -1,6 +1,7 @@
-import { Box, Drawer as MaterialDrawer, List, ListItem, ListItemText } from "@mui/material";
+import { Box, Drawer as MaterialDrawer, List, ListItem, ListItemText, Stack } from "@mui/material";
 import { LinkWrapper } from "@schoolpower/components/ButtonLink";
 import { navRoutes } from "@schoolpower/constants/Routes";
+import { LanguageSwitch } from "@schoolpower/i18n/LanguageSwitch";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -12,7 +13,8 @@ export const Drawer = ({open, onClose}: { open: boolean, onClose: () => void }) 
             open={open}
             onClose={onClose}
         >
-            <Box
+            <Stack
+                minHeight={"100%"}
                 width={250}
                 role="presentation"
             >
@@ -29,7 +31,10 @@ export const Drawer = ({open, onClose}: { open: boolean, onClose: () => void }) 
                         </LinkWrapper>
                     ))}
                 </List>
-            </Box>
+                <Stack mt={"auto"} p={2} sx={{display: {xs: "block", sm: "none"}}}>
+                    <LanguageSwitch/>
+                </Stack>
+            </Stack>
         </MaterialDrawer>
     );
 };
