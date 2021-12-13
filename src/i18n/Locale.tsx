@@ -1,3 +1,4 @@
+import { AppStoreRegion } from "@schoolpower/constants/AppDownloads";
 import { Language } from "@schoolpower/i18n/Language";
 import React from "react";
 
@@ -12,6 +13,7 @@ export interface Locale {
     language: Language,
     name: string,
     icon: string | React.ReactNode,
+    region: AppStoreRegion,
 }
 
 export const locales: Locale[] = [
@@ -20,24 +22,28 @@ export const locales: Locale[] = [
         language: "English",
         name: "English",
         icon: <span className="flag-icon flag-icon-ca"/>,
+        region: "ca",
     },
     {
         identifier: "zh-Hans",
         language: "Chinese Simplified",
         name: "简体中文",
         icon: <span className="flag-icon flag-icon-cn"/>,
+        region: "cn",
     },
     {
         identifier: "zh-Hant",
         language: "Chinese Traditional",
         name: "繁體中文",
         icon: <span className="flag-icon flag-icon-tw"/>,
+        region: "tw",
     },
     {
         identifier: "ja",
         language: "Japanese",
         name: "日本語",
         icon: <span className="flag-icon flag-icon-jp"/>,
+        region: "jp",
     },
 ];
 

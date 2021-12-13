@@ -1,4 +1,4 @@
-type AppStoreRegion = "ca" | "cn" | "tw" | "jp";
+export type AppStoreRegion = "ca" | "cn" | "tw" | "jp";
 
 export const appStoreURL = (region?: AppStoreRegion) => `https://apps.apple.com/${
     region ? `${region}/` : ""

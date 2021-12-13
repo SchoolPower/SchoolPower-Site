@@ -2,6 +2,12 @@ import { ResourceLanguage } from "i18next";
 
 const zhHans: ResourceLanguage = {
     translation: {
+        home: {
+            landing: {
+                title: "愿 SchoolPower<1>2.0</1><br/>与你同在",
+                subtitle: "一个 <1/> 的替代客户端",
+            },
+        },
         agreement: {
             definition: {
                 title: "定义",

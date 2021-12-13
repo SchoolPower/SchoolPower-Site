@@ -5,7 +5,8 @@ import { androidAPKURL, appStoreURL } from "@schoolpower/constants/AppDownloads"
 import { heroImage } from "@schoolpower/constants/ImageResources";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
-import { useLanguage } from "@schoolpower/hooks/useLanguage";
+import { useLocale } from "@schoolpower/hooks/useLocale";
+import { Translate } from "@schoolpower/hooks/useTranslate";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -17,8 +18,16 @@ export const Landing = () => {
                 <Container>
                     <Grid pt={6} container justifyContent={"center"} alignItems={"center"}>
                         <Title
-                            title={<>May SchoolPower<sup>2.0</sup><br/>Be With You</>}
-                            subtitle={<>An alternative client for <PowerSchool/></>}
+                            title={
+                                <Translate i18nKey={"home.landing.title"}>
+                                    May SchoolPower<sup>2.0</sup><br/>Be With You
+                                </Translate>
+                            }
+                            subtitle={
+                                <Translate i18nKey={"home.landing.subtitle"}>
+                                    An alternative client for <PowerSchool/>
+                                </Translate>
+                            }
                         />
                     </Grid>
                     <Downloads/>
@@ -46,9 +55,10 @@ const Background = () => {
 
 const Downloads = () => {
     const IOSDownload = () => {
+        const locale = useLocale();
         return (
             <DownloadButton
-                href={appStoreURL("jp")}
+                href={appStoreURL(locale.region)}
                 icon={<Apple/>}
                 text={"App Store"}
             />
@@ -56,15 +66,16 @@ const Downloads = () => {
     };
 
     const AndroidDownload = () => {
+        const {t} = useTranslation();
         return (
             <Stack alignItems={"center"}>
                 <DownloadButton
                     disabled
                     icon={<Android/>}
-                    text={"Android (Soon)"}
+                    text={t("home.landing.download.android.button")}
                 />
                 <Link href={androidAPKURL} underline={"hover"} color={"info.main"} variant={"caption"}>
-                    Download v1.5
+                    {t("home.landing.download.android.alt")}
                 </Link>
             </Stack>
         );

@@ -2,6 +2,18 @@ import { ResourceLanguage } from "i18next";
 
 const en: ResourceLanguage = {
     translation: {
+        home: {
+            landing: {
+                title: "May SchoolPower<1>2.0</1><br/>Be With You",
+                subtitle: "An alternative client for <1/>",
+                download: {
+                    android: {
+                        button: "Android (Soon)",
+                        alt: "Download v1.5"
+                    }
+                }
+            },
+        },
         agreement: {
             definition: {
                 title: "Definition",
