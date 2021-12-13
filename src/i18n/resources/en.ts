@@ -2,6 +2,7 @@ import { ResourceLanguage } from "i18next";
 
 const en: ResourceLanguage = {
     translation: {
+        copyright: "Built with ❤️ by SchoolPower Studio",
         navs: {
             sourceCode: "Source Code",
             web: "Web (Beta)",
@@ -29,7 +30,7 @@ const en: ResourceLanguage = {
                 items: {
                     newLook: {
                         title: "New Look",
-                        subtitle: "Brand new interface design provides you an enjoyable experience.",
+                        subtitle: "Brand new interface design provides you with an enjoyable experience.",
                     },
                     faster: {
                         title: "Faster",
@@ -74,7 +75,7 @@ const en: ResourceLanguage = {
             },
         },
         support: {
-            title: "Support",
+            title: "Support Us",
             subtitle: "Lorem ipsum dolor sit amet.",
             wechat: {
                 name: "Wechat Pay",
@@ -84,7 +85,7 @@ const en: ResourceLanguage = {
                 }
             },
             alipay: {
-                name: "Wechat Pay",
+                name: "Alipay",
                 instruction: {
                     desktop: "微信支付宝「扫一扫」中用相机扫描此二维码",
                     mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择"
@@ -99,9 +100,11 @@ const en: ResourceLanguage = {
             },
             save: "Save",
             saveQRCode: "Save QR Code",
-            copyError: "Copy failed: {{error}}. Please copy manually."
+            copyError: "Copy failed: {{error}}. Please copy manually.",
+            thanks: "Thank you so much for your support!",
         },
         agreement: {
+            title: "End User License Agreement",
             definition: {
                 title: "Definition",
                 content: "This Application includes SchoolPower and its affiliated services from first-party " +

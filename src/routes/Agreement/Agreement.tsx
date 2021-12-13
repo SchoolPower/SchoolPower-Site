@@ -29,7 +29,7 @@ export const Agreement = () => {
                 <Stack width={"100%"} height={"fit-content"} bgcolor={"primary.main"}>
                     <Container>
                         <Typography pt={16} pb={6} variant={"h3"} fontWeight={800}>
-                            End User License Agreement
+                            {t("agreement.title")}
                         </Typography>
                     </Container>
                 </Stack>
