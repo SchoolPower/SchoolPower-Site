@@ -74,7 +74,8 @@ const zhHant: ResourceLanguage = {
         },
         support: {
             title: "支持我們",
-            subtitle: "Lorem ipsum dolor sit amet.",
+            subtitle: "拋開大量的時間成本不計，僅是高昂的蘋果開發者年費和服務器費用就達每年數千元。如果您覺得這款 App 幫到了您，" +
+                "歡迎您贊助我們，或者將其介紹給您身邊的同學。感激不盡 (´,,•ω•,,)♡。",
             wechat: {
                 name: "微信支付",
                 instruction: {

@@ -76,7 +76,10 @@ const en: ResourceLanguage = {
         },
         support: {
             title: "Support Us",
-            subtitle: "Lorem ipsum dolor sit amet.",
+            subtitle: "The expensive Apple Developers fee and server fee cost us hundreds of dollars every year, " +
+                "not to mention the time we devoted ourselves to the development. " +
+                "If you feel that this app has helped you, you are more than welcome to donate us, " +
+                "or introduce this app to the students around you. Any help would be much appreciated ( ́,,•ω•,,)♡.",
             wechat: {
                 name: "Wechat Pay",
                 instruction: {

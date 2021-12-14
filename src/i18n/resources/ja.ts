@@ -75,7 +75,9 @@ const ja: ResourceLanguage = {
         },
         support: {
             title: "私たちを応援する",
-            subtitle: "Lorem ipsum dolor sit amet.",
+            subtitle: "開発に費やした時間は言うまでもなく、高価なApple開発者料金とサーバー料金は、毎年数百ドルもかかります。" +
+                "このアプリがあなたを助けたと感じたら、私たちを寄付したり、周りの学生にこのアプリを紹介したりはとって大きな助けになります。" +
+                "どんな助けでもありがたいです（́ ,,•ω•,,）♡。",
             wechat: {
                 name: "ウィーチャットペイ",
                 instruction: {
