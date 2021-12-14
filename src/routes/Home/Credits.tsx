@@ -1,4 +1,4 @@
-import { AccountCircle, BugReport, ExpandLess, ExpandMore, Message } from "@mui/icons-material";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import {
     Avatar,
     Card,
@@ -13,73 +13,17 @@ import {
     Stack
 } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
+import { credits } from "@schoolpower/constants/credits/credits";
+import { creditIdsByType, creditSections, ICreditSection } from "@schoolpower/constants/credits/sections";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface ICredit {
-    name: string,
-    imageURL: string,
-}
-
-interface ICreditSection {
-    titleKey: string,
-    icon: React.ReactElement,
-    credits: ICredit[],
-}
-
-const creditSections: ICreditSection[] = [
-    {
-        titleKey: "home.credits.sections.bugReports",
-        icon: <BugReport color={"info"}/>,
-        credits: [
-            {
-                name: "さかまたクロヱ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-            {
-                name: "ほしまちすいせい",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-            {
-                name: "アンジュカトリナ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-            {
-                name: "リゼヘルエスタ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-            {
-                name: "いぬいとこ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-            {
-                name: "なきりあやめ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-        ],
-    },
-    {
-        titleKey: "home.credits.sections.testAccounts",
-        icon: <AccountCircle color={"info"}/>,
-        credits: []
-    },
-    {
-        titleKey: "home.credits.sections.suggestions",
-        icon: <Message color={"info"}/>,
-        credits: [
-            {
-                name: "さかまたクロヱ",
-                imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg"
-            },
-        ]
-    },
-];
-
 const CreditSection = observer(({section}: { section: ICreditSection }) => {
     const {t} = useTranslation();
-    const open = useSimpleState(section.credits.length > 0);
+    const creditIds = creditIdsByType.get(section.type) ?? [];
+    const open = useSimpleState(creditIds.length > 0);
     return (
         <>
             <ListItemButton onClick={open.toggle}>
@@ -91,9 +35,16 @@ const CreditSection = observer(({section}: { section: ICreditSection }) => {
             </ListItemButton>
             <Collapse in={open.value} timeout="auto" unmountOnExit>
                 <Grid container p={2} minHeight={56} spacing={1}>
-                    {section.credits.map((it, index) => (
+                    {creditIds.map((it, index) => (
                         <Grid key={index} item>
-                            <Chip avatar={<Avatar src={it.imageURL}/>} label={it.name}/>
+                            <Chip avatar={
+                                <Avatar src={credits[it].imageURL} sx={{
+                                    color: "white !important",
+                                    bgcolor: credits[it].color
+                                }}>
+                                    {!credits[it].imageURL ? credits[it].name.charAt(0) : ""}
+                                </Avatar>
+                            } label={credits[it].name}/>
                         </Grid>
                     ))}
                 </Grid>
