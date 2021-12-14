@@ -1,16 +1,18 @@
 import { ChevronRight } from "@mui/icons-material";
 import { Container, Fab, Stack, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
-import { DeviceType, IOS_DEVICE_TYPES } from "@schoolpower/constants/DeviceType";
+import { DeviceType, IOS_DEVICE_TYPES, IOSDeviceType } from "@schoolpower/constants/DeviceType";
 import { splideOptions } from "@schoolpower/constants/theme";
 import { useLanguage } from "@schoolpower/hooks/useLanguage";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
+import { hydrating } from "@schoolpower/index";
 import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
 import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
 import { observer } from "mobx-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const useDeviceState = () => useSimpleState<DeviceType>("iPhone");
+// TODO Enable when android is available
+const useDeviceState = () => useSimpleState<IOSDeviceType>("iPhone");
 
 export const Gallery = () => {
     const device = useDeviceState();
@@ -32,33 +34,37 @@ interface IDeviceStateProps {
     device: ReturnType<typeof useDeviceState>;
 }
 
-const DeviceSelect = observer(({device}: IDeviceStateProps) => (
-    <Stack alignItems={"center"} pb={4}>
-        <ToggleButtonGroup
-            color="secondary"
-            value={device.value}
-            onChange={(_, value: DeviceType | null) => {
-                if (value !== null && value !== device.value) {
-                    device.set(value);
-                }
-            }}
-            aria-label="device"
-            exclusive
-        >
-            {/*TODO Enable when android is available*/}
-            {IOS_DEVICE_TYPES.map(it => (
-                <ToggleButton
-                    key={it}
-                    value={it}
-                    aria-label={it}
-                    sx={{width: "min(120px, 20vw)"}}
-                >
-                    {it}
-                </ToggleButton>
-            ))}
-        </ToggleButtonGroup>
-    </Stack>
-));
+const DeviceSelect = observer(({device}: IDeviceStateProps) => {
+    // TODO Enable when android is available
+    const buttonPercentageWidth = 90 / IOS_DEVICE_TYPES.length;
+    return (
+        <Stack alignItems={"center"} pb={4}>
+            <ToggleButtonGroup
+                color="secondary"
+                value={device.value}
+                onChange={(_, value: IOSDeviceType | null) => {
+                    if (value !== null && value !== device.value) {
+                        device.set(value);
+                    }
+                }}
+                aria-label="device"
+                exclusive
+            >
+                {/*TODO Enable when android is available*/}
+                {IOS_DEVICE_TYPES.map(it => (
+                    <ToggleButton
+                        key={it}
+                        value={it}
+                        aria-label={it}
+                        sx={{width: `${buttonPercentageWidth}vw`, maxWidth: "120px"}}
+                    >
+                        {it}
+                    </ToggleButton>
+                ))}
+            </ToggleButtonGroup>
+        </Stack>
+    );
+});
 
 // Workaround for issues with carousel dynamic image loading,
 // just pre-render a separate component for each set of images.
@@ -72,6 +78,9 @@ const imageMaxWidth = new Map<DeviceType, string>([
 ]);
 
 const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
+    if (!hydrating) {
+        return null;
+    }
     if (carouselByDevice === null) {
         // TODO Enable when android is available
         carouselByDevice = new Map(IOS_DEVICE_TYPES.map(it => [it, (
@@ -91,7 +100,7 @@ const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
 const CarouselByDevice = ({options, device, maxWidth}: {
     options: SplideProps["options"],
     device: DeviceType,
-    maxWidth?: string
+    maxWidth?: string,
 }) => {
     const language = useLanguage();
     const images = screenshotsByDeviceLanguage.get(device)?.get(language) ?? [];
@@ -115,7 +124,7 @@ const CarouselByDevice = ({options, device, maxWidth}: {
                         <Stack width="100%" pb={6} sx={{justifyContent: "center", alignItems: "center"}}>
                             <img
                                 draggable={false}
-                                style={{width: `min(${maxWidth ?? "100%"}, 100%)`}}
+                                style={{width: "100%", maxWidth: maxWidth}}
                                 src={it}
                             />
                         </Stack>
