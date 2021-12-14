@@ -3,10 +3,8 @@ import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { Translate } from "@schoolpower/hooks/useTranslate";
+import { WhatGif } from "@schoolpower/routes/Home/WhatGif";
 import React from "react";
-
-import a from "/public/a.png";
-
 import { useTranslation } from "react-i18next";
 
 interface IWhatItem {
@@ -86,7 +84,7 @@ const Wide = () => {
         (
             <Stack pt={4} justifyContent={"center"} alignItems={"center"}>
                 <Stack width={{xs: "30%", md: "332px"}} position={"absolute"} zIndex={5}>
-                    <img width={"100%"} src={a}/>
+                    <WhatGif/>
                 </Stack>
                 <Grid
                     height={540}
@@ -173,7 +171,7 @@ const Narrow = () => {
                     }}/>
                 </Stack>
                 <Stack pt={3} pb={3} zIndex={1}>
-                    <img width={"100%"} src={a}/>
+                    <WhatGif/>
                 </Stack>
                 <Stack pl={2} pr={2} pt={2} pb={4} width={"100%"} spacing={4} zIndex={1}>
                     {whatItems.right.map((it, index) => (

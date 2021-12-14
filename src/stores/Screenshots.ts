@@ -2,8 +2,6 @@ import { DeviceType, IOS_DEVICE_TYPES, IOSDeviceType } from "@schoolpower/consta
 import rawIOSScreenshotList from "@schoolpower/constants/screenshots/ios/images.json";
 import { Language, LANGUAGES } from "@schoolpower/i18n/Language";
 
-import a from "/public/a.png";
-
 type IOSScreenshotDeviceName =
     "iPhone 13 Pro Max (15.0)"
     | "iPad Pro (12.9-inch) (5th generation) (15.0)"
@@ -62,7 +60,7 @@ const androidScreenShots = async () => {
     for (const language of LANGUAGES) {
         ret.set(
             language,
-            Array(5).fill(0).map(() => a) // TODO
+            [] // TODO
         );
     }
     return ret;

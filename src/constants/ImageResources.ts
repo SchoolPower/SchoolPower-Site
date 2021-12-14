@@ -28,3 +28,6 @@ export const headerLogo = (
 export const miscImage = (
     name: string
 ) => `${cdn}/misc/${name}.png`;
+
+export const demoGif = `${cdn}/demo/demo.gif`;
+export const demoGifStart = `${cdn}/demo/demo_start.png`;

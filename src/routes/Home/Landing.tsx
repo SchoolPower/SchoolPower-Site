@@ -113,7 +113,7 @@ const DownloadButton = ({disabled, icon, text, href}: {
         color={"info"}
         startIcon={icon}
         sx={{
-            minWidth: "160px",
+            minWidth: "165px",
             height: "fit-content",
             pt: 1,
             pb: 1,

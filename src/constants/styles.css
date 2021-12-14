@@ -1,3 +1,7 @@
 .flag-icon {
   max-width: 100%;
 }
+
+.gif_player .play_button {
+  padding: 11px 10px;
+}
