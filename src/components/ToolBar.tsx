@@ -62,7 +62,9 @@ export const ToolBar = observer(() => {
                         <Stack direction={"row"} ml={"auto"} spacing={3} alignItems={"center"}>
                             <Stack direction={"row"} spacing={3} sx={{display: {xs: "none", md: "block"}}}>
                                 {navRoutes.map((it, index) => it.external ? (
-                                    <Button key={index} color="inherit" href={it.to}>{t(it.nameKey)}</Button>
+                                    <Button key={index} color="inherit" href={it.to} target={"_blank"}>
+                                        {t(it.nameKey)}
+                                    </Button>
                                 ) : (
                                     <ButtonLink key={index} to={it.to}>{t(it.nameKey)}</ButtonLink>
                                 ))}

@@ -7,12 +7,12 @@ export interface IRoute {
 export const navRoutes: IRoute[] = [
     {
         nameKey: "navs.sourceCode",
-        to: "",
+        to: "https://github.com/SchoolPower",
         external: true,
     },
     {
         nameKey: "navs.web",
-        to: "",
+        to: "https://web.schoolpower.tech/",
         external: true,
     },
     {
