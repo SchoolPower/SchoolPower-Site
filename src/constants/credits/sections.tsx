@@ -1,5 +1,5 @@
 import { AccountCircle, BugReport, Message } from "@mui/icons-material";
-import { credits, ICredits } from "@schoolpower/constants/credits/credits";
+import { Credits, credits } from "@schoolpower/constants/credits/credits";
 import React from "react";
 
 export type CreditType = "bug" | "account" | "suggestion";
@@ -28,8 +28,8 @@ export const creditSections: ICreditSection[] = [
     },
 ];
 
-export const creditIdsByType: Map<CreditType, (keyof ICredits)[]> = (() => {
-    const raw = new Map<CreditType, Set<keyof ICredits>>();
+export const creditIdsByType: Map<CreditType, (keyof Credits)[]> = (() => {
+    const raw = new Map<CreditType, Set<keyof Credits>>();
     for (const [idString, credit] of Object.entries(credits)) {
         const id = Number(idString);
         for (const type of credit.types) {
@@ -40,7 +40,7 @@ export const creditIdsByType: Map<CreditType, (keyof ICredits)[]> = (() => {
             }
         }
     }
-    const ret = new Map<CreditType, (keyof ICredits)[]>();
+    const ret = new Map<CreditType, (keyof Credits)[]>();
     for (const [type, ids] of raw) {
         ret.set(type, Array.from(ids));
     }
