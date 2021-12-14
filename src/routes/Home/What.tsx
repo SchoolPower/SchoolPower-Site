@@ -170,7 +170,7 @@ const Narrow = () => {
                         opacity: 0.19,
                     }}/>
                 </Stack>
-                <Stack pt={3} pb={3} zIndex={1}>
+                <Stack zIndex={1}>
                     <WhatGif/>
                 </Stack>
                 <Stack pl={2} pr={2} pt={2} pb={4} width={"100%"} spacing={4} zIndex={1}>

@@ -78,6 +78,9 @@ const imageMaxWidth = new Map<DeviceType, string>([
 ]);
 
 const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
+    // This is to prevent language not being updated on initial page load
+    // due to isomorphic pre-rendering, but will also cause it to not show
+    // in debug. Just disable this temporarily while debugging.
     if (!hydrating) {
         return null;
     }
