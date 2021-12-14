@@ -10,7 +10,7 @@ export const BackNav = ({title}: { title: string }) => {
             <IconButton onClick={() => navigate(-1)} sx={{marginLeft: -1}}>
                 <ArrowBack color={"info"}/>
             </IconButton>
-            <Typography pl={3} fontSize={24} fontWeight={600}>
+            <Typography pt={"3px"} pl={3} fontSize={24} fontWeight={600}>
                 {title}
             </Typography>
         </Stack>
