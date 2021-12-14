@@ -17,7 +17,7 @@ export const navRoutes: IRoute[] = [
     },
     {
         nameKey: "navs.contactUs",
-        to: "",
+        to: "/contact",
     },
 ];
 

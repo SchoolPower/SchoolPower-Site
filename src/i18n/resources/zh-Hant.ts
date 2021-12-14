@@ -118,7 +118,18 @@ const zhHant: ResourceLanguage = {
                 title: "隱私",
                 content: "您允許該應用程序記錄並永久保存您使用的用戶名、所用的操作系統信息和所用的程序版本，並將其用於統計、分析用途。"
             }
-        }
+        },
+        contact: {
+            title: "聯繫我們",
+            form: {
+                email: "你的電郵",
+                subject: "主題",
+                message: "內容",
+                send: "發送",
+                sent: "消息已發送！",
+                error: "消息發送失敗：",
+            }
+        },
     }
 };
 

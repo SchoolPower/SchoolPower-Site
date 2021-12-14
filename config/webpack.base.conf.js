@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
@@ -67,7 +68,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./public/index.html"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new Dotenv(),
     ],
     experiments: {
         topLevelAwait: true

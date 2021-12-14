@@ -2,6 +2,7 @@ import { App } from "@schoolpower/App";
 import React from "react";
 import { hydrate, render } from "react-dom";
 import "i18n/index";
+import "./emailjs";
 
 export let hydrating = false;
 

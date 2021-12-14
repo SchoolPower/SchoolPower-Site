@@ -130,7 +130,18 @@ const en: ResourceLanguage = {
                     "the operating system information, and the application's version you use and use it for " +
                     "statistical and analytical purposes."
             }
-        }
+        },
+        contact: {
+            title: "Contact Us",
+            form: {
+                email: "Your email address",
+                subject: "Subject",
+                message: "Message",
+                send: "Send",
+                sent: "Your message has been sent!",
+                error: "Cannot send you message: ",
+            }
+        },
     }
 };
 

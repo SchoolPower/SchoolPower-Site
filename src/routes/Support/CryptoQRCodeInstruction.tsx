@@ -1,18 +1,7 @@
 import { ContentCopy, Done, Download } from "@mui/icons-material";
-import {
-    Alert,
-    Button,
-    Grid,
-    IconButton,
-    InputAdornment,
-    OutlinedInput,
-    Paper,
-    Snackbar,
-    Stack,
-    Typography
-} from "@mui/material";
+import { Button, Grid, IconButton, InputAdornment, OutlinedInput, Paper, Stack, Typography } from "@mui/material";
+import { Snack } from "@schoolpower/components/Snack";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
-import { Translate } from "@schoolpower/hooks/useTranslate";
 import { observer } from "mobx-react";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
@@ -108,15 +97,18 @@ export const CryptoQRCodeInstruction = observer(({
                     </Button>
                 </Stack>
             </Stack>
-            <Snackbar open={!!cannotCopy.value} autoHideDuration={1000}>
-                <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{width: "100%"}}>
+            <Snack
+                open={!!cannotCopy.value}
+                message={
                     <Trans
                         i18nKey="support.copyError"
                         defaults="Copy failed: {{error}}. Please copy manually."
-                        values={{ error: cannotCopy.value}}
+                        values={{error: cannotCopy.value}}
                     />
-                </Alert>
-            </Snackbar>
+                }
+                severity={"error"}
+                onClose={() => cannotCopy.set(null)}
+            />
         </Stack>
     );
 });

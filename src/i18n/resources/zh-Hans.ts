@@ -118,7 +118,18 @@ const zhHans: ResourceLanguage = {
                 title: "隐私",
                 content: "您允许该应用程序记录并永久保存您使用的用户名、所用的操作系统信息和所用的程序版本，并将其用于统计、分析用途。"
             }
-        }
+        },
+        contact: {
+            title: "联系我们",
+            form: {
+                email: "你的邮箱",
+                subject: "主题",
+                message: "内容",
+                send: "发送",
+                sent: "消息已发送！",
+                error: "消息发送失败：",
+            }
+        },
     }
 };
 
