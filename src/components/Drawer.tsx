@@ -20,7 +20,7 @@ export const Drawer = ({open, onClose}: { open: boolean, onClose: () => void }) 
             >
                 <List>
                     {navRoutes.map((it, index) => it.external ? (
-                        <ListItem button href={it.to} key={index} target={"_blank"}>
+                        <ListItem button component="a" href={it.to} key={index} target={"_blank"}>
                             <ListItemText primary={t(it.nameKey)}/>
                         </ListItem>
                     ) : (
