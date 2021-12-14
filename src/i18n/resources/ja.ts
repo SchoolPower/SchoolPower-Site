@@ -80,14 +80,16 @@ const ja: ResourceLanguage = {
                 name: "ウィーチャットペイ",
                 instruction: {
                     desktop: "カメラを使用して、Wechat でこのQRコードをスキャンする",
-                    mobile: "このQRコードを保存し、Wechat で「アルバムから選択」を選択する"
+                    mobile: "このQRコードを保存し、Wechat で「アルバムから選択」を選択する" +
+                        "（iOS Safariユーザーは、保存するために画像を手動で長押しする必要がある場合があります）"
                 }
             },
             alipay: {
                 name: "Alipay",
                 instruction: {
                     desktop: "カメラを使用して、Alipay でこのQRコードをスキャンする",
-                    mobile: "このQRコードを保存し、Alipay で「アルバムから選択」を選択する"
+                    mobile: "このQRコードを保存し、Alipay で「アルバムから選択」を選択する" +
+                        "（iOS Safariユーザーは、保存するために画像を手動で長押しする必要がある場合があります）"
                 }
             },
             paypal: {

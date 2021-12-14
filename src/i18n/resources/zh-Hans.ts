@@ -79,14 +79,14 @@ const zhHans: ResourceLanguage = {
                 name: "微信支付",
                 instruction: {
                     desktop: "微信「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在微信「扫一扫」中从相册选择"
+                    mobile: "保存此二维码至手机相册，并在微信「扫一扫」中从相册选择（iOS Safari 用户可能需要手动长按图片保存）"
                 }
             },
             alipay: {
                 name: "支付宝",
                 instruction: {
                     desktop: "支付宝「扫一扫」中用相机扫描此二维码",
-                    mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择"
+                    mobile: "保存此二维码至手机相册，并在支付宝「扫一扫」中从相册选择（iOS Safari 用户可能需要手动长按图片保存）"
                 }
             },
             paypal: {

@@ -81,14 +81,16 @@ const en: ResourceLanguage = {
                 name: "Wechat Pay",
                 instruction: {
                     desktop: "Use camera to scan this QR code in Wechat Scan",
-                    mobile: "Save this QR code to your phone and choose \"select from album\" in Wechat Scan"
+                    mobile: "Save this QR code to your phone and choose \"select from album\" in Wechat Scan" +
+                        " (iOS Safari users may need to manually long press the image to download)"
                 }
             },
             alipay: {
                 name: "Alipay",
                 instruction: {
                     desktop: "Use camera to scan this QR code in Alipay Scan",
-                    mobile: "Save this QR code to your phone and choose \"select from album\" in Alipay Scan"
+                    mobile: "Save this QR code to your phone and choose \"select from album\" in Alipay Scan" +
+                        " (iOS Safari users may need to manually long press the image to download)"
                 }
             },
             paypal: {

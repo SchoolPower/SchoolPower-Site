@@ -79,14 +79,14 @@ const zhHant: ResourceLanguage = {
                 name: "微信支付",
                 instruction: {
                     desktop: "微信「掃一掃」中用相機掃描此二維碼",
-                    mobile: "保存此二維碼至手機相冊，並在微信「掃一掃」中從相冊選擇"
+                    mobile: "保存此二維碼至手機相冊，並在微信「掃一掃」中從相冊選擇（iOS Safari 用戶可能需要手動長按圖片保存）"
                 }
             },
             alipay: {
                 name: "支付寶",
                 instruction: {
                     desktop: "支付寶「掃一掃」中用相機掃描此二維碼",
-                    mobile: "保存此二維碼至手機相冊，並在支付寶「掃一掃」中從相冊選擇"
+                    mobile: "保存此二維碼至手機相冊，並在支付寶「掃一掃」中從相冊選擇（iOS Safari 用戶可能需要手動長按圖片保存）"
                 }
             },
             paypal: {
