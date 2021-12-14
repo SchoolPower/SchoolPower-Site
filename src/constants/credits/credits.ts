@@ -8,9 +8,9 @@ export interface ICredit {
     types: CreditType[],
 }
 
-export type ICredits = { [id: number]: ICredit }
+export type Credits = { [id: number]: ICredit }
 
-export const credits: ICredits = {
+export const credits: Credits = {
     0: {
         name: "さかまたクロヱ",
         imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg",
