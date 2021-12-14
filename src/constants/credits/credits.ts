@@ -12,22 +12,17 @@ export type Credits = { [id: number]: ICredit }
 
 export const credits: Credits = {
     0: {
-        name: "さかまたクロヱ",
-        imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg",
+        name: "Andrew Zhang",
+        imageURL: "https://i.loli.net/2018/09/18/5ba0ecc0f01c1.jpg",
         types: ["bug", "suggestion", "account"],
     },
     1: {
-        name: "ほしまちすいせい",
-        color: deepPurple[600],
-        types: ["bug"],
+        name: "陈俊宏",
+        imageURL: "https://i.loli.net/2017/08/11/598d22aca5cfe.jpg",
+        types: ["suggestion"],
     },
-    2: {
-        name: "ほしまちすいせい",
-        types: ["bug"],
-    },
-    3: {
-        name: "ほしまちすいせい",
-        imageURL: "https://i1.sndcdn.com/artworks-M3MiBvSdqvqjAyVj-movmDw-t500x500.jpg",
+    2: { // Demo
+        name: "さかまたクロヱ",
         color: deepPurple[600],
         types: ["bug"],
     },
