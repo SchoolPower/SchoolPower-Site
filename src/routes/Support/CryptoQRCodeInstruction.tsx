@@ -108,7 +108,7 @@ export const CryptoQRCodeInstruction = observer(({
                     </Button>
                 </Stack>
             </Stack>
-            <Snackbar open={!!cannotCopy.value}>
+            <Snackbar open={!!cannotCopy.value} autoHideDuration={1000}>
                 <Alert onClose={() => cannotCopy.set(null)} severity="error" sx={{width: "100%"}}>
                     <Trans
                         i18nKey="support.copyError"
