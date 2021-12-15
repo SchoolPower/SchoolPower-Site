@@ -133,7 +133,8 @@ const Images = () => {
                 sx={{display: {xs: "block", sm: "none"}}}
             >
                 <Stack alignItems={"center"}>
-                    <LazyLoadImage threshold={1000} style={{width: "100%", maxWidth: "400px"}} src={heroImage("phone")}/>
+                    <LazyLoadImage threshold={1000} style={{width: "100%", maxWidth: "400px"}}
+                                   src={heroImage("phone")}/>
                 </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
