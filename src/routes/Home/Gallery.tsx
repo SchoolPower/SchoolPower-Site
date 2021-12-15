@@ -4,12 +4,12 @@ import { DeviceType, IOS_DEVICE_TYPES, IOSDeviceType } from "@schoolpower/consta
 import { splideOptions } from "@schoolpower/constants/theme";
 import { useLanguage } from "@schoolpower/hooks/useLanguage";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
-import { hydrating } from "@schoolpower/index";
 import { screenshotsByDeviceLanguage } from "@schoolpower/stores/Screenshots";
 import { Splide, SplideProps, SplideSlide } from "@splidejs/react-splide";
 import { observer } from "mobx-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // TODO Enable when android is available
 const useDeviceState = () => useSimpleState<IOSDeviceType>("iPhone");
@@ -78,12 +78,6 @@ const imageMaxWidth = new Map<DeviceType, string>([
 ]);
 
 const DeviceCarousel = observer(({device}: IDeviceStateProps) => {
-    // This is to prevent language not being updated on initial page load
-    // due to isomorphic pre-rendering, but will also cause it to not show
-    // in debug. Just disable this temporarily while debugging.
-    if (!hydrating) {
-        return null;
-    }
     if (carouselByDevice === null) {
         // TODO Enable when android is available
         carouselByDevice = new Map(IOS_DEVICE_TYPES.map(it => [it, (
@@ -125,7 +119,7 @@ const CarouselByDevice = ({options, device, maxWidth}: {
                 {images.map((it, index) => (
                     <SplideSlide key={index}>
                         <Stack width="100%" pb={6} sx={{justifyContent: "center", alignItems: "center"}}>
-                            <img
+                            <LazyLoadImage
                                 draggable={false}
                                 style={{width: "100%", maxWidth: maxWidth}}
                                 src={it}

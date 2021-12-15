@@ -2,6 +2,7 @@ import { Download, Laptop, PhoneIphone } from "@mui/icons-material";
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export interface QRCodeInstructionProps {
     qrCodeImageURL: string;
@@ -29,7 +30,7 @@ export const QRCodeInstruction = ({
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <img style={{
+                <LazyLoadImage style={{
                     width: "90%",
                     height: "90%",
                 }} src={qrCodeImageURL}/>

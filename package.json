@@ -12,6 +12,7 @@
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/styled-components": "^5.1.16",
     "add": "^2.0.6",
     "babel-polyfill": "^6.26.0",
@@ -31,6 +32,7 @@
     "react-dom": "^17.0.2",
     "react-gif-player": "^0.4.2",
     "react-i18next": "^11.15.0",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-router-dom": "^6.0.2",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.3"

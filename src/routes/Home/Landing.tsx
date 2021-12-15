@@ -7,9 +7,9 @@ import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import { useLocale } from "@schoolpower/hooks/useLocale";
 import { Translate } from "@schoolpower/hooks/useTranslate";
-import { hydrating } from "@schoolpower/index";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export const Landing = () => {
     return (
@@ -124,9 +124,6 @@ const DownloadButton = ({disabled, icon, text, href}: {
 );
 
 const Images = () => {
-    if (!hydrating) {
-        return null;
-    }
     return (
         <Grid container justifyContent={"center"}>
             <Grid
@@ -136,14 +133,14 @@ const Images = () => {
                 sx={{display: {xs: "block", sm: "none"}}}
             >
                 <Stack alignItems={"center"}>
-                    <img style={{width: "100%", maxWidth: "400px"}} src={heroImage("phone")}/>
+                    <LazyLoadImage style={{width: "100%", maxWidth: "400px"}} src={heroImage("phone")}/>
                 </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
-                <img style={{maxWidth: "100%"}} src={heroImage("tablet")}/>
+                <LazyLoadImage style={{maxWidth: "100%"}} src={heroImage("tablet")}/>
             </Grid>
             <Grid item xs={12} sx={{display: {xs: "none", lg: "block"}}}>
-                <img style={{maxWidth: "100%"}} src={heroImage("laptop")}/>
+                <LazyLoadImage style={{maxWidth: "100%"}} src={heroImage("laptop")}/>
             </Grid>
         </Grid>
     );

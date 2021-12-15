@@ -10,6 +10,7 @@ import { Bitcoin } from "@schoolpower/routes/Support/Bitcoin";
 import { WechatPay } from "@schoolpower/routes/Support/WechatPay";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 
@@ -70,7 +71,7 @@ const SupportPage = () => {
             height: "100%",
             borderRadius: "30px",
         }}>
-            <img style={{
+            <LazyLoadImage style={{
                 width: "75%",
                 height: "75%",
             }} src={imageURL}/>

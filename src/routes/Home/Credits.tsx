@@ -19,6 +19,7 @@ import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const CreditSection = observer(({section}: { section: ICreditSection }) => {
     const {t} = useTranslation();
@@ -37,14 +38,16 @@ const CreditSection = observer(({section}: { section: ICreditSection }) => {
                 <Grid container p={2} minHeight={56} spacing={1}>
                     {creditIds.map((it, index) => (
                         <Grid key={index} item>
-                            <Chip avatar={
-                                <Avatar src={credits[it].imageURL} sx={{
-                                    color: "white !important",
-                                    bgcolor: credits[it].color
-                                }}>
-                                    {!credits[it].imageURL ? credits[it].name.charAt(0) : ""}
-                                </Avatar>
-                            } label={credits[it].name}/>
+                            <LazyLoadComponent>
+                                <Chip avatar={
+                                    <Avatar src={credits[it].imageURL} sx={{
+                                        color: "white !important",
+                                        bgcolor: credits[it].color
+                                    }}>
+                                        {!credits[it].imageURL ? credits[it].name.charAt(0) : ""}
+                                    </Avatar>
+                                } label={credits[it].name}/>
+                            </LazyLoadComponent>
                         </Grid>
                     ))}
                 </Grid>

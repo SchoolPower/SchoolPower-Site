@@ -5,6 +5,7 @@ import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import styled from "styled-components";
 
 export interface QRCodeInstructionProps {
@@ -58,7 +59,7 @@ export const CryptoQRCodeInstruction = observer(({
                 alignItems={"center"}
                 justifyContent={"center"}
             >
-                <img style={{
+                <LazyLoadImage style={{
                     width: "75%",
                     height: "75%",
                 }} src={qrCodeImageURL}/>
@@ -66,7 +67,7 @@ export const CryptoQRCodeInstruction = observer(({
             <Stack spacing={3}>
                 <Stack spacing={2}>
                     <InstructionItem
-                        icon={<img style={{width: "100%", height: "100%"}} src={currencyIcon}/>}
+                        icon={<LazyLoadImage style={{width: "100%", height: "100%"}} src={currencyIcon}/>}
                         text={instruction}
                     />
                     <Paper>

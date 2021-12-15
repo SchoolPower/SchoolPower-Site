@@ -7,6 +7,7 @@ import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { Translate } from "@schoolpower/hooks/useTranslate";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const useHowItems = (): IHowItem[] => {
     const {t} = useTranslation();
@@ -49,7 +50,7 @@ export const How = () => {
                 <Grid container pt={7} alignItems={"center"} justifyContent={"center"}>
                     <Grid item xs={12} sm={8} md={6}>
                         <Stack alignItems={"center"} justifyContent={"center"}>
-                            <img style={{maxWidth: "100%"}}
+                            <LazyLoadImage style={{maxWidth: "100%"}}
                                  src={miscImage("ps_sp")}/>
                         </Stack>
                     </Grid>
