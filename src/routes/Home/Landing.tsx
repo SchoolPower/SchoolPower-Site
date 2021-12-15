@@ -133,14 +133,14 @@ const Images = () => {
                 sx={{display: {xs: "block", sm: "none"}}}
             >
                 <Stack alignItems={"center"}>
-                    <LazyLoadImage style={{width: "100%", maxWidth: "400px"}} src={heroImage("phone")}/>
+                    <LazyLoadImage threshold={1000} style={{width: "100%", maxWidth: "400px"}} src={heroImage("phone")}/>
                 </Stack>
             </Grid>
             <Grid item xs={10} md={8} sx={{display: {xs: "none", sm: "block", lg: "none"}}}>
-                <LazyLoadImage style={{maxWidth: "100%"}} src={heroImage("tablet")}/>
+                <LazyLoadImage threshold={1000} style={{maxWidth: "100%"}} src={heroImage("tablet")}/>
             </Grid>
             <Grid item xs={12} sx={{display: {xs: "none", lg: "block"}}}>
-                <LazyLoadImage style={{maxWidth: "100%"}} src={heroImage("laptop")}/>
+                <LazyLoadImage threshold={1000} style={{maxWidth: "100%"}} src={heroImage("laptop")}/>
             </Grid>
         </Grid>
     );
