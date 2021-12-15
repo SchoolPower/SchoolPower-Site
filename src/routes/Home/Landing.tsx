@@ -1,5 +1,5 @@
 import { Android, Apple } from "@mui/icons-material";
-import { Box, Button, Container, Grid, Link, Stack } from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { Title } from "@schoolpower/components/PageTitle";
 import { androidAPKURL, appStoreURL } from "@schoolpower/constants/AppDownloads";
 import { heroImage } from "@schoolpower/constants/ImageResources";
@@ -71,13 +71,13 @@ const Downloads = () => {
         return (
             <Stack alignItems={"center"}>
                 <DownloadButton
-                    disabled
                     icon={<Android/>}
+                    href={androidAPKURL}
                     text={t("home.landing.download.android.button")}
                 />
-                <Link href={androidAPKURL} underline={"hover"} color={"info.main"} variant={"caption"}>
+                <Typography color={"info.main"} variant={"caption"}>
                     {t("home.landing.download.android.alt")}
-                </Link>
+                </Typography>
             </Stack>
         );
     };

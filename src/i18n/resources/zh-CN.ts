@@ -18,8 +18,8 @@ const zhCN: ResourceLanguage = {
                 subtitle: "一个 <1/> 的替代客户端",
                 download: {
                     android: {
-                        button: "安卓 (即将推出)",
-                        alt: "下载 v1.5"
+                        button: "安卓 (v1.5)",
+                        alt: "v2.0 即将推出"
                     }
                 }
             },

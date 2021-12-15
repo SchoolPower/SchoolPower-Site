@@ -18,8 +18,8 @@ const ja: ResourceLanguage = {
                 subtitle: "<1/> の代替クライアント",
                 download: {
                     android: {
-                        button: "Android (近日公開)",
-                        alt: "v1.5をダウンロード"
+                        button: "Android (v1.5)",
+                        alt: "v2.0は近日公開"
                     }
                 }
             },

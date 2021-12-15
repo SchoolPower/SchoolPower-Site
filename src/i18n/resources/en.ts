@@ -18,8 +18,8 @@ const en: ResourceLanguage = {
                 subtitle: "An alternative client for <1/>",
                 download: {
                     android: {
-                        button: "Android (Soon)",
-                        alt: "Download v1.5"
+                        button: "Android (v1.5)",
+                        alt: "v2.0 Coming soon"
                     }
                 }
             },

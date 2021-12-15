@@ -18,8 +18,8 @@ const zhTW: ResourceLanguage = {
                 subtitle: "一個 <1/> 的替代客戶端",
                 download: {
                     android: {
-                        button: "安卓 (即將推出)",
-                        alt: "下載 v1.5"
+                        button: "安卓 (v1.5)",
+                        alt: "v2.0 即將推出"
                     }
                 }
             },
