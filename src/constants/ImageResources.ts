@@ -29,5 +29,9 @@ export const miscImage = (
     name: string
 ) => `${cdn}/misc/${name}.png`;
 
+export const avatar = (
+    filename: string
+) => `${cdn}/credits/avatar/${filename}`;
+
 export const demoGif = `${cdn}/demo/demo.gif`;
 export const demoGifStart = `${cdn}/demo/demo_start.png`;
