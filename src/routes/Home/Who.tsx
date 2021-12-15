@@ -2,6 +2,7 @@ import { Avatar, ButtonBase, Container, Stack, Typography } from "@mui/material"
 import { SectionHeader } from "@schoolpower/components/SectionHeader";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 const whoItems: IWhoItem[] = [
     {
@@ -55,13 +56,15 @@ export const Who = () => {
 
 const WhoItem = ({item}: { item: IWhoItem }) => (
     <Stack spacing={2} justifyContent={"center"} alignItems={"center"}>
-        <ButtonBase sx={{padding: 0, borderRadius: 76}} href={item.profileURL} target={"_blank"}>
-            <Avatar
-                alt={item.name}
-                src={item.imageURL}
-                sx={{width: 152, height: 152}}
-            />
-        </ButtonBase>
+        <LazyLoadComponent>
+            <ButtonBase sx={{padding: 0, borderRadius: 76}} href={item.profileURL} target={"_blank"}>
+                <Avatar
+                    alt={item.name}
+                    src={item.imageURL}
+                    sx={{width: 152, height: 152}}
+                />
+            </ButtonBase>
+        </LazyLoadComponent>
         <Typography variant={"subtitle1"} color={"primary.contrastText"} fontWeight={600}>
             {item.name}
         </Typography>
