@@ -1,8 +1,8 @@
 import { Locale, LOCALE_IDENTIFIERS, localeByIdentifier } from "@schoolpower/i18n/Locale";
 import en from "@schoolpower/i18n/resources/en";
 import ja from "@schoolpower/i18n/resources/ja";
-import zhHans from "@schoolpower/i18n/resources/zh-Hans";
-import zhHant from "@schoolpower/i18n/resources/zh-Hant";
+import zhCN from "@schoolpower/i18n/resources/zh-CN";
+import zhTW from "@schoolpower/i18n/resources/zh-TW";
 import i18next, { changeLanguage, i18n, use } from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
@@ -13,10 +13,10 @@ use(LanguageDetector)
         resources: {
             "en": en,
             "ja": ja,
-            "zh-Hans": zhHans,
-            "zh-Hant": zhHant,
+            "zh-CN": zhCN,
+            "zh-TW": zhTW,
         },
-        supportedLngs: ["en", "ja", "zh-Hans", "zh-Hant"],
+        supportedLngs: ["en", "ja", "zh-CN", "zh-TW"],
         fallbackLng: "en",
         interpolation: {
             escapeValue: false,

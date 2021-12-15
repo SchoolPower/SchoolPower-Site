@@ -1,6 +1,6 @@
 import { ResourceLanguage } from "i18next";
 
-const zhHans: ResourceLanguage = {
+const zhCN: ResourceLanguage = {
     translation: {
         copyright: "Built with ❤️ by SchoolPower 工作室",
         navs: {
@@ -133,4 +133,4 @@ const zhHans: ResourceLanguage = {
     }
 };
 
-export default zhHans;
+export default zhCN;

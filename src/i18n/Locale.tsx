@@ -3,7 +3,7 @@ import { Language } from "@schoolpower/i18n/Language";
 import React from "react";
 
 export const LOCALE_IDENTIFIERS = [
-    "en", "ja", "zh-Hans", "zh-Hant"
+    "en", "ja", "zh-CN", "zh-TW"
 ];
 
 export type LocaleIdentifier = typeof LOCALE_IDENTIFIERS[number];
@@ -23,13 +23,13 @@ export const locales: Locale[] = [
         region: "ca",
     },
     {
-        identifier: "zh-Hans",
+        identifier: "zh-CN",
         language: "Chinese Simplified",
         name: "简体中文",
         region: "cn",
     },
     {
-        identifier: "zh-Hant",
+        identifier: "zh-TW",
         language: "Chinese Traditional",
         name: "繁體中文",
         region: "tw",
