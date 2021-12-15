@@ -72,6 +72,7 @@ const SupportPage = () => {
             width: "100%",
             height: "100%",
             borderRadius: "30px",
+            padding: "12.5%",
         }}>
             <LazyLoadImage style={{
                 width: "100%",
@@ -125,7 +126,6 @@ const SupportPage = () => {
                                 container
                                 sx={{
                                     width: "100%",
-                                    padding: "12.5%",
                                     bgcolor: "white",
                                     borderRadius: "30px",
                                 }}
