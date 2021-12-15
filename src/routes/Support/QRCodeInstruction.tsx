@@ -23,7 +23,7 @@ export const QRCodeInstruction = ({
                 container
                 sx={{
                     width: "238px",
-                    aspectRatio: "1",
+                    padding: "15px",
                     bgcolor: "white",
                     borderRadius: "30px",
                 }}
@@ -31,8 +31,8 @@ export const QRCodeInstruction = ({
                 justifyContent={"center"}
             >
                 <LazyLoadImage style={{
-                    width: "90%",
-                    height: "90%",
+                    width: "100%",
+                    height: "100%",
                 }} src={qrCodeImageURL}/>
             </Grid>
             <Stack spacing={3}>

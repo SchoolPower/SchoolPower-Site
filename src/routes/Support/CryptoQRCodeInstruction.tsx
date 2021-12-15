@@ -52,7 +52,7 @@ export const CryptoQRCodeInstruction = observer(({
                 container
                 sx={{
                     width: "238px",
-                    aspectRatio: "1",
+                    padding: "30px",
                     bgcolor: "white",
                     borderRadius: "30px",
                 }}
@@ -60,8 +60,8 @@ export const CryptoQRCodeInstruction = observer(({
                 justifyContent={"center"}
             >
                 <LazyLoadImage style={{
-                    width: "75%",
-                    height: "75%",
+                    width: "100%",
+                    height: "100%",
                 }} src={qrCodeImageURL}/>
             </Grid>
             <Stack spacing={3}>

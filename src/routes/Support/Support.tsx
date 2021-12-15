@@ -74,8 +74,8 @@ const SupportPage = () => {
             borderRadius: "30px",
         }}>
             <LazyLoadImage style={{
-                width: "75%",
-                height: "75%",
+                width: "100%",
+                height: "100%",
             }} src={imageURL}/>
         </ButtonBase>
     );
@@ -125,7 +125,7 @@ const SupportPage = () => {
                                 container
                                 sx={{
                                     width: "100%",
-                                    aspectRatio: "1",
+                                    padding: "12.5%",
                                     bgcolor: "white",
                                     borderRadius: "30px",
                                 }}
