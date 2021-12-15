@@ -1,5 +1,6 @@
 import { Download, Laptop, PhoneIphone } from "@mui/icons-material";
-import { Button, Grid, Stack, Typography } from "@mui/material";
+import { Button, CircularProgress, Grid, Stack, Typography } from "@mui/material";
+import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -30,9 +31,11 @@ export const QRCodeInstruction = ({
                 alignItems={"center"}
                 justifyContent={"center"}
             >
+                <CircularProgress sx={{zIndex: 0, position: "absolute"}}/>
                 <LazyLoadImage style={{
-                    width: "100%",
-                    height: "100%",
+                    width: "196px",
+                    height: "196px",
+                    zIndex: 1,
                 }} src={qrCodeImageURL}/>
             </Grid>
             <Stack spacing={3}>

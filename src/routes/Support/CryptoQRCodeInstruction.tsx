@@ -1,5 +1,15 @@
 import { ContentCopy, Done, Download } from "@mui/icons-material";
-import { Button, Grid, IconButton, InputAdornment, OutlinedInput, Paper, Stack, Typography } from "@mui/material";
+import {
+    Button,
+    CircularProgress,
+    Grid,
+    IconButton,
+    InputAdornment,
+    OutlinedInput,
+    Paper,
+    Stack,
+    Typography
+} from "@mui/material";
 import { Snack } from "@schoolpower/components/Snack";
 import { useSimpleState } from "@schoolpower/hooks/useSimpleState";
 import { observer } from "mobx-react";
@@ -59,9 +69,11 @@ export const CryptoQRCodeInstruction = observer(({
                 alignItems={"center"}
                 justifyContent={"center"}
             >
+                <CircularProgress sx={{zIndex: 0, position: "absolute"}}/>
                 <LazyLoadImage style={{
-                    width: "100%",
-                    height: "100%",
+                    width: "178px",
+                    height: "178px",
+                    zIndex: 1,
                 }} src={qrCodeImageURL}/>
             </Grid>
             <Stack spacing={3}>
