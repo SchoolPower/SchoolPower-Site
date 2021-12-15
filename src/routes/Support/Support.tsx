@@ -45,7 +45,7 @@ const donationMethods: IDonationMethod[] = [
     },
 ];
 
-export const Support = () => (
+const Support = () => (
     <Stack>
         <ScrollToTop/>
         <Background>
@@ -59,6 +59,8 @@ export const Support = () => (
         <Footer/>
     </Stack>
 );
+
+export default Support;
 
 const SupportPage = () => {
     const {t} = useTranslation();

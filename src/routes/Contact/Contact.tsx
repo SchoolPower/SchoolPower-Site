@@ -10,7 +10,7 @@ import { observer } from "mobx-react";
 import React, { FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
-export const Contact = observer(() => {
+const Contact = observer(() => {
     const {t} = useTranslation();
     const fromEmail = useSimpleState("");
     const subject = useSimpleState("");
@@ -131,3 +131,5 @@ export const Contact = observer(() => {
         </Stack>
     );
 });
+
+export default Contact;

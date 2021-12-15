@@ -5,6 +5,7 @@
     "@babel/react"
   ],
   "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
     [
       "import",
       {

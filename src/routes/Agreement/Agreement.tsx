@@ -20,7 +20,7 @@ const sections: { title: string, content: string }[] = [
     },
 ];
 
-export const Agreement = () => {
+const Agreement = () => {
     const {t} = useTranslation();
     return (
         <Stack>
@@ -54,3 +54,5 @@ export const Agreement = () => {
         </Stack>
     );
 };
+
+export default Agreement;
