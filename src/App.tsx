@@ -1,4 +1,4 @@
-import { CssBaseline } from "@mui/material";
+import { CircularProgress, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Background } from "@schoolpower/components/Background";
 import { ToolBar } from "@schoolpower/components/ToolBar";
@@ -18,7 +18,11 @@ export const App = observer(() => {
             <BrowserRouter>
                 <CssBaseline enableColorScheme/>
                 <ToolBar/>
-                <React.Suspense fallback={<Background/>}>
+                <React.Suspense fallback={
+                    <Background sx={{justifyContent: "center", alignItems: "center"}}>
+                        <CircularProgress color={"secondary"}/>
+                    </Background>
+                }>
                     <Routes>
                         <Route path="/" element={<Home/>}/>
                         <Route path="/support/*" element={<Support/>}/>
