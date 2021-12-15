@@ -7,6 +7,7 @@ import { PowerSchool } from "@schoolpower/constants/PowerSchool";
 import { ToolBarHeight } from "@schoolpower/constants/styles";
 import { useLocale } from "@schoolpower/hooks/useLocale";
 import { Translate } from "@schoolpower/hooks/useTranslate";
+import { hydrating } from "@schoolpower/index";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -123,6 +124,9 @@ const DownloadButton = ({disabled, icon, text, href}: {
 );
 
 const Images = () => {
+    if (!hydrating) {
+        return null;
+    }
     return (
         <Grid container justifyContent={"center"}>
             <Grid
