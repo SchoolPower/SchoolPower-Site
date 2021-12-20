@@ -1,6 +1,7 @@
 import { CircularProgress, CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Background } from "@schoolpower/components/Background";
+import { Redirect } from "@schoolpower/components/Redirect";
 import { ToolBar } from "@schoolpower/components/ToolBar";
 import { MUITheme } from "@schoolpower/constants/theme";
 import Home from "@schoolpower/routes/Home/Home";
@@ -28,6 +29,7 @@ export const App = observer(() => {
                         <Route path="/support/*" element={<Support/>}/>
                         <Route path="/eula" element={<Agreement/>}/>
                         <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/survey" element={<Redirect to={"https://wj.qq.com/s2/9348764/f46c"}/>}/>
                     </Routes>
                 </React.Suspense>
             </BrowserRouter>

@@ -3,6 +3,11 @@ import { ResourceLanguage } from "i18next";
 const en: ResourceLanguage = {
     translation: {
         copyright: "Built with ❤️ by SchoolPower Studio",
+        redirect: {
+            title: "Redirecting...",
+            message: "If you are not automatically redirected, click <1/>",
+            button: "here",
+        },
         navs: {
             sourceCode: "Source Code",
             web: "Web (Beta)",

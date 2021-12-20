@@ -13,7 +13,7 @@ export const MUITheme = createTheme({
         },
         secondary: {
             main: "#F178B6",
-            contrastText: "#FFFFFF"
+            contrastText: "#FFFFFF",
         },
         background: {
             default: "#EDFDFF",

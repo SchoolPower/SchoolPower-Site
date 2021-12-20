@@ -3,6 +3,11 @@ import { ResourceLanguage } from "i18next";
 const zhCN: ResourceLanguage = {
     translation: {
         copyright: "Built with ❤️ by SchoolPower 工作室",
+        redirect: {
+            title: "跳转中...",
+            message: "如果你没有被自动跳转，请点击 <1/>",
+            button: "这里",
+        },
         navs: {
             sourceCode: "源代码",
             web: "网页版 (Beta)",

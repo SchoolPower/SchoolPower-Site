@@ -3,6 +3,11 @@ import { ResourceLanguage } from "i18next";
 const ja: ResourceLanguage = {
     translation: {
         copyright: "Built with ❤️ by SchoolPower スタジオ",
+        redirect: {
+            title: "リダイレクト中...",
+            message: "自動的にリダイレクトされていない場合は、<1/> をクリックしてください",
+            button: "こちら",
+        },
         navs: {
             sourceCode: "ソースコード",
             web: "Web (ベータ)",
