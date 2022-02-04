@@ -1,0 +1,97 @@
+{
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/noto-sans-sc": "^4.5.2",
+    "@fontsource/plus-jakarta-sans": "^4.5.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.2",
+    "@splidejs/react-splide": "^0.6.17",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.37",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-lazy-load-image-component": "^1.5.2",
+    "@types/styled-components": "^5.1.16",
+    "add": "^2.0.6",
+    "babel-polyfill": "^6.26.0",
+    "buffer": "^6.0.3",
+    "css-loader": "^6.5.1",
+    "dotenv-webpack": "^7.0.3",
+    "emailjs-com": "^3.2.0",
+    "i18next": "^21.6.0",
+    "i18next-browser-languagedetector": "^6.1.2",
+    "lodash": "^4.17.21",
+    "mobx": "^6.3.8",
+    "mobx-react": "^7.2.1",
+    "mobx-utils": "^6.0.4",
+    "query-string": "^7.0.1",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^17.0.2",
+    "react-gif-player": "^0.4.2",
+    "react-i18next": "^11.15.0",
+    "react-lazy-load-image-component": "^1.5.1",
+    "react-router-dom": "^6.0.2",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.3"
+  },
+  "scripts": {
+    "webpack": "webpack --config config/webpack.prod.conf.js",
+    "start": "webpack serve --open --config config/webpack.dev.conf.js",
+    "build": "rm -rf ./build && yarn run webpack",
+    "postbuild": "react-snap",
+    "deploy": "./deploy.sh",
+    "clean": "rm -rf ./node_modules",
+    "bundle-analyze": "yarn bundle-stats && yarn view-stats",
+    "view-stats": "webpack-bundle-analyzer stats.json build/",
+    "bundle-stats": "rm -rf ./build && webpack --config config/webpack.prod.conf.js --profile --json=stats.json"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-import": "^1.13.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "eslint": "^8.3.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-react": "^7.27.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "react-snap": "^1.23.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "^4.5.3",
+    "webpack": "^5.64.4",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
