@@ -1,6 +1,8 @@
-import { Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+const icpUrl = "https://beian.miit.gov.cn/";
 
 export const Footer = () => {
     const {t} = useTranslation();
@@ -9,9 +11,9 @@ export const Footer = () => {
             <Typography variant={"caption"} color={"white"}>
                 {t("copyright")}
             </Typography>
-            <Typography variant={"caption"} color={"white"}>
+            <Link href={icpUrl} color={"white"} underline={"hover"} variant={"caption"}>
                 浙ICP备18004218号
-            </Typography>
+            </Link>
         </Stack>
     );
 };
